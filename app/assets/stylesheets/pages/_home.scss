@@ -18,9 +18,11 @@
   text-decoration: underline $purple;
 }
 
-.tasks-list {
+.teams-list {
   background-color: $light-gray;
   padding: 8px;
+  display: flex;
+  justify-content: space-around;
   margin-bottom: 8px;
   border-radius: 8px;
   box-shadow: 0 10px 30px rgba(0,0,0,.1);

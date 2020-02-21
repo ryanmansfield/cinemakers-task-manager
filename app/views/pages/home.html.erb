@@ -6,22 +6,31 @@
 
       </div>
       <div class="user">
-
-        <p>Ryan Mansfield - Chicago, IL - Company - Position</p>
+        <p><%= current_user.first_name %></p>
+        <p><%= current_user.last_name %></p>
+        <p><%= current_user.tag %></p>
+        <p><%= current_user.bio %></p>
+        <p><%= current_user.company %></p>
+        <p><%= current_user.city %></p>
+        <p><%= current_user.state %></p>
+        <p><%= current_user.website %></p>
       </div>
     </div>
-    <div class="tasks-list">
-      <div class="task">task 1</div>
+    <div class="teams-list">
+
+      <% current_user.teams.each do |team| %>
+        <div class="team">
+          <p><%="#{team.name}"%></p>
+        </div>
+      <% end %>
+      <p><%= link_to "View All Teams", teams_path, class: "btn btn-primary" %></p>
+      <p><%= link_to "New Team", new_team_path, class: "btn btn-primary" %></p>
+
     </div>
     <div class="projects-list">
-      <div class="project">
-        Project 1
-      </div>
-      <div class="project">
-        Project 2
-      </div>
+    <p>TODO USERS PROJECT LIST</p>
       <div class="new-project">
-        New Project
+        <p>TODO NEW PROJECT BUTTON</p>
       </div>
     </div>
   </div>
