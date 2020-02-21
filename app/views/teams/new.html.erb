@@ -1,0 +1,11 @@
+<h3>Create a New Team</h3>
+
+
+
+
+<h3>Add a new dose</h3>
+<%= simple_form_for @team do |f| %>
+  <%= f.input :name, label: "Team Name" %>
+  <%= f.association :user, input_html: { class: "beautiful-dropdown" }, include_hidden: false %>
+  <%= f.button :submit, class: "btn btn-primary" %>
+<% end %>
