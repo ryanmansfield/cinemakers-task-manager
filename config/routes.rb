@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   resources :teams, only: [ :index, :show, :new, :create, :destroy ] do
     resources :collaborators, only: [:index, :new, :create ]
   end
-  resources :dose, only: [:destroy]
+  resources :projects, only: [:index, :show, :new, :create, :destroy]
+
 
 
   # namespace :api, defaults: { format: :json } do
