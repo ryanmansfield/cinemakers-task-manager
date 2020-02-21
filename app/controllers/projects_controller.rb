@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: [:show]
+  # before_action :set_project, only: [:show]
 
   def index
     @projects = Project.all
@@ -17,7 +17,7 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(project_params)
     if @project.save
-      redirect_to project_path(@project)
+      redirect_to root_path
     else
       render :new
     end
@@ -28,10 +28,10 @@ class ProjectsController < ApplicationController
   def project_params
     # *Strong params*: You need to *whitelist* what can be updated by the user
     # Never trust user data!
-    params.require(:project).permit(:name)
+    params.require(:project).permit(:name, :team_id)
   end
 
-  def set_project
-    @project = project.find(params[:id])
-  end
+  # def set_project
+  #   @project = project.find(params[:id])
+  # end
 end
