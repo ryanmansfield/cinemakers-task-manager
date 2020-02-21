@@ -2,6 +2,10 @@ class TeamsController < ApplicationController
   # before_action :set_project, except: :destroy
   before_action :set_team, only: [:destroy, :show]
 
+  def index
+    @teams = Team.all
+  end
+
   def new
     @team = Team.new
     # @user = current_user
@@ -9,7 +13,6 @@ class TeamsController < ApplicationController
 
   def create
     @team = Team.new(team_params)
-    @team.user_id = current_user.id
     if @team.save
       redirect_to root_path
     else
@@ -30,12 +33,12 @@ class TeamsController < ApplicationController
   def team_params
     # *Strong params*: You need to *whitelist* what can be updated by the user
     # Never trust user data!
-    params.require(:team).permit(:name, :user_id)
+    params.require(:team).permit(:name)
   end
 
-  def set_project
-    @project = Project.find(params[:project_id])
-  end
+  # def set_project
+  #   @project = Project.find(params[:project_id])
+  # end
 
   def set_team
     @team = team.find(params[:id])

@@ -14,24 +14,24 @@
         <p><%= current_user.city %></p>
         <p><%= current_user.state %></p>
         <p><%= current_user.website %></p>
-        <p><%= current_user.team_id %></p>
-
-
       </div>
     </div>
     <div class="teams-list">
-      <%  %>
-      <div class="team">Team 1</div>
+    <% @teams.each do |team| %>
+      <div class="team">
+        <%= link_to "Join #{team.name}", new_collaborator_path, class: "btn btn-primary" %>
+      </div>
+    <% end %>
+
+
           <p><%= link_to "New Team", new_team_path, class: "btn btn-primary" %></p>
 
     </div>
     <div class="projects-list">
-      <div class="project">
-        Project 1
-      </div>
-      <div class="project">
-        Project 2
-      </div>
+      <% @projects.each do |project| %>
+
+        <h1><%=project.name  %></h1>
+    <% end %>
       <div class="new-project">
         <p><%= link_to "Add Project", new_project_path, class: "btn btn-primary" %></p>
       </div>
