@@ -1,5 +1,5 @@
 class AddTeamIdToUsers < ActiveRecord::Migration[5.2]
   def change
-    add_column :users, :team_id, :integer
+    add_reference :users, :team, foreign_key: true
   end
 end
