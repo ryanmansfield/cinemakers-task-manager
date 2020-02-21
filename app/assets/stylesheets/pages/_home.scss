@@ -1,1 +1,36 @@
 // Specific CSS for your home-page
+.profile {
+  padding: 8px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  background-color: $dark-gray;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+
+}
+
+.user {
+  color: $gray;
+
+}
+.title {
+  color: $blue;
+  text-decoration: underline $purple;
+}
+
+.tasks-list {
+  background-color: $light-gray;
+  padding: 8px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+}
+
+.projects-list {
+  padding: 8px;
+  background-color: $light-gray;
+  display: flex;
+  justify-content: space-around;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+}

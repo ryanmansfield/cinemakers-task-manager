@@ -1,2 +1,33 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<% if user_signed_in? %>
+  <div class="container">
+    <div class="profile">
+      <div class="title">
+        <h1>Cinemakers</h1>
+
+      </div>
+      <div class="user">
+
+        <p>Ryan Mansfield - Chicago, IL - Company - Position</p>
+      </div>
+    </div>
+    <div class="tasks-list">
+      <div class="task">task 1</div>
+    </div>
+    <div class="projects-list">
+      <div class="project">
+        Project 1
+      </div>
+      <div class="project">
+        Project 2
+      </div>
+      <div class="new-project">
+        New Project
+      </div>
+    </div>
+  </div>
+<% else %>
+  <h1>Welcome to Cinemakers</h1>
+  <li>
+    <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+  </li>
+<% end %>
