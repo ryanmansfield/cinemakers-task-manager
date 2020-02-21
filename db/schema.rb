@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_21_073445) do
+ActiveRecord::Schema.define(version: 2020_02_21_083037) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,15 +21,15 @@ ActiveRecord::Schema.define(version: 2020_02_21_073445) do
     t.string "plot"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "team_id"
+    t.index ["team_id"], name: "index_projects_on_team_id"
   end
 
   create_table "teams", force: :cascade do |t|
     t.string "name"
     t.bigint "user_id"
-    t.bigint "project_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["project_id"], name: "index_teams_on_project_id"
     t.index ["user_id"], name: "index_teams_on_user_id"
   end
 
@@ -50,13 +50,10 @@ ActiveRecord::Schema.define(version: 2020_02_21_073445) do
     t.string "state"
     t.string "website"
     t.string "field"
-    t.bigint "team_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-    t.index ["team_id"], name: "index_users_on_team_id"
   end
 
-  add_foreign_key "teams", "projects"
+  add_foreign_key "projects", "teams"
   add_foreign_key "teams", "users"
-  add_foreign_key "users", "teams"
 end
