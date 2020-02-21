@@ -6,11 +6,20 @@
 
       </div>
       <div class="user">
+        <p><%= current_user.first_name %></p>
+        <p><%= current_user.last_name %></p>
+        <p><%= current_user.tag %></p>
+        <p><%= current_user.bio %></p>
+        <p><%= current_user.company %></p>
+        <p><%= current_user.city %></p>
+        <p><%= current_user.state %></p>
+        <p><%= current_user.website %></p>
 
-        <p>Ryan Mansfield - Chicago, IL - Company - Position</p>
+
       </div>
     </div>
     <div class="teams-list">
+      <%  %>
       <div class="team">Team 1</div>
           <p><%= link_to "New Team", new_team_path, class: "btn btn-primary" %></p>
 

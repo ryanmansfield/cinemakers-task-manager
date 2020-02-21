@@ -4,14 +4,12 @@ class TeamsController < ApplicationController
 
   def new
     @team = Team.new
-    @users = User.all
+    # @user = current_user
   end
 
   def create
     @team = Team.new(team_params)
-
-    # @team.user = User.find(params['team']['user'])
-
+    @team.user_id = current_user.id
     if @team.save
       redirect_to root_path
     else
