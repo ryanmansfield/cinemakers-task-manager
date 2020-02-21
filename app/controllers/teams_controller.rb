@@ -25,11 +25,9 @@ class TeamsController < ApplicationController
   end
 
   # def destroy
-  #   @team = Team.find(params[:id])
+  #   # @team = Team.find(params[:id])
   #   @team.destroy
-
-  #   # no need for app/views/restaurants/destroy.html.erb
-  #   redirect_to @team.project
+  #   redirect_to root_path
   # end
 
   private
@@ -40,7 +38,7 @@ class TeamsController < ApplicationController
     params.require(:team).permit(:name)
   end
 
-  def set_team
-    @team = team.find(params[:id])
-  end
+  # def set_team
+  #   @team = team.find(params[:id])
+  # end
 end
