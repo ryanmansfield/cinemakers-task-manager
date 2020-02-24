@@ -1,16 +1,4 @@
+<%= simple_form_for [@team, @collaborator] do |f| %>
+  <%= f.button :submit, "Join Team", class: "btn btn-primary" %>
+<% end %>
 
-
-
-
-Join this Team
-
-<div class="container">
-  <%= simple_form_for [@team, @collaborator] do |f| %>
-
-
-
-
-
-    <%= f.submit class: 'btn btn-primary'%>
-  <% end %>
-</div>

@@ -12,9 +12,3 @@ class PagesController < ApplicationController
     @collaborator = current_user
   end
 end
-
-
-
-  # def set_project
-  #   @project = project.find(params[:id])
-  # end

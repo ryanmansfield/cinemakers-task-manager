@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: [:show]
+  # before_action :set_project, only: [:show]
 
   def index
     @projects = Project.all
@@ -7,7 +7,6 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
-    @team = @projects.team
   end
 
   def new

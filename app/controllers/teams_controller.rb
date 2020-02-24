@@ -1,6 +1,5 @@
 class TeamsController < ApplicationController
   # before_action :set_project, except: :destroy
-  # before_action :set_team, only: [:destroy, :show]
 
   def index
     @teams = Team.all
@@ -9,6 +8,7 @@ class TeamsController < ApplicationController
   def show
     @team = Team.find(params[:id])
     @collaborators = @team.collaborators
+    @collaborator = Collaborator.new
   end
 
   def new
@@ -24,11 +24,11 @@ class TeamsController < ApplicationController
     end
   end
 
-  # def destroy
-  #   # @team = Team.find(params[:id])
-  #   @team.destroy
-  #   redirect_to root_path
-  # end
+  def destroy
+    @team = Team.find(params[:id])
+    @team.destroy
+    redirect_to root_path
+  end
 
   private
 
@@ -37,8 +37,4 @@ class TeamsController < ApplicationController
     # Never trust user data!
     params.require(:team).permit(:name)
   end
-
-  # def set_team
-  #   @team = team.find(params[:id])
-  # end
 end
