@@ -1,8 +1,16 @@
-<h1><%= @team.name %></h1>
-<p>TODO TEAM MEMBER LIST</p>
+<div class="container">
 
-<%= render :template => 'collaborators/new' %>
- <p><%= link_to "Delete Team", @team, method: :delete, class: "btn btn-primary" %></p>
+  <h1><%= @team.name %></h1>
+  <h2>Current Members:</h2>
+
+  <% @team.collaborators.each do |collaborator| %>
+    <p> Team Member : <%= collaborator.user.first_name  %></p>
+  <% end %>
+
+  <%= render :template => 'collaborators/new' %>
+   <p><%= link_to "Delete Team", @team, method: :delete, class: "btn btn-primary" %></p>
+</div>
+
 
 
 

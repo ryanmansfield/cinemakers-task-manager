@@ -18,21 +18,42 @@
   text-decoration: underline $purple;
 }
 
-.teams-list {
+.teams-list-container {
+  text-align: center;
   background-color: $light-gray;
   padding: 8px;
-  display: flex;
-  justify-content: space-around;
   margin-bottom: 8px;
   border-radius: 8px;
   box-shadow: 0 10px 30px rgba(0,0,0,.1);
 }
 
-.projects-list {
-  padding: 8px;
-  background-color: $light-gray;
+.teams-list {
   display: flex;
   justify-content: space-around;
+}
+
+.team-card {
+  padding: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+
+}
+
+
+.projects-list-container {
+  text-align: center;
+  padding: 8px;
+  background-color: $light-gray;
   border-radius: 8px;
   box-shadow: 0 10px 30px rgba(0,0,0,.1);
+}
+
+.projects-list  {
+  display: flex;
+  justify-content: space-around;
+}
+
+.project-card {
+  padding: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+
 }
