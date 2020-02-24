@@ -30,13 +30,7 @@
     </div>
     <h2>My Projects</h2>
     <div class="projects-list">
-      <% current_user.teams.each do |team| %>
-        <% team.projects.each do |project| %>
-          <div class="team">
-            <p><%="#{project.name}"%></p>
-          </div>
-        <% end %>
-       <% end %>
+      <p>TODO PROJECTS LIST</p>
       <div class="new-project">
         <p><%= link_to "New Project", new_project_path, class: "btn btn-primary" %></p>
       </div>
