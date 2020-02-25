@@ -1,0 +1,5 @@
+<div id="stage_app" data-stages=<%= Stage.all.to_json %>></div>
+
+<% content_for :after_js do %>
+  <%= javascript_pack_tag "stage" %>
+<% end %>
