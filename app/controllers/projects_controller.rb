@@ -16,8 +16,11 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
-    if @project.save
+    @project.stages.build(name: 'pre-production')
+    @project.stages.build(name: "production")
+    @project.stages.build(name: "post-production")
 
+    if @project.save
       redirect_to root_path
     else
       render :new
@@ -35,7 +38,7 @@ class ProjectsController < ApplicationController
   def project_params
     # *Strong params*: You need to *whitelist* what can be updated by the user
     # Never trust user data!
-    params.require(:project).permit(:name, :team_id, :stages)
+    params.require(:project).permit(:name, :team_id)
   end
 
   # def set_project
