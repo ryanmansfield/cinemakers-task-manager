@@ -9,11 +9,13 @@
         </ul>
       </div>
     <% end %>
+  <!--   <%= f.simple_fields_for :stages do |p| %>
+      <%= p.input :name%>
+    <% end %> -->
+
     <%= f.input :name %>
     <%= f.input :plot %>
     <%= f.input :genre %>
-
-
     <%= f.input :team_id, collection: current_user.teams %>
     <%= f.submit class: 'btn btn-primary'%>
   <% end %>

@@ -11,6 +11,7 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
+    # @project.stages.build
   end
 
   def create
@@ -34,7 +35,7 @@ class ProjectsController < ApplicationController
   def project_params
     # *Strong params*: You need to *whitelist* what can be updated by the user
     # Never trust user data!
-    params.require(:project).permit(:name, :team_id)
+    params.require(:project).permit(:name, :team_id, :stages)
   end
 
   # def set_project
