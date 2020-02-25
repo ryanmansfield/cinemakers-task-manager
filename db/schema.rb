@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_21_104504) do
+ActiveRecord::Schema.define(version: 2020_02_25_030859) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "checklists", force: :cascade do |t|
+    t.string "name"
+    t.bigint "stage_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["stage_id"], name: "index_checklists_on_stage_id"
+  end
 
   create_table "collaborators", force: :cascade do |t|
     t.bigint "user_id"
@@ -32,6 +40,26 @@ ActiveRecord::Schema.define(version: 2020_02_21_104504) do
     t.datetime "updated_at", null: false
     t.bigint "team_id"
     t.index ["team_id"], name: "index_projects_on_team_id"
+  end
+
+  create_table "stages", force: :cascade do |t|
+    t.string "name"
+    t.bigint "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_stages_on_project_id"
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.bigint "checklist_id"
+    t.string "title"
+    t.string "note"
+    t.datetime "due_date"
+    t.boolean "is_complete", default: false, null: false
+    t.string "assigned_to"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["checklist_id"], name: "index_tasks_on_checklist_id"
   end
 
   create_table "teams", force: :cascade do |t|
@@ -63,8 +91,11 @@ ActiveRecord::Schema.define(version: 2020_02_21_104504) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "checklists", "stages"
   add_foreign_key "collaborators", "teams"
   add_foreign_key "collaborators", "users"
   add_foreign_key "projects", "teams"
+  add_foreign_key "stages", "projects"
+  add_foreign_key "tasks", "checklists"
   add_foreign_key "teams", "users"
 end
