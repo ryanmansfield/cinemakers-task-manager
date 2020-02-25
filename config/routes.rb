@@ -5,17 +5,20 @@ Rails.application.routes.draw do
   resources :teams, only: [ :index, :show, :new, :create, :destroy ] do
     resources :collaborators, only: [:index, :new, :create ]
   end
+
   resources :projects, only: [:index, :show, :new, :create, :destroy]
 
 
 
-  # namespace :api, defaults: { format: :json } do
-  #   namespace :v1 do
-  #     resources :channels, only: [] do
-  #       resources :messages, only: [ :index, :create ]
-  #     end
-  #   end
-  # end
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      resources :stages, only: [] do
+        resources :checklist, only: [ :index, :create ] do
+          resources :tasks, only: []
+        end
+      end
+    end
+  end
 
 
 
