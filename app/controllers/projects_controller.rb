@@ -11,7 +11,6 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
-    # @project.stages.build
   end
 
   def create

@@ -14,11 +14,13 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
-      resources :stages, only: [] do
-        resources :checklist, only: [ :index, :create ] do
-          resources :tasks, only: []
+      # resources :projects, only: [] do
+        resources :stages, only: [] do
+          resources :checklist, only: [ :index, :create ] do
+            resources :tasks, only: []
+          end
         end
-      end
+      # end
     end
   end
 
