@@ -9,7 +9,7 @@
 User.destroy_all
 Team.destroy_all
 Project.destroy_all
-Stage.destroy_all
+
 
 puts "All Users, Teams, Projects, and Stages have been destroyed, Creating new ones"
 
@@ -34,10 +34,6 @@ Project.create(name: "Project 3", genre: "genre", plot: "plot", team_id: 1)
 
 puts "Projects Created"
 
-stage_names = ['pre-production', 'production', 'post-production']
 
-stages = stage_names.map do |name|
-  Stage.find_or_create_by( name: name, project_id: 1)
-end
 
 
