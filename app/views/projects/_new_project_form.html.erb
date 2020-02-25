@@ -12,6 +12,8 @@
     <%= f.input :name %>
     <%= f.input :plot %>
     <%= f.input :genre %>
+
+
     <%= f.input :team_id, collection: current_user.teams %>
     <%= f.submit class: 'btn btn-primary'%>
   <% end %>

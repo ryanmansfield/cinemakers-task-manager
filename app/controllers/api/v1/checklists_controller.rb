@@ -2,7 +2,7 @@ class Api::V1::ChecklistsController < ApplicationController
   before_action :set_stage
 
   def index
-    checklists = @stage.messages.order('created_at ASC')
+    checklists = @stage.checklists.order('created_at ASC')
     render json: checklists
   end
 
@@ -10,7 +10,7 @@ class Api::V1::ChecklistsController < ApplicationController
     checklist = @stage.checklists.build(content: params[:content])
     # checklist.user = current_user
     checklist.save
-    render json: message
+    render json: checklist
   end
 
   private

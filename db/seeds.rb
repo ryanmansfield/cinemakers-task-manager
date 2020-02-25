@@ -37,7 +37,7 @@ puts "Projects Created"
 stage_names = ['pre-production', 'production', 'post-production']
 
 stages = stage_names.map do |name|
-  Stage.find_or_create_by( name: name)
+  Stage.find_or_create_by( name: name, project_id: 1)
 end
 
-puts "Stages have been seeded"
+

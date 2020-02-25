@@ -6,7 +6,9 @@ Rails.application.routes.draw do
     resources :collaborators, only: [:index, :new, :create ]
   end
 
-  resources :projects, only: [:index, :show, :new, :create, :destroy]
+  resources :projects, only: [:index, :show, :new, :create, :destroy] do
+    resources :stages, only: [:show]
+  end
 
 
 
