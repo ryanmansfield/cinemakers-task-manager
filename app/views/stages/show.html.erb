@@ -1,5 +1,5 @@
-<div id="chat_app" data-channels=<%= Stage.all.to_json %>></div>
+<div id="stage_app" data-channels=<%= Stage.all.to_json %>></div>
 
 <% content_for :after_js do %>
-  <%= javascript_pack_tag "project" %>
+  <%= javascript_pack_tag "stage" %>
 <% end %>
