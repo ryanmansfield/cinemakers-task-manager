@@ -1,17 +1,14 @@
 import React from 'react';
-import StageList from '../containers/stage_list';
+// import StageList from '../containers/stage_list';
 // import MessageList from '../containers/message_list';
 
 
 
 const App = (props) => {
+  console.log('working')
   return (
-    <div className="stages-wrapper">
-      <div>
-       <h1>THIS IS YOUR STAGES LIST</h1>
-      </div>
-        <StageList selectedStage={props.match.params.stage} />
-
+    <div>
+      <h1>THIS IS YOUR REACT APP, FINISH IT</h1>
     </div>
   );
 };

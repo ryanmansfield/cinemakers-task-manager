@@ -9,12 +9,13 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import App from './components/app';
 import messagesReducer from './reducers/messages_reducer';
 
-const stageContainer = document.getElementById('stage_app');
-const stages = JSON.parse(stageContainer.dataset.stages).map(s => s.name);
+const projectContainer = document.getElementById('project_app');
+const project = JSON.parse(projectContainer.dataset.project).map(p => p.name);
 
 const initialState = {
   checklist: [],
   stages: stages // TODO: get that from Rails DB.
+  project: project
 };
 
 const reducers = combineReducers({
@@ -29,9 +30,9 @@ ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
       <Switch>
-        <Route path="/stages/:stage" component={App} />
+        <Route path="/projects/:id/" component={App} />
       </Switch>
     </BrowserRouter>
   </Provider>,
-  stageContainer
+  projectContainer
 );

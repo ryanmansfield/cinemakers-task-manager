@@ -7,7 +7,7 @@ class ProjectsController < ApplicationController
 
   def show
     if params[:id].blank?
-      redierect_to project_path(Project.first.name)
+      redirect_to project_path(Project.first.name)
     else
       @project = Project.find(params[:id])
       @projects = Project.all

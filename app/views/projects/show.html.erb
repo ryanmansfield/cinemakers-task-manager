@@ -3,4 +3,8 @@
 
 
 
-<%= render :template => 'stages/show' %>
+<div id="project_app" data-project=<%= Project.all.to_json %>></div>
+
+<% content_for :after_js do %>
+  <%= javascript_pack_tag "project" %>
+<% end %>
