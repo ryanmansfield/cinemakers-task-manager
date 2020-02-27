@@ -6,12 +6,16 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @project = Project.find(params[:id])
+    if params[:id].blank?
+      redirect_to project_path(Project.first.name)
+    else
+      @project = Project.find(params[:id])
+      @projects = Project.all
+    end
   end
 
   def new
     @project = Project.new
-    # @project.stages.build
   end
 
   def create

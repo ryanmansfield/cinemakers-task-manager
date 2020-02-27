@@ -1,4 +1,4 @@
 class Stage < ApplicationRecord
-  belongs_to :project, dependent: :destroy
-  has_many :checklists
+  belongs_to :project
+  has_many :checklists, dependent: :destroy
 end

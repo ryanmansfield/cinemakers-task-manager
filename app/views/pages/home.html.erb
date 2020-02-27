@@ -2,17 +2,14 @@
   <div class="container">
     <div class="profile">
       <div class="title">
-        <h1>Cinemakers</h1>
-
+        <h1>Cinemakers > </h1>
       </div>
       <div class="user">
-        <p><%= current_user.first_name %></p>
-        <p><%= current_user.last_name %></p>
+
+
+
         <p><%= current_user.tag %></p>
         <p><%= current_user.bio %></p>
-        <p><%= current_user.company %></p>
-        <p><%= current_user.city %></p>
-        <p><%= current_user.state %></p>
         <p><%= current_user.website %></p>
       </div>
         <%= link_to "View All Teams", teams_path, class: "btn btn-primary" %>
