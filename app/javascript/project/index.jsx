@@ -7,20 +7,16 @@ import ReduxPromise from 'redux-promise';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import App from './components/app';
-import messagesReducer from './reducers/messages_reducer';
+import tasksReducer from './reducers/tasks_reducer';
 
 const projectContainer = document.getElementById('project_app');
 const projects = JSON.parse(projectContainer.dataset.project);
 
 const initialState = {
-  // checklist: [],
-  // stages: stages // TODO: get that from Rails DB.
-
 };
 
 const reducers = combineReducers({
-  messages: messagesReducer,
-  channels: (state = null, action) => state
+  projects: (state = null, action) => state
 });
 
 const middlewares = applyMiddleware(logger, ReduxPromise);

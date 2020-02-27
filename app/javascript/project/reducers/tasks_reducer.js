@@ -1,4 +1,4 @@
-import { PROJECT_SELECTED } from '../actions';
+import {  } from '../actions';
 
 export default function(state = null, action) {
   switch (action.type) {
@@ -14,9 +14,9 @@ export default function(state = null, action) {
     //     return copiedState;
     //   }
     // }
-    case PROJECT_SELECTED: {
-      return []; // Stage has changed. Clearing view.
-    }
+    // case PROJECT_SELECTED: {
+    //   return []; // Stage has changed. Clearing view.
+    // }
     default:
       return state;
   }

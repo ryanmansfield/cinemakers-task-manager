@@ -1,6 +1,6 @@
 // import React, { Component } from 'react';
-// import { bindActionCreators } from 'redux';
 // import { connect } from 'react-redux';
+// import { bindActionCreators } from 'redux';
 // import { createMessage } from '../actions/index';
 
 // class MessageForm extends Component {
@@ -19,15 +19,15 @@
 
 //   handleSubmit = (event) => {
 //     event.preventDefault();
-//     this.props.createMessage(this.props.selectedChannel, this.state.value);
-//     this.setState({ value: '' }); // Reset message input
+//     this.props.createMessage(this.props.selectedChannel, this.props.currentUser, this.state.value);
+//     this.setState({ value: ''});
 //   }
 
 //   render() {
 //     return (
 //       <form onSubmit={this.handleSubmit} className="channel-editor">
 //         <input
-//           ref={(input) => { this.messageBox = input; }}
+//           ref={(input) => {this.messageBox = input; }}
 //           type="text"
 //           className="form-control"
 //           autoComplete="off"
@@ -41,7 +41,15 @@
 // }
 
 // function mapDispatchToProps(dispatch) {
-//   return bindActionCreators({ createMessage }, dispatch);
+//   return bindActionCreators({ createMessage }, dispatch)
 // }
 
-// export default connect(null, mapDispatchToProps)(MessageForm);
+// function mapStateToProps (state) {
+//   return {
+//     currentUser: state.currentUser,
+//     selectedChannel: state.selectedChannel
+//   };
+// }
+
+
+// export default connect(mapStateToProps, mapDispatchToProps)(MessageForm);

@@ -4,54 +4,51 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { selectStage, fetchChecklists } from '../actions/index';
+// import { selectStage, fetchChecklists } from '../actions/index';
 
 class StageList extends Component {
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.selectedStage !== this.props.selectedStage) {
-      this.props.fetchChecklists(nextProps.selectedStage);
-    }
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   if (nextProps.selectedStage !== this.props.selectedStage) {
+  //     this.props.fetchChecklists(nextProps.selectedStage);
+  //   }
+  // }
 
-  handleClick = (stage) => {
-    this.props.selectStage(stage);
-    this.props.fetchChecklists(stage);
-  }
+  // handleClick = (stage) => {
+  //   this.props.selectStage(stage);
+  //   this.props.fetchChecklists(stage);
+  // }
 
-  renderStage = (stage) => {
-    return (
-      <li
-        key={stage}
-        className={stage === this.props.selectedStage ? 'active' : null}
-        onClick={() => this.handleClick(stage)}>
-        <Link
-          to={`/stages/${stage}`}>
-          #{stage}
-        </Link>
-      </li>
-    )
-  }
+  // renderStage = (stage) => {
+  //   return (
+  //     <li
+  //       key={stage}
+  //       className={stage === this.props.selectedStage ? 'active' : null}
+  //       onClick={() => this.handleClick(stage)}>
+  //       <Link
+  //         to={`/stages/${stage}`}>
+  //         #{stage}
+  //       </Link>
+  //     </li>
+  //   )
+  // }
 
   render() {
     return (
-      <div className="stages-container">
-        <span>Prodect Stages:</span>
-        <ul>
-          {this.props.stages.map(this.renderStage)}
-        </ul>
-      </div>
+      <h1>STAGELIST</h1>
     );
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    Stages: state.stages
-  };
-}
+export default StageList;
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ selectStage, fetchMessages }, dispatch);
-}
+// function mapStateToProps(state) {
+//   return {
+//     Stages: state.stages
+//   };
+// }
 
-export default connect(mapStateToProps, mapDispatchToProps)(StageList);
+// function mapDispatchToProps(dispatch) {
+//   return bindActionCreators({ selectStage, fetchMessages }, dispatch);
+// }
+
+// export default connect(mapStateToProps, mapDispatchToProps)(StageList);
