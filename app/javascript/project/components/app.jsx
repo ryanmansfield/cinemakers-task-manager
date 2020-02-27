@@ -1,13 +1,15 @@
 import React from 'react';
-// import StageList from '../containers/stage_list';
-// import MessageList from '../containers/message_list';
-
-
+import StageList from '../containers/stage_list';
+import CheckList from '../containers/check_list';
+import Dashboard from '../containers/dashboard';
 
 const App = (props) => {
   return (
     <div>
       <h1>THIS IS YOUR REACT APP, FINISH IT</h1>
+      <StageList/>
+      <CheckList/>
+      <Dashboard/>
     </div>
   );
 };
