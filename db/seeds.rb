@@ -26,11 +26,7 @@ Team.create(name: "Team 2")
 
 puts "Teams Created"
 
-Project.create(name: "Project 1", genre: "genre", plot: "plot", team_id: 1)
 
-Project.create(name: "Project 2", genre: "genre", plot: "plot", team_id: 2)
-
-Project.create(name: "Project 3", genre: "genre", plot: "plot", team_id: 1)
 
 puts "Projects Created"
 

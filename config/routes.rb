@@ -6,7 +6,6 @@ Rails.application.routes.draw do
     resources :collaborators, only: [:index, :new, :create ]
   end
 
-  resources :projects, only: [:index, :show, :new, :create, :destroy]
 
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
@@ -20,6 +19,7 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :projects, only: [:index, :show, :new, :create, :destroy]
 
 
   # mount ActionCable.server => "/cable"
