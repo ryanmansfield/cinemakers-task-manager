@@ -34,9 +34,7 @@ class StageList extends Component {
 
   render() {
     return (
-      <div className="stages-container">
-        <span>TODO Project Header with links to stages</span>
-      </div>
+      <h1>STAGELIST</h1>
     );
   }
 }
