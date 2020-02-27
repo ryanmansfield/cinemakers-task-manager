@@ -2,9 +2,9 @@ import { PROJECT_SELECTED } from '../actions';
 
 export default function(state = null, action) {
   switch (action.type) {
-    case FETCH_CHECKLISTS: {
-      return action.payload;
-    }
+    // case FETCH_CHECKLISTS: {
+    //   return action.payload;
+    // }
     // case MESSAGE_POSTED: {
     //   if (state.map(message => message.id).includes(action.payload.id)) {
     //     return state;

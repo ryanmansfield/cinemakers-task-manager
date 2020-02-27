@@ -1,8 +1,3 @@
-<h1>TODO REACT APP</h1>
- <p><%= link_to "Delete Project", @project, method: :delete, class: "btn btn-primary" %></p>
-
-
-
 <div id="project_app" data-project=<%= Project.all.to_json %>></div>
 
 <% content_for :after_js do %>

@@ -10,11 +10,11 @@ import App from './components/app';
 import messagesReducer from './reducers/messages_reducer';
 
 const projectContainer = document.getElementById('project_app');
-const projects = JSON.parse(projectContainer.dataset.projects).map(p => p.name);
+const projects = JSON.parse(projectContainer.dataset.project);
 
 const initialState = {
-  checklist: [],
-  stages: stages // TODO: get that from Rails DB.
+  // checklist: [],
+  // stages: stages // TODO: get that from Rails DB.
 
 };
 
@@ -30,7 +30,7 @@ ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
       <Switch>
-        <Route path="/stages/:id/" component={App} />
+        <Route path="/projects/:id/" component={App} />
       </Switch>
     </BrowserRouter>
   </Provider>,
