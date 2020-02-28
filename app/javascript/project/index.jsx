@@ -7,16 +7,19 @@ import ReduxPromise from 'redux-promise';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import App from './components/app';
-import tasksReducer from './reducers/tasks_reducer';
+import checklistsReducer from './reducers/checklists_reducer';
 
 const projectContainer = document.getElementById('project_app');
-const projects = JSON.parse(projectContainer.dataset.project);
+const stages = JSON.parse(projectContainer.dataset.stages).map(stage => stage.name);
+
+
 
 const initialState = {
+  stages: stages
 };
 
 const reducers = combineReducers({
-  projects: (state = null, action) => state
+  stages: (state = null, action) => state
 });
 
 const middlewares = applyMiddleware(logger, ReduxPromise);

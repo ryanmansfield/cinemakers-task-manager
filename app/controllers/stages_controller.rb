@@ -1,7 +1,7 @@
 class StagesController < ApplicationController
   def show
     if params[:id].blank?
-      redirect_to stage_path(Stage.first.name)
+      redirect_to stage_path(Stage.first.id)
     else
       @stage = Stage.find_by(params[:id])
       @stages = Stage.all

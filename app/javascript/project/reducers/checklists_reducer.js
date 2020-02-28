@@ -14,9 +14,9 @@ export default function(state = null, action) {
     //     return copiedState;
     //   }
     // }
-    // case PROJECT_SELECTED: {
-    //   return []; // Stage has changed. Clearing view.
-    // }
+    case STAGE_SELECTED: {
+      return []; // Stage has changed. Clearing view.
+    }
     default:
       return state;
   }
