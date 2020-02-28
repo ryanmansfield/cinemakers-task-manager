@@ -6,7 +6,7 @@ import Dashboard from '../containers/dashboard';
 const App = (props) => {
   return (
     <div>
-      <StageList/>
+      <StageList selectedStage={props.match.params.stage}/>
       <CheckLists/>
     </div>
   );

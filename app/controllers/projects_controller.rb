@@ -11,6 +11,7 @@ class ProjectsController < ApplicationController
     else
       @project = Project.find(params[:id])
       @projects = Project.all
+      # @stages = @project.stages
     end
   end
 

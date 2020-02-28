@@ -2,6 +2,7 @@ const BASE_URL = '/api/v1';
 
 // export const FETCH_MESSAGES = 'FETCH_MESSAGES';
 // export const MESSAGE_POSTED = 'MESSAGE_POSTED';
+export const STAGE_SELECTED = 'STAGE_SELECTED';
 
 
 // export function fetchMessages(channel) {
@@ -34,5 +35,11 @@ const BASE_URL = '/api/v1';
 //     payload: promise // Will be resolved by redux-promise
 //   };
 // }
+
+export function selectStage() {
+  return {
+    type: STAGE_SELECTED
+  };
+}
 
 
