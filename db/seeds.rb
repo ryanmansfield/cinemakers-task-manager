@@ -42,10 +42,10 @@ Stage.create(project_id: 1, name: "pre-production")
 Stage.create(project_id: 1, name: "production")
 Stage.create(project_id: 1, name: "post-production")
 
-Project.create(team_id: 1, name: "Best Project Ever")
-Stage.create(project_id: 1, name: "pre-production")
-Stage.create(project_id: 1, name: "production")
-Stage.create(project_id: 1, name: "post-production")
+Project.create(team_id: 1, name: "Second Best Project Ever")
+Stage.create(project_id: 2, name: "pre-production")
+Stage.create(project_id: 2, name: "production")
+Stage.create(project_id: 2, name: "post-production")
 
 puts "Projects and Stages Seeded"
 
