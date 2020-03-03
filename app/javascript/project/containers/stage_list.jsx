@@ -33,6 +33,7 @@ class StageList extends Component {
 
   render() {
     return (
+      console.log(this.props.selectedStage.checklists),
       <div className="stages-container">
         <span>STAGELIST</span>
         <ul>

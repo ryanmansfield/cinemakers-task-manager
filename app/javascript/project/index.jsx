@@ -18,7 +18,7 @@ const stages = JSON.parse(projectContainer.dataset.stages).map(stage => stage.na
 const initialState = {
   checklists: [],
   stages: stages,
-  selectedStage:'pre-production'
+  selectedStage:'production'
 };
 
 const reducers = combineReducers({

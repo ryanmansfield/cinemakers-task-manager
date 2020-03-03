@@ -32,13 +32,14 @@ class CheckLists extends Component {
       console.log(this.props.checklists),
       <div className="checklists-container">
         <span>Checklist's Container for #{this.props.selectedStage}</span>
-        <div className="checklists-content" >
+        <div >
           {
             this.props.checklists.map((checklist) => {
-              return <Checklist key={checklist.id} checklist={checklist} />;
+              return <CheckList key={checklist.id} checklist={checklist} />;
             })
           }
         </div>
+
       </div>
     );
   }

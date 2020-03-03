@@ -3,15 +3,16 @@ class Api::V1::ChecklistsController < ApplicationController
 
   def index
     @stage = Stage.find_by(params[:id])
+    # binding.pry
     checklists = @stage.checklists
     render json: checklists
   end
 
-  def create
-    checklist = @stage.checklists.build(content: params[:content])
-    checklist.save
-    render json: checklist
-  end
+  # def create
+  #   checklist = @stage.checklists.build(content: params[:content])
+  #   checklist.save
+  #   render json: checklist
+  # end
 
   private
 
