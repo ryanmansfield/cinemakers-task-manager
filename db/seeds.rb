@@ -37,7 +37,7 @@ Collaborator.create(team_id: 2, user_id: 2)
 
 puts "Collaborator created"
 
-Project.create(team_id: 1, name: "Best Project Ever")
+Project.create(team_id: 1, name: "BestProjectEver")
 Stage.create(project_id: 1, name: "pre-production")
 Stage.create(project_id: 1, name: "production")
 Stage.create(project_id: 1, name: "post-production")

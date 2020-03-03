@@ -2,6 +2,7 @@ class Api::V1::ChecklistsController < ApplicationController
   # before_action :set_stage
 
   def index
+    # @project = Project.find_by(params[:id])
     @stage = Stage.find_by(params[:id])
     # binding.pry
     checklists = @stage.checklists

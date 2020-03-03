@@ -29,9 +29,9 @@ class CheckLists extends Component {
 
   render() {
     return (
-      console.log(this.props.checklists),
+      console.log(this.props.selectedStage.id),
       <div className="checklists-container">
-        <span>Checklist's Container for #{this.props.selectedStage}</span>
+        <span>Checklist's Container for #{this.props.selectedStage.name}</span>
         <div >
           {
             this.props.checklists.map((checklist) => {

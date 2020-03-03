@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { selectStage } from '../actions/index';
+import { selectStage, fetchChecklists } from '../actions/index';
 
 class StageList extends Component {
   componentDidUpdate(nextProps) {
@@ -15,7 +15,7 @@ class StageList extends Component {
 
   handleClick = (stage) => {
     this.props.selectStage(stage);
-    // this.props.fetchChecklists(stage);
+    this.props.fetchChecklists(stage);
   }
 
   renderStage = (stage) => {
@@ -24,8 +24,11 @@ class StageList extends Component {
         key={stage}
         className={stage === this.props.selectedStage ? 'active' : null }
         onClick={() => this.handleClick(stage)}>
+        <Link
+          to={`/stages/${stage.id}`}>
+          {stage.name}
 
-          {stage}
+        </Link>
 
       </li>
     )
@@ -33,7 +36,7 @@ class StageList extends Component {
 
   render() {
     return (
-      console.log(this.props.selectedStage.checklists),
+      // console.log(this.props.selectedStage.project_id),
       <div className="stages-container">
         <span>STAGELIST</span>
         <ul>
@@ -49,12 +52,12 @@ class StageList extends Component {
 function mapStateToProps(state) {
   return {
     stages: state.stages,
-    selectedStage: state.selectedStage
+    // selectedStage: state.selectedStage
   };
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ selectStage }, dispatch);
+  return bindActionCreators({ selectStage, fetchChecklists }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(StageList);
