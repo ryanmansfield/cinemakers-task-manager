@@ -8,6 +8,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import App from './components/app';
 import checklistsReducer from './reducers/checklists_reducer';
+import selectedStageReducer from './reducers/selected_stage_reducer';
 
 const projectContainer = document.getElementById('project_app');
 const stages = JSON.parse(projectContainer.dataset.stages).map(stage => stage.name);
@@ -15,11 +16,15 @@ const stages = JSON.parse(projectContainer.dataset.stages).map(stage => stage.na
 
 
 const initialState = {
-  stages: stages
+  checklists: [],
+  stages: stages,
+  selectedStage:'pre-production'
 };
 
 const reducers = combineReducers({
-  stages: (state = null, action) => state
+  stages: (state = null, action) => state,
+  selectedStage: selectedStageReducer,
+  checklists: checklistsReducer
 });
 
 const middlewares = applyMiddleware(logger, ReduxPromise);

@@ -7,7 +7,7 @@ const App = (props) => {
   return (
     <div>
       <StageList selectedStage={props.match.params.stage}/>
-      <CheckLists/>
+      <CheckLists selectedStage={props.match.params.stage}/>
     </div>
   );
 };

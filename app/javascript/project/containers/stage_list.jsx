@@ -1,13 +1,13 @@
 /* eslint no-bitwise:off */
 
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { selectStage } from '../actions/index';
 
 class StageList extends Component {
-  componentWillReceiveProps(nextProps) {
+  componentDidUpdate(nextProps) {
     if (nextProps.selectedStage !== this.props.selectedStage) {
       this.props.fetchChecklists(nextProps.selectedStage);
     }
@@ -24,16 +24,14 @@ class StageList extends Component {
         key={stage}
         className={stage === this.props.selectedStage ? 'active' : null }
         onClick={() => this.handleClick(stage)}>
-        <Link
-          to={`/projects/3`}>
+
           {stage}
-        </Link>
+
       </li>
     )
   }
 
   render() {
-      console.log(this.props.selectedStage)
     return (
       <div className="stages-container">
         <span>STAGELIST</span>
@@ -49,7 +47,8 @@ class StageList extends Component {
 
 function mapStateToProps(state) {
   return {
-    stages: state.stages
+    stages: state.stages,
+    selectedStage: state.selectedStage
   };
 }
 
@@ -57,6 +56,4 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({ selectStage }, dispatch);
 }
 
-// export default StageList;
-// export default connect(mapStateToProps)(StageList);
 export default connect(mapStateToProps, mapDispatchToProps)(StageList);
