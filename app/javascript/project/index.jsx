@@ -11,13 +11,11 @@ import checklistsReducer from './reducers/checklists_reducer';
 import selectedStageReducer from './reducers/selected_stage_reducer';
 
 const projectContainer = document.getElementById('project_app');
-// const project  = JSON.parse(projectContainer.dataset.project);
 const stages = JSON.parse(projectContainer.dataset.stages);
 const selectedStage = JSON.parse(projectContainer.dataset.stages)[1];
 
 
 const initialState = {
-  // project: project,
   checklists: [],
   stages: stages,
   selectedStage: selectedStage

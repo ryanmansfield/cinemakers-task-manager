@@ -1,5 +1,4 @@
 /* eslint no-bitwise:off */
-
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
@@ -17,20 +16,10 @@ class CheckLists extends Component {
     this.props.fetchChecklists(this.props.selectedStage.id);
   }
 
-  // render() {
-  //   return (
-  //     <div className="checklist-container">
-  //       <span>Stage #{this.props.selectedStage}</span>
-  //       <h1>CHECKLISTS CONTAINER</h1>
-  //       <CheckList />
-  //     </div>
-  //   );
-  // }
-
   render() {
     return (
-      console.log(`selected stage id: ${this.props.selectedStage.id}`),
-      console.log(`project_id: ${this.props.selectedStage.project_id}`),
+      console.log(`checklist: ${this.props.checklists}`),
+      // console.log(`project_id: ${this.props.selectedStage.project_id}`),
 
       <div className="checklists-container">
         <span>Checklist's Container for #{this.props.selectedStage.name}</span>
@@ -46,8 +35,6 @@ class CheckLists extends Component {
     );
   }
 }
-
-// export default CheckLists;
 
 function mapStateToProps (state) {
   return {

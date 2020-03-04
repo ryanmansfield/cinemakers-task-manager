@@ -1,5 +1,4 @@
 /* eslint no-bitwise:off */
-
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
@@ -15,7 +14,7 @@ class StageList extends Component {
 
   handleClick = (stage) => {
     this.props.selectStage(stage);
-    this.props.fetchChecklists(stage);
+    // this.props.fetchChecklists(stage);
   }
 
   renderStage = (stage) => {
@@ -24,18 +23,16 @@ class StageList extends Component {
       <li
         key={stage.id}
         className={stage === this.props.selectedStage ? 'active' : null }
-        onClick={() => this.handleClick(stage)}>
-
-          {stage.name}
-
-
+        onClick={() => this.handleClick(stage)}
+      >
+        {stage.name}
       </li>
     )
   }
 
   render() {
     return (
-      console.log(this.props.stages),
+      // console.log(this.props.stages),
       <div className="stages-container">
         <span>STAGELIST</span>
         <ul>
