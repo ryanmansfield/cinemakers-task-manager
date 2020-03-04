@@ -13,14 +13,14 @@ import selectedStageReducer from './reducers/selected_stage_reducer';
 const projectContainer = document.getElementById('project_app');
 // const project  = JSON.parse(projectContainer.dataset.project);
 const stages = JSON.parse(projectContainer.dataset.stages);
-
+const selectedStage = JSON.parse(projectContainer.dataset.stages)[0];
 
 
 const initialState = {
   // project: project,
   checklists: [],
   stages: stages,
-  selectedStage: "pre-production"
+  selectedStage: selectedStage
 };
 
 const reducers = combineReducers({
@@ -32,13 +32,17 @@ const reducers = combineReducers({
 const middlewares = applyMiddleware(logger, ReduxPromise);
 const store = createStore(reducers, initialState, middlewares);
 
+// ReactDOM.render(
+//   <Provider store={store}>
+//     <BrowserRouter>
+//       <Switch>
+//         <Route path="/projects/:id" component={App} />
+//       </Switch>
+//     </BrowserRouter>
+//   </Provider>,
 ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter>
-      <Switch>
-        <Route path="/projects/:id" component={App} />
-      </Switch>
-    </BrowserRouter>
+    <App />
   </Provider>,
   projectContainer
 );
