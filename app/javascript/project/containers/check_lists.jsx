@@ -29,7 +29,7 @@ class CheckLists extends Component {
 
   render() {
     return (
-      console.log(this.props.selectedStage.id),
+      console.log(this.props.selectedStage.name),
       <div className="checklists-container">
         <span>Checklist's Container for #{this.props.selectedStage.name}</span>
         <div >

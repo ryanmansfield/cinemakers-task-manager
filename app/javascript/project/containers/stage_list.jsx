@@ -21,14 +21,12 @@ class StageList extends Component {
   renderStage = (stage) => {
     return (
       <li
-        key={stage}
+        key={stage.id}
         className={stage === this.props.selectedStage ? 'active' : null }
         onClick={() => this.handleClick(stage)}>
-        <Link
-          to={`/stages/${stage.id}`}>
+
           {stage.name}
 
-        </Link>
 
       </li>
     )
@@ -36,7 +34,7 @@ class StageList extends Component {
 
   render() {
     return (
-      // console.log(this.props.selectedStage.project_id),
+      // console.log(this.props.stages,
       <div className="stages-container">
         <span>STAGELIST</span>
         <ul>
@@ -52,7 +50,7 @@ class StageList extends Component {
 function mapStateToProps(state) {
   return {
     stages: state.stages,
-    // selectedStage: state.selectedStage
+    selectedStage: state.selectedStage
   };
 }
 

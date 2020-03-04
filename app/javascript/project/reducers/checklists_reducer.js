@@ -6,9 +6,9 @@ export default function(state = null, action) {
       return action.payload;
     }
 
-    // case STAGE_SELECTED: {
-    //   return []; // Stage has changed. Clearing view.
-    // }
+    case STAGE_SELECTED: {
+      return []; // Stage has changed. Clearing view.
+    }
     default:
       return state;
   }

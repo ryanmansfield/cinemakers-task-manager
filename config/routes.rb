@@ -19,10 +19,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :projects, only: [:index, :show, :new, :create, :destroy] do
-    resources :stages, only: [:index, :show]
-  end
-
+  resources :projects, only: [:index, :show, :new, :create, :destroy]
 
 
   # mount ActionCable.server => "/cable"

@@ -8,7 +8,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import App from './components/app';
 import checklistsReducer from './reducers/checklists_reducer';
-// import selectedStageReducer from './reducers/selected_stage_reducer';
+import selectedStageReducer from './reducers/selected_stage_reducer';
 
 const projectContainer = document.getElementById('project_app');
 // const project  = JSON.parse(projectContainer.dataset.project);
@@ -20,12 +20,12 @@ const initialState = {
   // project: project,
   checklists: [],
   stages: stages,
-  // selectedStage: stages[0]
+  selectedStage: "pre-production"
 };
 
 const reducers = combineReducers({
   stages: (state = null, action) => state,
-  // selectedStage: selectedStageReducer,
+  selectedStage: selectedStageReducer,
   checklists: checklistsReducer
 });
 
@@ -36,7 +36,7 @@ ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
       <Switch>
-        <Route path="/projects/:id/stages/:id" component={App} />
+        <Route path="/projects/:id" component={App} />
       </Switch>
     </BrowserRouter>
   </Provider>,
