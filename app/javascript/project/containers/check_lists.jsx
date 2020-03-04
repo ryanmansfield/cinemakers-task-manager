@@ -14,7 +14,7 @@ class CheckLists extends Component {
   }
 
   fetchChecklists = () => {
-    this.props.fetchChecklists(this.props.selectedStage);
+    this.props.fetchChecklists(this.props.selectedStage.id);
   }
 
   // render() {
@@ -29,7 +29,9 @@ class CheckLists extends Component {
 
   render() {
     return (
-      console.log(this.props.selectedStage.id),
+      console.log(`selected stage id: ${this.props.selectedStage.id}`),
+      console.log(`project_id: ${this.props.selectedStage.project_id}`),
+
       <div className="checklists-container">
         <span>Checklist's Container for #{this.props.selectedStage.name}</span>
         <div >
