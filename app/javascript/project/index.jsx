@@ -12,7 +12,7 @@ import selectedStageReducer from './reducers/selected_stage_reducer';
 
 const projectContainer = document.getElementById('project_app');
 const stages = JSON.parse(projectContainer.dataset.stages);
-const selectedStage = JSON.parse(projectContainer.dataset.stages)[1];
+const selectedStage = JSON.parse(projectContainer.dataset.stages)[0];
 
 
 const initialState = {

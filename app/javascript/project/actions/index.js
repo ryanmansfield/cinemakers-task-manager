@@ -1,10 +1,14 @@
+// const BASE_URL = '/api/v1/projects';
 const BASE_URL = '/api/v1/stages';
 
 export const STAGE_SELECTED = 'STAGE_SELECTED';
 export const FETCH_CHECKLISTS = 'FETCH_CHECKLISTS';
 
 export function fetchChecklists(stage) {
-  const url = `${BASE_URL}/${stage}/checklists`;
+  // const url = `${BASE_URL}/${stage.project_id}/stages${stage.id}/checklists`;
+
+  const url = `${BASE_URL}/${stage.id}/checklists`;
+
   const promise = fetch(url, { credentials: "same-origin" }).then(r => r.json());
 
   return {

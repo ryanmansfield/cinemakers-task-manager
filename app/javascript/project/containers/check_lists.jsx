@@ -13,7 +13,7 @@ class CheckLists extends Component {
   }
 
   fetchChecklists = () => {
-    this.props.fetchChecklists(this.props.selectedStage.id);
+    this.props.fetchChecklists(this.props.selectedStage);
   }
 
   render() {
