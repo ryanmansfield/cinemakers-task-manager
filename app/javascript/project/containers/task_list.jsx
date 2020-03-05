@@ -49,16 +49,3 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(TaskList);
-
-
-//   render() {
-//     return (
-//       <div className="checklist-container">
-//         <h1>TASKLIST CONTAINER</h1>
-//           <Task />
-//       </div>
-//     );
-//   }
-// }
-
-// export default TaskList;
