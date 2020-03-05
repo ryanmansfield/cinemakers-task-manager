@@ -10,8 +10,8 @@ class ProjectsController < ApplicationController
       redirect_to project_path(Project.first.name)
     else
       @project = Project.find(params[:id])
-      @projects = Project.all
-      # @stages = @project.stages
+
+
     end
   end
 

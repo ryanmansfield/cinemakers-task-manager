@@ -9,20 +9,18 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
-      resources :projects, only: [:show] do
-        resources :stages, only: [:index, :show] do
-          resources :checklist, only: [ :index, :create , :destroy] do
+      # resources :projects, only: [] do
+        resources :stages, only: [] do
+          resources :checklists, only: [ :index, :create , :destroy] do
             resources :tasks, only: [:index, :new, :create, :update, :destroy]
           end
         end
-      end
+      # end
     end
   end
 
   resources :projects, only: [:index, :show, :new, :create, :destroy]
 
-
-  # mount ActionCable.server => "/cable"
 end
 
 

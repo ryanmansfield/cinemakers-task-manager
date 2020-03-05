@@ -3,11 +3,20 @@ import StageList from '../containers/stage_list';
 import CheckLists from '../containers/check_lists';
 import Dashboard from '../containers/dashboard';
 
+// const App = (props) => {
+//   return (
+//     <div>
+//       <StageList selectedStage={props.match.params.stage}/>
+//       <CheckLists selectedStage={props.match.params.stage}/>
+//     </div>
+//   );
+// };
+
 const App = (props) => {
   return (
     <div>
-      <StageList selectedStage={props.match.params.stage}/>
-      <CheckLists/>
+      <StageList />
+      <CheckLists />
     </div>
   );
 };

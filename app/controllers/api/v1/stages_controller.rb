@@ -12,7 +12,8 @@
 #     if params[:id].blank?
 #       redirect_to stage_path(Stage.first.name)
 #     else
-#       # @project = Project.find_by(params[:project_id])
+#       binding.pry
+#       @project = Project.find_by(params[:project_id])
 #       @stage = Stage.find_by(params[:id])
 #       @stages = Stage.all
 #     end
@@ -22,5 +23,5 @@
 
 #   # def set_project
 #   #   @project = Project.find_by(params[:project_id])
-#   # end
+# #   # end
 # end
