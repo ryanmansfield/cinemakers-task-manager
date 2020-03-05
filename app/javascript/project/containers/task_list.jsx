@@ -11,34 +11,34 @@ class TaskList extends Component {
     this.fetchTasks();
   }
 
-  fetchTask = () => {
-    this.props.fetchTask(this.props.Checklists)
+  fetchTasks = () => {
+    this.props.fetchTasks(this.props.Checklists)
   }
 
 
   render() {
     return (
-      <div>
-        <h2>TASKLIST CONTAINER</h2>
+      <div className="tasklist-container">
+        <div>
+          <h2>TASKLIST CONTAINER</h2>
+        </div>
+        <div className="tasklist">
+          <div>
+            {
+              this.props.tasks.map((task) => {
+                return <Task key={task.id} task={task} />;
+              })
+            }
+          </div>
+        </div>
       </div>
-      // <div className="tasklist-container">
-        // <h1>TASKLIST CONTAINER for this.props.checklist</h1>
-        // <div>
-          // {
-          //   this.props.tasks.map((task) => {
-          //     return <Task key={task.id} task={task} />;
-          //   })
-          // }
-        // </div>
-
-      // </div>
     );
   }
 }
 
 function mapStateToProps (state) {
   return {
-    checklists: state.checklists,
+    tasks: state.tasks,
     selectedStage: state.selectedStage
 
   };

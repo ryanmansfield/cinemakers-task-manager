@@ -24,7 +24,8 @@ export function selectStage(stage) {
 
 
 export function fetchTasks(checklist) {
-  const url = `${BASE_URL}/${stage.id}/checklists/${checklist.id}`;
+  const url = `${BASE_URL}/1/checklists/1/tasks`;
+  // const url = `${BASE_URL}/${stage.id}/checklists/${checklist.id}/tasks`;
   const promise = fetch(url, { credentials: "same-origin" }).then(r => r.json());
 
   return {
