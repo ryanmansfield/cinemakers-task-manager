@@ -18,8 +18,8 @@ class CheckLists extends Component {
 
   render() {
     return (
-      console.log(`checklist: ${this.props.checklists}`),
-      // console.log(`project_id: ${this.props.selectedStage.project_id}`),
+      // console.log(`checklist: ${this.props.checklists}`),
+      console.log('hi from checklists container'),
 
       <div className="checklists-container">
         <span>Checklist's Container for #{this.props.selectedStage.name}</span>

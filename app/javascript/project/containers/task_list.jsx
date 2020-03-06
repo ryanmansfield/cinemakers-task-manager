@@ -12,12 +12,21 @@ class TaskList extends Component {
   }
 
   fetchTasks = () => {
-    this.props.fetchTasks(this.props.Checklists)
+    this.props.fetchTasks(this.props.checklists[0])
   }
+
+
+  // fetchTasks = () => {
+  //   this.props.fetchTasks(this.props.checklists.map((checklist) => {
+  //     checklist.id
+  //   }));
+  // }
 
 
   render() {
     return (
+      console.log('hi from task list container'),
+      console.log(this.props.checklists),
       <div className="tasklist-container">
         <div>
           <h2>TASKLIST CONTAINER</h2>
@@ -39,7 +48,8 @@ class TaskList extends Component {
 function mapStateToProps (state) {
   return {
     tasks: state.tasks,
-    selectedStage: state.selectedStage
+    selectedStage: state.selectedStage,
+    checklists: state.checklists
 
   };
 }

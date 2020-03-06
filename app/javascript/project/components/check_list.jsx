@@ -3,8 +3,9 @@ import TaskList from '../containers/task_list';
 import TaskForm from '../containers/task_form';
 
 const CheckList = (props) => {
-  const { name } = props.checklist;
-  // console.log(name);
+  const { name, id } = props.checklist;
+  // console.log(id);
+  console.log(`hi from checklist ${id}`);
 
   return (
     <div className="checklist">

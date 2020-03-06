@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
 const Task = (props) => {
-  // const { title, note } = props.task;
-  console.log("hi from task")
+  const { title, note, checklist_id } = props.task;
+  console.log(`hi from task ${id} on ${checklist_id}`);
 
   return (
     <div className="task">
