@@ -1,8 +1,8 @@
 class Api::V1::ChecklistsController < ApplicationController
-  # before_action :set_stage
+  before_action :set_stage
 
   def index
-    @stage = Stage.find(params[:stage_id])
+    # @stage = Stage.find(params[:stage_id])
     checklists = @stage.checklists
     render json: checklists
   end
@@ -20,7 +20,7 @@ class Api::V1::ChecklistsController < ApplicationController
 
   private
 
-  # def set_stage
-  #   @stage = Stage.find(params[:id])
-  # end
+  def set_stage
+    @stage = Stage.find(params[:stage_id])
+  end
 end
