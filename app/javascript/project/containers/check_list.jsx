@@ -1,37 +1,29 @@
-/* eslint no-bitwise:off */
 import React, { Component } from 'react';
-// import { Link } from 'react-router-dom';
+import TaskForm from '../containers/task_form';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { fetchTasks } from '../actions/index';
 import Task from '../components/task';
 
-class TaskList extends Component {
+
+class CheckList extends Component {
   componentDidMount() {
     this.fetchTasks();
   }
 
   fetchTasks = () => {
-    this.props.fetchTasks(this.props.checklists[0])
+    this.props.fetchTasks(this.props.checklist)
   }
-
-
-  // fetchTasks = () => {
-  //   this.props.fetchTasks(this.props.checklists.map((checklist) => {
-  //     checklist.id
-  //   }));
-  // }
-
 
   render() {
     return (
-      console.log('hi from task list container'),
-      console.log(this.props.checklists),
-      <div className="tasklist-container">
+      console.log('hi from checklist container'),
+      console.log(`hi from checklist ${this.props.checklist.id}`),
+      <div className="CheckList-container">
         <div>
-          <h2>TASKLIST CONTAINER</h2>
+          <h2>{this.props.checklist.name}'s container</h2>
         </div>
-        <div className="tasklist">
+        <div className="CheckList">
           <div>
             {
               this.props.tasks.map((task) => {
@@ -40,10 +32,14 @@ class TaskList extends Component {
             }
           </div>
         </div>
+        <div className="task-form">
+
+        </div>
       </div>
     );
   }
 }
+//   // <TaskForm />
 
 function mapStateToProps (state) {
   return {
@@ -58,4 +54,9 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({ fetchTasks }, dispatch)
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(TaskList);
+export default connect(mapStateToProps, mapDispatchToProps)(CheckList);
+
+
+
+
+

@@ -6,11 +6,6 @@ import { connect } from 'react-redux';
 import { selectStage, fetchChecklists } from '../actions/index';
 
 class StageList extends Component {
-  // componentDidUpdate(nextProps) {
-  //   if (nextProps.selectedStage !== this.props.selectedStage) {
-  //     this.props.fetchChecklists(nextProps.selectedStage);
-  //   }
-  // }
 
   handleClick = (stage) => {
     this.props.selectStage(stage);
@@ -32,7 +27,6 @@ class StageList extends Component {
 
   render() {
     return (
-      // console.log(this.props.stages),
       <div className="stages-container">
         <span>STAGELIST</span>
         <ul>

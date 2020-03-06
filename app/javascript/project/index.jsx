@@ -20,7 +20,7 @@ const initialState = {
   tasks: [],
   checklists: [],
   stages: stages,
-  selectedStage: selectedStage
+  selectedStage: selectedStage,
 };
 
 const reducers = combineReducers({

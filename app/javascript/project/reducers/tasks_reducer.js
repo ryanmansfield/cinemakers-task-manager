@@ -5,10 +5,6 @@ export default function(state = null, action) {
     case FETCH_TASKS: {
       return action.payload;
     }
-
-    // case STAGE_SELECTED: {
-    //   return []; // Stage has changed. Clearing view.
-    // }
     default:
       return state;
   }

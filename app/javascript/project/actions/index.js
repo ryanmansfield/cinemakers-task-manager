@@ -1,4 +1,3 @@
-// const BASE_URL = '/api/v1/projects';
 const BASE_URL = '/api/v1';
 
 export const STAGE_SELECTED = 'STAGE_SELECTED';
@@ -24,7 +23,6 @@ export function selectStage(stage) {
 
 
 export function fetchTasks(checklist) {
-  // const url = `${BASE_URL}/checklists/1/tasks`;
   const url = `${BASE_URL}/checklists/${checklist.id}/tasks`;
   const promise = fetch(url, { credentials: "same-origin" }).then(r => r.json());
 
@@ -33,17 +31,3 @@ export function fetchTasks(checklist) {
     payload: promise // Will be resolved by redux-promise
   };
 }
-
-// export function fetchTasks(checklists) {
-//   checklists.map((checklist) => {
-//     const url = `${BASE_URL}/checklists/1/tasks`;
-
-//     const promise = fetch(url, { credentials: "same-origin" }).then(r => r.json());
-
-//     return {
-//       type: FETCH_TASKS,
-//       payload: promise // Will be resolved by redux-promise
-//     };
-
-//   });
-// }
