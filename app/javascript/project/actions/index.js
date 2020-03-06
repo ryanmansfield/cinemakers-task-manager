@@ -34,8 +34,8 @@ export function fetchTasks(checklist) {
 
 
 export function createCheckList(stage, name) {
-  const url = `${BASE_URL}/channels/${channel}/messages`;
-  const body = { content };
+  const url = `${BASE_URL}/stages/${stage.id}/checklists`;
+  const body = { name };
   const csrfToken = document.querySelector('meta[name="csrf-token"]').attributes.content.value;
   const promise = fetch(url, {
     method: 'POST',
