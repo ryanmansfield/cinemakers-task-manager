@@ -8,9 +8,9 @@ class Api::V1::ChecklistsController < ApplicationController
   end
 
   def create
-  #   checklist = @stage.checklists.build(content: params[:content])
-  #   checklist.save
-  #   render json: checklist
+    checklist = @stage.checklists.build(name: params[:name])
+    checklist.save
+    render json: checklist
   end
 
   def destroy
