@@ -17,6 +17,18 @@ class CheckLists extends Component {
     this.props.fetchChecklists(this.props.selectedStage);
   }
 
+  // componentWillReceiveProps(nextProps) { // For after switching channels
+  //   if (this.props.selectedChannel != nextProps.selectedChannel) {
+  //     this.subscribeActionCable(nextProps);
+  //   }
+  // }
+
+  //    componentWillReceiveProps(nextProps) { // For after switching channels
+  //   if (this.props.checklist != nextProps.checklist) {
+  //     this.props.fetchTask(nextProps.checklist);
+  //   }
+  // }
+
   render() {
     return (
       // console.log(`checklist: ${this.props.checklists}`),

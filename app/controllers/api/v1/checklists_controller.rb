@@ -14,9 +14,11 @@ class Api::V1::ChecklistsController < ApplicationController
   end
 
   def destroy
-
+    @checklist = Checklist.find(params[:checklist_id])
+    @checklist.destroy
+    head 204
+    # render json: checklist
   end
-
 
   private
 
