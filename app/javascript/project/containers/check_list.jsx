@@ -11,6 +11,13 @@ class CheckList extends Component {
     this.fetchTasks();
   }
 
+  //  componentWillReceiveProps(nextProps) { // For after switching channels
+  //   if (this.props.checklist != nextProps.checklist) {
+  //     this.props.fetchTask(nextProps.checklist);
+  //   }
+  // }
+
+
   fetchTasks = () => {
     this.props.fetchTasks(this.props.checklist)
   }
@@ -44,8 +51,8 @@ class CheckList extends Component {
 function mapStateToProps (state) {
   return {
     tasks: state.tasks,
-    selectedStage: state.selectedStage,
-    checklists: state.checklists
+    // selectedStage: state.selectedStage,
+    // checklist: state.checklist
 
   };
 }
