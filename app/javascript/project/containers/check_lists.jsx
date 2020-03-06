@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { fetchChecklists } from '../actions/index';
 import CheckList from './check_list';
+import CheckListForm from './check_list_form';
 
 
 class CheckLists extends Component {
@@ -22,6 +23,9 @@ class CheckLists extends Component {
 
       <div className="checklists-container">
         <span>Checklists Container for #{this.props.selectedStage.name}</span>
+        <div className="checklist-form">
+          <CheckListForm selectedStage={this.props.selectedStage} />
+        </div>
         <div >
           {
             this.props.checklists.map((checklist) => {
