@@ -1,10 +1,9 @@
 /* eslint no-bitwise:off */
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { fetchChecklists } from '../actions/index';
-import CheckList from '../components/check_list';
+import CheckList from './check_list';
 
 
 class CheckLists extends Component {
@@ -18,11 +17,11 @@ class CheckLists extends Component {
 
   render() {
     return (
-      console.log(`checklist: ${this.props.checklists}`),
-      // console.log(`project_id: ${this.props.selectedStage.project_id}`),
+      // console.log(`checklist: ${this.props.checklists}`),
+      console.log('hi from checklists container'),
 
       <div className="checklists-container">
-        <span>Checklist's Container for #{this.props.selectedStage.name}</span>
+        <span>Checklists Container for #{this.props.selectedStage.name}</span>
         <div >
           {
             this.props.checklists.map((checklist) => {
@@ -30,7 +29,6 @@ class CheckLists extends Component {
             })
           }
         </div>
-
       </div>
     );
   }

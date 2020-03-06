@@ -9,6 +9,7 @@ import ReduxPromise from 'redux-promise';
 import App from './components/app';
 import checklistsReducer from './reducers/checklists_reducer';
 import selectedStageReducer from './reducers/selected_stage_reducer';
+import tasksReducer from './reducers/tasks_reducer';
 
 const projectContainer = document.getElementById('project_app');
 const stages = JSON.parse(projectContainer.dataset.stages);
@@ -16,15 +17,17 @@ const selectedStage = JSON.parse(projectContainer.dataset.stages)[0];
 
 
 const initialState = {
+  tasks: [],
   checklists: [],
   stages: stages,
-  selectedStage: selectedStage
+  selectedStage: selectedStage,
 };
 
 const reducers = combineReducers({
   stages: (state = null, action) => state,
   selectedStage: selectedStageReducer,
-  checklists: checklistsReducer
+  checklists: checklistsReducer,
+  tasks: tasksReducer
 });
 
 const middlewares = applyMiddleware(logger, ReduxPromise);
