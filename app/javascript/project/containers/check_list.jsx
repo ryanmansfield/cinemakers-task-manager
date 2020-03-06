@@ -10,7 +10,7 @@ import Task from '../components/task';
 class CheckList extends Component {
   componentDidMount() {
     // this.setState({ this.props.checklist });
-    // this.props.checklist = checklist
+    // checklist = this.props.checklist
     this.fetchTasks();
   }
 

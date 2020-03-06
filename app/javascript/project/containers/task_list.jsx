@@ -11,34 +11,26 @@
 //     this.fetchTasks();
 //   }
 
-//   //  componentWillReceiveProps(nextProps) { // For after switching channels
-//   //   if (this.props.TaskList != nextProps.TaskList) {
-//   //     this.props.fetchTask(nextProps.TaskList);
-//   //   }
-//   // }
-
-
 //   fetchTasks = () => {
-//     this.props.fetchTasks(this.props.checkList)
+//     this.props.fetchTasks(this.props.checklist)
 //   }
 
 //   render() {
 //     return (
 //       console.log('hi from TaskList container'),
-//       // console.log(`hi from TaskList ${this.props.checklist.id}`),
+//       console.log(`hi from TaskList ${this.props.checklist}`),
 //       <div className="TaskList-container">
 //         <div>
-
-//         </div>
-//         <div className="TaskList">
-//           <div>
+//         <div>
 //             {
 //               this.props.tasks.map((task) => {
 //                 return <Task key={task.id} task={task} />;
 //               })
 //             }
 //           </div>
+
 //         </div>
+
 //         <div className="task-form">
 
 //         </div>
@@ -51,11 +43,6 @@
 // function mapStateToProps (state) {
 //   return {
 //     tasks: state.tasks,
-//     checkLists: state.checklists,
-//     checklist: state.checklist,
-//     // selectedStage: state.selectedStage,
-//     // TaskList: state.TaskList
-
 //   };
 // }
 
