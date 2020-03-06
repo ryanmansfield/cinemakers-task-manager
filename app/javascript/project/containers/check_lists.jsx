@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { fetchChecklists } from '../actions/index';
 import CheckList from './check_list';
+// import CheckList from '../components/check_list';
 import CheckListForm from './check_list_form';
 
 
@@ -41,7 +42,8 @@ class CheckLists extends Component {
 function mapStateToProps (state) {
   return {
     checklists: state.checklists,
-    selectedStage: state.selectedStage
+    selectedStage: state.selectedStage,
+    // checklist: state.checklist
   };
 }
 

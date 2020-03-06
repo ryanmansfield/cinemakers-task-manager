@@ -4,12 +4,19 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { fetchTasks } from '../actions/index';
 import Task from '../components/task';
+// import Tasks from './tasks';
 
 
 class CheckList extends Component {
   componentDidMount() {
+    // this.setState({ this.props.checklist });
+    // this.props.checklist = checklist
     this.fetchTasks();
   }
+
+  // componentDidUpdate () {
+  //   this.fetchTasks();
+  // }
 
   //  componentWillReceiveProps(nextProps) { // For after switching channels
   //   if (this.props.checklist != nextProps.checklist) {
@@ -25,11 +32,12 @@ class CheckList extends Component {
   render() {
     return (
       console.log('hi from checklist container'),
-      console.log(`hi from checklist ${this.props.checklist.id}`),
+      // console.log(`hi from checklist ${this.props.checklist.id}`),
       <div className="CheckList-container">
         <div>
           <h2>{this.props.checklist.name}'s container</h2>
         </div>
+
         <div className="CheckList">
           <div>
             {
@@ -60,6 +68,8 @@ function mapStateToProps (state) {
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({ fetchTasks }, dispatch)
 }
+
+// export default connect(mapStateToProps)(CheckList);
 
 export default connect(mapStateToProps, mapDispatchToProps)(CheckList);
 

@@ -21,8 +21,8 @@ const initialState = {
   checklists: [],
   stages: stages,
   selectedStage: selectedStage,
-  checklist: [],
-  selectedChecklist: []
+  // checklist: [],
+  // selectedChecklist: []
 };
 
 const reducers = combineReducers({
