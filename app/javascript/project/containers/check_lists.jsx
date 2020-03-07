@@ -4,6 +4,8 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { fetchChecklists } from '../actions/index';
 import CheckList from './check_list';
+// import CheckList from '../components/check_list';
+import CheckListForm from './check_list_form';
 
 
 class CheckLists extends Component {
@@ -15,6 +17,18 @@ class CheckLists extends Component {
     this.props.fetchChecklists(this.props.selectedStage);
   }
 
+  // componentWillReceiveProps(nextProps) { // For after switching channels
+  //   if (this.props.selectedChannel != nextProps.selectedChannel) {
+  //     this.subscribeActionCable(nextProps);
+  //   }
+  // }
+
+  //    componentWillReceiveProps(nextProps) { // For after switching channels
+  //   if (this.props.checklist != nextProps.checklist) {
+  //     this.props.fetchTask(nextProps.checklist);
+  //   }
+  // }
+
   render() {
     return (
       // console.log(`checklist: ${this.props.checklists}`),
@@ -22,6 +36,9 @@ class CheckLists extends Component {
 
       <div className="checklists-container">
         <span>Checklists Container for #{this.props.selectedStage.name}</span>
+        <div className="checklist-form">
+          <CheckListForm selectedStage={this.props.selectedStage} />
+        </div>
         <div >
           {
             this.props.checklists.map((checklist) => {
@@ -37,7 +54,8 @@ class CheckLists extends Component {
 function mapStateToProps (state) {
   return {
     checklists: state.checklists,
-    selectedStage: state.selectedStage
+    selectedStage: state.selectedStage,
+    // checklist: state.checklist
   };
 }
 

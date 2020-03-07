@@ -23,9 +23,9 @@ Rails.application.routes.draw do
     namespace :v1 do
       # resources :projects, only: [] do
         resources :stages, only: [] do
-          resources :checklists, only: [ :index, :create , :destroy]
+          resources :checklists, only: [ :index, :create ]
         end
-        resources :checklists, only: [ :index, :create , :destroy] do
+        resources :checklists, only: [ :destroy] do
             resources :tasks, only: [:index, :new, :create, :update, :destroy]
         end
       # end
