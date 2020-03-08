@@ -35,9 +35,6 @@ class CheckList extends Component {
   render() {
     return (
       // const { checklist_id } = this.props.checklist.id;
-      // console.log('hi from checklist container'),
-      console.log(`hi from checklist ${this.props.checklist.id}`),
-       console.log(`hi from checklist ${this.props.tasks.checklist_id}`),
       <div className="CheckList-container">
         <div>
           <h2>{this.props.checklist.name}'s container</h2>
@@ -68,7 +65,7 @@ class CheckList extends Component {
 //   // <TaskForm />
 
 function mapStateToProps (state, ownProps) {
-   console.log(ownProps);
+
 
   return {
     tasks: state.tasks,
