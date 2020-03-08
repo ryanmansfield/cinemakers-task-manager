@@ -11,8 +11,12 @@ import CheckListForm from './check_list_form';
 class CheckLists extends Component {
   componentDidMount() {
     this.fetchChecklists();
+    this.refresher =setInterval(this.fetchChecklists, 10);
   }
 
+  componentWillUnmount () {
+    clearInterval(this.refresher);
+  }
   fetchChecklists = () => {
     this.props.fetchChecklists(this.props.selectedStage);
   }

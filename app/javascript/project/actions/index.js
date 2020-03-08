@@ -69,13 +69,12 @@ export function destroyChecklist(checklist){
       },
       credentials: "same-origin",
       body: JSON.stringify(body)
-       }).then(r => r.json()).then((data)=> {console.log(data)});
+       }).then(r => r.json())
 
   return {
     type: CHECK_LIST_DESTROYED,
     payload: promise // Will be resolved by redux-promise
   };
-  console.log(`here is the endpoint ${url}`)
 }
 
 

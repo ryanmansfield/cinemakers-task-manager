@@ -14,14 +14,9 @@ export default function(state = null, action) {
         return copiedState;
       }
     }
+
     case CHECK_LIST_DESTROYED: {
-      if (state.map(checklist => checklist.id).includes(action.payload.id)) {
         return state;
-      } else {
-        const copiedState = state.slice(0);
-        copiedState.push(action.payload);
-        return copiedState;
-      }
     }
 
     case STAGE_SELECTED: {
