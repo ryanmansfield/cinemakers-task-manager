@@ -58,24 +58,23 @@ export function createCheckList(stage, name) {
 
 export function destroyChecklist(checklist){
   const url = `${BASE_URL}/checklists/${checklist.id}`;
-  // const body = { name };
+  const body = { checklist };
   const csrfToken = document.querySelector('meta[name="csrf-token"]').attributes.content.value;
-  const promise = fetch(url, {
-    method: 'DELETE',
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json',
-      'X-CSRF-Token': csrfToken
-    },
-    credentials: 'same-origin',
-    // body: JSON.stringify(body)
-  }).then(r => r.json());
+    const promise = fetch(url, {
+      method: 'DELETE',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'X-CSRF-Token': csrfToken
+      },
+      credentials: "same-origin",
+      body: JSON.stringify(body)
+       }).then(r => r.json())
 
   return {
     type: CHECK_LIST_DESTROYED,
     payload: promise // Will be resolved by redux-promise
   };
-  console.log(`here is the endpoint ${url}`)
 }
 
 
