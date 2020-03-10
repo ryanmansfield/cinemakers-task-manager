@@ -36,25 +36,22 @@ class CheckList extends Component {
   render() {
     return (
       // const { checklist_id } = this.props.checklist.id;
-      <div className="CheckList-container">
-        <div>
-          <h2>{this.props.checklist.name}'s container</h2>
+      <div className="checklist">
+        <div className='checklist-title'>
+          <h2>{this.props.checklist.name}</h2>
         </div>
         <div className="checklist-destroy">
           <button
             onClick={() => this.handleClick(this.props.checklist)}
-          >delete this checklist</button>
+          ><i class="fas fa-trash-alt"></i></button>
         </div>
+        <div className="task-list">
+          {
+            this.props.tasks.map((task) => {
+              if (task.checklist_id === this.props.checklist.id) { return <Task key={task.id} task={task} />; }
 
-        <div className="CheckList">
-          <div>
-            {
-              this.props.tasks.map((task) => {
-                if (task.checklist_id === this.props.checklist.id) { return <Task key={task.id} task={task} />; }
-
-              })
-            }
-          </div>
+            })
+          }
         </div>
         <div className="task-form">
           <TaskForm checklist={this.props.checklist} />
