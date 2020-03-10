@@ -14,7 +14,6 @@ class StageList extends Component {
 
   renderStage = (stage) => {
     return (
-
       <li
         key={stage.id}
         className={stage === this.props.selectedStage ? 'active' : null }
@@ -28,7 +27,6 @@ class StageList extends Component {
   render() {
     return (
       <div className="stages-container">
-        <span>STAGELIST</span>
         <ul>
           {this.props.stages.map(this.renderStage)}
         </ul>

@@ -2,12 +2,9 @@
   <div class="container">
     <div class="profile">
       <div class="title">
-        <h1>Cinemakers > </h1>
+        <h1>Cinemakers > <%= current_user.first_name %> </h1>
       </div>
       <div class="user">
-
-
-
         <p><%= current_user.tag %></p>
         <p><%= current_user.bio %></p>
         <p><%= current_user.website %></p>
