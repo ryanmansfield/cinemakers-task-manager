@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { fetchTasks, destroyChecklist } from '../actions/index';
 import TaskForm from '../containers/task_form';
-import Task from '../components/task';
+import Task from './task';
 // import Tasks from './tasks';
 
 
