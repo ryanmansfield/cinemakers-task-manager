@@ -10,7 +10,10 @@ class TaskForm extends Component {
     // this.state = { value: '' };
       this.state = {
         title: '',
-        note: ''
+        note: '',
+        due_date: '',
+        assigned_to: '',
+
       };
   }
 
@@ -33,11 +36,12 @@ class TaskForm extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     console.log("Inside handle submit");
-    console.log(`checklist: ${this.props.checklist}`);
-    console.log(`VALUE-STATE: ${this.state.title}`);
-    console.log(`note: ${this.state.note}`);
-    this.props.createTask(this.props.checklist, this.state.title, this.state.note);
-    this.props.createTask(this.props.checklist, this.state);
+    this.props.createTask(
+                          this.props.checklist,
+                          this.state.title,
+                          this.state.note,
+                          this.state.due_date,
+                          this.state.assigned_to);
     this.setState({ value: ''});
   }
 
@@ -71,6 +75,30 @@ class TaskForm extends Component {
                 className="form-control"
                 autoComplete="off"
                 value={this.state.text}
+                onChange={this.handleChange}
+              />
+          </label>
+          <label>
+             due date:
+              <input
+                // ref={(input) => {this.messageBox = input; }}
+                name="due_date"
+                type="date"
+                className="form-control"
+                autoComplete="off"
+                value={this.state.due_date}
+                onChange={this.handleChange}
+              />
+          </label>
+          <label>
+             assigned to:
+              <input
+                // ref={(input) => {this.messageBox = input; }}
+                name="assigned_to"
+                type="text"
+                className="form-control"
+                autoComplete="off"
+                value={this.state.assigned_to}
                 onChange={this.handleChange}
               />
           </label>

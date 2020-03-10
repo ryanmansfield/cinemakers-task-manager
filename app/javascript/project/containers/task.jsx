@@ -40,8 +40,18 @@ class Task extends Component {
           >delete task</button>
         </div>
         <p>{this.props.task.note}</p>
-        <p>task id: {this.props.task.id}</p>
-        <p>task's checklist id: {this.props.task.checklist_id}</p>
+
+        <p>{`Due:
+          ${new Intl.DateTimeFormat("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "2-digit"
+          }).format(this.props.due_date)}`}
+        </p>
+
+        <p>{`Assigned to: ${this.props.task.assigned_to}`}</p>
+         <p>{`Is complete ${this.props.task.is_complete}`}</p>
+
       </div>
     );
   }

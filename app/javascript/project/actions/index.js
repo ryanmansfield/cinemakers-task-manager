@@ -81,13 +81,13 @@ export function destroyChecklist(checklist){
   };
 }
 
-export function createTask(checklist, title, note) {
-  console.log('inside createTask redux function')
-  console.log({checklist});
-  console.log({title});
-  console.log({note});
+export function createTask(checklist, title, note, due_date, assigned_to) {
+  // console.log('inside createTask redux function')
+  // console.log({checklist});
+  // console.log({title});
+  // console.log({note});
   const url = `${BASE_URL}/checklists/${checklist.id}/tasks`;
-  const body = { title, note };
+  const body = { title, note, due_date, assigned_to };
   const csrfToken = document.querySelector('meta[name="csrf-token"]').attributes.content.value;
   const promise = fetch(url, {
     method: 'POST',
