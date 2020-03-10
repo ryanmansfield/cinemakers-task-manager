@@ -17,6 +17,7 @@ export default function(state = null, action) {
 
     case CHECK_LIST_DESTROYED: {
         return state;
+        // return action.payload;
        // return {...state. items: state.items.splice(item.index, 1)};
         // return state.filter(({ id }) => id !== action.payload);
          //  return {

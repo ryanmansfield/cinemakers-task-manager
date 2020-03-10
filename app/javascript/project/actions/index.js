@@ -28,7 +28,7 @@ export function fetchChecklists(stage) {
 export function fetchTasks(checklist) {
   const url = `${BASE_URL}/checklists/${checklist.id}/tasks`;
   const promise = fetch(url, { credentials: "same-origin" }).then(r => r.json());
-
+   console.log({promise})
   return {
     type: FETCH_TASKS,
     payload: promise // Will be resolved by redux-promise
@@ -61,7 +61,8 @@ export function createCheckList(stage, name) {
 
 
 export function destroyChecklist(checklist){
-  const url = `${BASE_URL}/checklists/${checklist.id}`;
+  // console.log(`hi from inside checklist destroy ${checklist.id}`)
+  const url = `${BASE_URL}/stages/${checklist.stage_id}/checklists/${checklist.id}`;
   const body = { checklist };
   const csrfToken = document.querySelector('meta[name="csrf-token"]').attributes.content.value;
     const promise = fetch(url, {
@@ -74,7 +75,6 @@ export function destroyChecklist(checklist){
       credentials: "same-origin",
       body: JSON.stringify(body)
        }).then(r => r.json())
-
   return {
     type: CHECK_LIST_DESTROYED,
     payload: promise // Will be resolved by redux-promise

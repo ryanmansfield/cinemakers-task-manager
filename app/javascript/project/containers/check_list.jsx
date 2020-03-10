@@ -29,7 +29,8 @@ class CheckList extends Component {
 
   handleClick = (checklist) => {
     this.props.destroyChecklist(checklist);
-    console.log(`test test ${this.props.checklist.name}`)
+    // this.props.fetchChecklists(checklist.stage);
+    // console.log(`test test ${this.props.checklist.stage}`)
   }
 
   render() {

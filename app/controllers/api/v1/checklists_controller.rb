@@ -1,5 +1,5 @@
 class Api::V1::ChecklistsController < ApplicationController
-  before_action :set_stage, except: :destroy
+  before_action :set_stage
 
   def index
     # @stage = Stage.find(params[:stage_id])
@@ -17,7 +17,7 @@ class Api::V1::ChecklistsController < ApplicationController
     @checklist = Checklist.find(params[:id])
     @checklist.destroy
     head 204
-    # render json: checklist
+    # render json: @checklists
   end
 
   private
