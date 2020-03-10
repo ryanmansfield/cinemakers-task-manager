@@ -35,15 +35,11 @@ class CheckLists extends Component {
 
   render() {
     return (
-      // console.log(`checklist: ${this.props.checklists}`),
-      console.log('hi from checklists container'),
-
       <div className="checklists-container">
-        <span>Checklists Container for #{this.props.selectedStage.name}</span>
         <div className="checklist-form">
           <CheckListForm selectedStage={this.props.selectedStage} />
         </div>
-        <div >
+        <div className="checklist-container" >
           {
             this.props.checklists.map((checklist) => {
               return <CheckList key={checklist.id} checklist={checklist} />;
