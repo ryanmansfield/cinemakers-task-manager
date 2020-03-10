@@ -1,5 +1,5 @@
 class Api::V1::TasksController < ApplicationController
-  before_action :set_checklist
+  before_action :set_checklist, except: :destroy
 
   def index
     # @checklist = Checklist.find(params[:checklist_id])
@@ -20,6 +20,9 @@ class Api::V1::TasksController < ApplicationController
   end
 
   def destroy
+    @task = Task.find(params[:id])
+    @task.destroy
+    head 204
   end
 
   private
