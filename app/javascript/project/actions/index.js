@@ -6,6 +6,7 @@ export const FETCH_TASKS = 'FETCH_TASKS';
 export const CHECK_LIST_POSTED = 'CHECK_LIST_POSTED';
 export const CHECK_LIST_DESTROYED = 'CHECK_LIST_DESTROYED';
 export const TASK_POSTED = 'TASK_POSTED';
+export const TASK_DESTROYED = 'TASK_DESTROYED';
 
 export function selectStage(stage) {
   return {
@@ -102,6 +103,29 @@ export function createTask(checklist, title, note) {
 
   return {
     type: TASK_POSTED,
+    payload: promise // Will be resolved by redux-promise
+  };
+}
+
+
+
+export function destroyTask(task){
+   const url = `${BASE_URL}/tasks/${task.id}`;
+  const body = { task };
+  const csrfToken = document.querySelector('meta[name="csrf-token"]').attributes.content.value;
+    const promise = fetch(url, {
+      method: 'DELETE',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'X-CSRF-Token': csrfToken
+      },
+      credentials: "same-origin",
+      body: JSON.stringify(body)
+       }).then(r => r.json())
+
+  return {
+    type: TASK_DESTROYED,
     payload: promise // Will be resolved by redux-promise
   };
 }

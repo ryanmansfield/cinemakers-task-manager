@@ -28,6 +28,7 @@ Rails.application.routes.draw do
         resources :checklists, only: [ :destroy] do
             resources :tasks, only: [:index, :new, :create, :update, :destroy]
         end
+        resources :tasks, only: [ :destroy]
       # end
     end
   end
