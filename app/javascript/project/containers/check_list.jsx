@@ -56,13 +56,12 @@ class CheckList extends Component {
           </div>
         </div>
         <div className="task-form">
-
+          <TaskForm checklist={this.props.checklist} />
         </div>
       </div>
     );
   }
 }
-//   // <TaskForm />
 
 function mapStateToProps (state, ownProps) {
 

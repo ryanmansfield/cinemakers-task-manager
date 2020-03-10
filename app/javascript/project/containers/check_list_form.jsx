@@ -19,6 +19,7 @@ class CheckListForm extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
+    // console.log(`state.value in checklist ${this.state.value}`)
     this.props.createCheckList(this.props.selectedStage, this.state.value);
     this.setState({ value: '' }); // Reset message input
   }

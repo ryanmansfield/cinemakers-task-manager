@@ -17,6 +17,12 @@ export default function(state = null, action) {
 
     case CHECK_LIST_DESTROYED: {
         return state;
+       // return {...state. items: state.items.splice(item.index, 1)};
+        // return state.filter(({ id }) => id !== action.payload);
+         //  return {
+         //   ...state,
+         //   checklists: state.checklists.filter((item, index) => index !== action.payload)
+         // }
     }
 
     case STAGE_SELECTED: {
