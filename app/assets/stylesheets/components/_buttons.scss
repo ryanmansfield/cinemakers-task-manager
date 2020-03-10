@@ -1,0 +1,14 @@
+.btn-destroy {
+  border-radius: 50%;
+  border: none;
+}
+
+.btn-destroy :hover{
+  color: $purple;
+  font-size: larger;
+
+}
+
+.fa-trash {
+  color: $blue;
+}

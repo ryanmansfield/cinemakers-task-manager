@@ -8,11 +8,9 @@
 }
 
 .project-banner > h1  {
-    color: $blue;
-    text-decoration: underline $purple;
-  }
-
-
+  color: $purple;
+  padding-left: 16px;
+}
 
 .stages-container {
   padding: 20px;
@@ -25,17 +23,9 @@
   list-style: none;
   display: flex;
   justify-content: space-around;
-
-  -webkit-margin-before: 2em;
-  -webkit-margin-after: 0em;
-  -webkit-margin-start: 0px;
-  -webkit-margin-end: 0px;
-  -webkit-padding-start: 0px;
 }
 
 .stages-container > ul > li {
-  // display: inline-block;
-  // justify-content: space-between;
   color: $blue;
   margin: 10px 0;
   font-size: 14px;
@@ -45,5 +35,4 @@
 .stages-container > ul > li.active {
   font-weight: 600;
   text-decoration: underline $purple;
-
 }

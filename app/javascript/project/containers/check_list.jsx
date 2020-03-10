@@ -39,11 +39,12 @@ class CheckList extends Component {
       <div className="checklist">
         <div className='checklist-title'>
           <h2>{this.props.checklist.name}</h2>
-        </div>
-        <div className="checklist-destroy">
-          <button
-            onClick={() => this.handleClick(this.props.checklist)}
-          ><i class="fas fa-trash-alt"></i></button>
+          <div className="checklist-destroy">
+            <button
+              className="btn-destroy"
+              onClick={() => this.handleClick(this.props.checklist)}
+            ><i class="fas fa-trash"></i></button>
+          </div>
         </div>
         <div className="task-list">
           {
