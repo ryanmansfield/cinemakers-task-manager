@@ -5,6 +5,7 @@ export const FETCH_CHECKLISTS = 'FETCH_CHECKLISTS';
 export const FETCH_TASKS = 'FETCH_TASKS';
 export const CHECK_LIST_POSTED = 'CHECK_LIST_POSTED';
 export const CHECK_LIST_DESTROYED = 'CHECK_LIST_DESTROYED';
+export const TASK_POSTED = 'TASK_POSTED';
 
 export function selectStage(stage) {
   return {
@@ -35,6 +36,8 @@ export function fetchTasks(checklist) {
 
 
 export function createCheckList(stage, name) {
+  // console.log('inside createchecklist')
+  // console.log({name})
   const url = `${BASE_URL}/stages/${stage.id}/checklists`;
   const body = { name };
   const csrfToken = document.querySelector('meta[name="csrf-token"]').attributes.content.value;
@@ -77,7 +80,31 @@ export function destroyChecklist(checklist){
   };
 }
 
+export function createTask(checklist, title, note) {
+  console.log('inside createTask redux function')
+  console.log({checklist});
+  console.log({title});
+  console.log({note});
+  const url = `${BASE_URL}/checklists/${checklist.id}/tasks`;
+  const body = { title, note };
+  const csrfToken = document.querySelector('meta[name="csrf-token"]').attributes.content.value;
+  const promise = fetch(url, {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+      'X-CSRF-Token': csrfToken
+    },
+    credentials: 'same-origin',
+    body: JSON.stringify(body)
+  }).then(r => r.json());
+  // console.log('tttteeeessttt');
 
+  return {
+    type: TASK_POSTED,
+    payload: promise // Will be resolved by redux-promise
+  };
+}
 
 
 
