@@ -11,11 +11,11 @@ class Task extends Component {
     this.state = { is_complete: this.props.task.is_complete };
   }
 
-  componentDidMount() {
+  // componentDidMount() {
     // this.setState({ this.props.checklist });
     // checklist = this.props.checklist
     // this.fetchTasks();
-  }
+  // }
 
 
   //  componentDidUpdate(nextProps) { // For after checklists
@@ -59,7 +59,7 @@ class Task extends Component {
             </p>
 
             <p>{`Assigned to: ${this.props.task.assigned_to}`}</p>
-            <p>Is complete <input type="checkbox" defaultChecked={this.props.task.is_complete} /></p>
+            <p>Completed <input type="checkbox" defaultChecked={this.props.task.is_complete} /></p>
 
           </div>
         </div>
@@ -73,15 +73,10 @@ function mapStateToProps (state) {
 
   return {
     tasks: state.tasks,
-    // selectedStage: state.selectedStage,
-    // checklist: state.checklist
-    // ownProp: ownProps.prop
-
   };
 }
 
 function mapDispatchToProps(dispatch) {
-   // console.log(ownProps);
   return bindActionCreators({ destroyTask }, dispatch)
 }
 
