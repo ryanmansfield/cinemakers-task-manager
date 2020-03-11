@@ -1,0 +1,21 @@
+.btn-destroy {
+  border-radius: 50%;
+  border: none;
+}
+
+.btn-destroy :hover{
+  color: $black;
+  font-size: larger;
+
+}
+
+.fa-trash {
+  color: $dark-gray;
+}
+
+.checklist-button {
+  border: none;
+  color: $purple;
+  font-size: xx-large;
+  float: right;
+}

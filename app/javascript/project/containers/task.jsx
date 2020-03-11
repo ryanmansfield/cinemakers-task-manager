@@ -6,11 +6,16 @@ import { destroyTask } from '../actions/index';
 
 
 class Task extends Component {
-  componentDidMount() {
+  constructor(props) {
+    super(props);
+    this.state = { is_complete: this.props.task.is_complete };
+  }
+
+  // componentDidMount() {
     // this.setState({ this.props.checklist });
     // checklist = this.props.checklist
     // this.fetchTasks();
-  }
+  // }
 
 
   //  componentDidUpdate(nextProps) { // For after checklists
@@ -37,23 +42,26 @@ class Task extends Component {
           <h3>{this.props.task.title}</h3>
           <div className="task-destroy">
             <button
-                onClick={() => this.handleClick(this.props.task)}
-            ><i class="fas fa-trash"></i></button>
+              className="btn-destroy"
+              onClick={() => this.handleClick(this.props.task)}
+            ><i className="fas fa-trash"></i></button>
           </div>
         </div>
         <div className="task-info">
           <p>{this.props.task.note}</p>
+          <div className="task-due">
+            <p>{`Due:
+              ${new Intl.DateTimeFormat("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "2-digit"
+              }).format(this.props.due_date)}`}
+            </p>
 
-          <p>{`Due:
-            ${new Intl.DateTimeFormat("en-US", {
-              year: "numeric",
-              month: "long",
-              day: "2-digit"
-            }).format(this.props.due_date)}`}
-          </p>
+            <p>{`Assigned to: ${this.props.task.assigned_to}`}</p>
+            <p>Completed <input type="checkbox" defaultChecked={this.props.task.is_complete} /></p>
 
-          <p>{`Assigned to: ${this.props.task.assigned_to}`}</p>
-          <p>{`Is complete ${this.props.task.is_complete}`}</p>
+          </div>
         </div>
       </div>
     );
@@ -65,15 +73,10 @@ function mapStateToProps (state) {
 
   return {
     tasks: state.tasks,
-    // selectedStage: state.selectedStage,
-    // checklist: state.checklist
-    // ownProp: ownProps.prop
-
   };
 }
 
 function mapDispatchToProps(dispatch) {
-   // console.log(ownProps);
   return bindActionCreators({ destroyTask }, dispatch)
 }
 

@@ -1,0 +1,30 @@
+.task-list {
+  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+
+}
+
+.task {
+  border-bottom: 2px solid $gray;
+
+}
+
+.task-title {
+  display: flex;
+  justify-content: center;
+  margin: 16px;
+
+}
+
+.task-destroy {
+
+}
+
+
+.task-info {
+
+}
+
+.task-due {
+  display: flex;
+  justify-content: space-between;
+}
