@@ -9,6 +9,17 @@ import CheckListForm from './check_list_form';
 
 
 class CheckLists extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { isHidden: true };
+  }
+
+  toggleHidden () {
+    this.setState({
+      isHidden: !this.state.isHidden
+    })
+  }
+
   componentDidMount() {
     this.fetchChecklists();
     // this.refresher =setInterval(this.fetchChecklists, 3000);
@@ -37,7 +48,10 @@ class CheckLists extends Component {
     return (
       <div className="checklists-container">
         <div className="checklist-form">
-          <CheckListForm selectedStage={this.props.selectedStage} />
+          <button className="checklist-button" onClick={this.toggleHidden.bind(this)} >
+            <i className="fas fa-plus-circle"></i>
+          </button>
+          {!this.state.isHidden && <CheckListForm selectedStage={this.props.selectedStage} />}
         </div>
         <div className="checklist-container" >
           {

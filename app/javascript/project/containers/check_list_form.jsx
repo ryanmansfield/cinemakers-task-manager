@@ -25,17 +25,20 @@ class CheckListForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit} className="checklist-editor">
-        <input
-          ref={(input) => { this.messageBox = input; }}
-          type="text"
-          className="form-control"
-          autoComplete="off"
-          value={this.state.value}
-          onChange={this.handleChange}
-        />
-        <button type="submit" className="btn btn-primary">Create a new Checklist</button>
-      </form>
+      // <div className="form-container">
+
+        <form onSubmit={this.handleSubmit} className="checklist-editor">
+          <input
+            ref={(input) => { this.messageBox = input; }}
+            type="text"
+            className="form-control"
+            autoComplete="off"
+            value={this.state.value}
+            onChange={this.handleChange}
+          />
+          <button type="submit" className="btn btn-primary">Save Checklist</button>
+        </form>
+      // </div>
     );
   }
 }

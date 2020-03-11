@@ -4,11 +4,18 @@
 }
 
 .btn-destroy :hover{
-  color: $purple;
+  color: $black;
   font-size: larger;
 
 }
 
 .fa-trash {
-  color: $blue;
+  color: $dark-gray;
+}
+
+.checklist-button {
+  border: none;
+  color: $purple;
+  font-size: xx-large;
+  float: right;
 }
