@@ -1,11 +1,17 @@
 <div class="container">
 
+
+
+
   <h1><%= @team.name %></h1>
   <h2>Current Members:</h2>
 
   <% @team.collaborators.each do |collaborator| %>
     <p> Team Member : <%= collaborator.user.first_name  %></p>
   <% end %>
+
+  <h3>please share this link for others to join the team</h3>
+  <p><%= request.original_url %></p>
 
   <%= render :template => 'collaborators/new' %>
    <p><%= link_to "Delete Team", @team, method: :delete, class: "btn btn-primary" %></p>
