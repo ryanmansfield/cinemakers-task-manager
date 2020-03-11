@@ -1,9 +1,7 @@
-<%=@project.name  %>
+<div class="project-banner">
+  <h1><%= @project.team.name %> > <%= @project.name %></h1>
+</div>
 <div id="project_app" data-stages=<%= @project.stages.to_json %>></div>
 <% content_for :after_js do %>
   <%= javascript_pack_tag "project" %>
 <% end %>
-
-
-
-

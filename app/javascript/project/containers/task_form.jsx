@@ -42,7 +42,13 @@ class TaskForm extends Component {
                           this.state.note,
                           this.state.due_date,
                           this.state.assigned_to);
-    this.setState({ value: ''});
+    this.setState(
+                  {
+                    title: '',
+                    note: '',
+                    due_date: '',
+                    assigned_to: '',
+    });
   }
 
   // handleSubmit(event) {
@@ -102,7 +108,7 @@ class TaskForm extends Component {
                 onChange={this.handleChange}
               />
           </label>
-        <button type="submit">Create Task</button>
+        <button type="submit" className="btn-primary">Create Task</button>
       </form>
     );
   }

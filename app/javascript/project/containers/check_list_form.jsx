@@ -19,24 +19,26 @@ class CheckListForm extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    // console.log(`state.value in checklist ${this.state.value}`)
     this.props.createCheckList(this.props.selectedStage, this.state.value);
     this.setState({ value: '' }); // Reset message input
   }
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit} className="checklist-editor">
-        <input
-          ref={(input) => { this.messageBox = input; }}
-          type="text"
-          className="form-control"
-          autoComplete="off"
-          value={this.state.value}
-          onChange={this.handleChange}
-        />
-        <button type="submit">Create a new Checklist</button>
-      </form>
+      // <div className="form-container">
+
+        <form onSubmit={this.handleSubmit} className="checklist-editor">
+          <input
+            ref={(input) => { this.messageBox = input; }}
+            type="text"
+            className="form-control"
+            autoComplete="off"
+            value={this.state.value}
+            onChange={this.handleChange}
+          />
+          <button type="submit" className="btn btn-primary">Save Checklist</button>
+        </form>
+      // </div>
     );
   }
 }
