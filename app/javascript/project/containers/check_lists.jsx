@@ -24,11 +24,12 @@ class CheckLists extends Component {
     // this.refresher =setInterval(this.fetchChecklists, 3000);
   }
 
-componentDidUpdate(prevProps) {
-  if (this.props.checklists !== prevProps.checklists) {
-    this.setState({ isHidden: true });
+  componentDidUpdate(prevProps) {
+    if (this.props.checklists !== prevProps.checklists) {
+      this.setState({ isHidden: true });
+      // this.fetchChecklists();
+    }
   }
-}
 
   componentWillUnmount () {
     // clearInterval(this.refresher);
