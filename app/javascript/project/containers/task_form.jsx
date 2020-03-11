@@ -60,55 +60,74 @@ class TaskForm extends Component {
     return (
       console.log(this.props.checklist),
       <form onSubmit={this.handleSubmit} className="task-editor">
-          <label>
-             title:
+        <div className="form-row">
+          <div className="col">
+            <label>
+              Task
               <input
                 // ref={(input) => {this.messageBox = input; }}
                 name="title"
                 type="text"
                 className="form-control"
                 autoComplete="off"
+                placeholder="Task"
                 value={this.state.title}
                 onChange={this.handleChange}
               />
-          </label>
-          <label>
-            note:
+            </label>
+          </div>
+          <div className="col">
+            <label>
+              Note
               <input
                 // ref={(input) => {this.messageBox = input; }}
                 name="note"
                 type="text"
                 className="form-control"
                 autoComplete="off"
+                placeholder="Description"
                 value={this.state.text}
                 onChange={this.handleChange}
               />
-          </label>
-          <label>
-             due date:
+            </label>
+          </div>
+        </div>
+
+        <div className="form-row">
+          <div className="col">
+            <label>
+              Due Date
               <input
                 // ref={(input) => {this.messageBox = input; }}
                 name="due_date"
                 type="date"
                 className="form-control"
                 autoComplete="off"
+                // label="Due Date"
                 value={this.state.due_date}
                 onChange={this.handleChange}
               />
-          </label>
-          <label>
-             assigned to:
+            </label>
+          </div>
+          <div className="col">
+            <label>
+              Assigned To
               <input
                 // ref={(input) => {this.messageBox = input; }}
                 name="assigned_to"
                 type="text"
                 className="form-control"
                 autoComplete="off"
+                placeholder="Assigned To"
                 value={this.state.assigned_to}
                 onChange={this.handleChange}
               />
-          </label>
-        <button type="submit" className="btn-primary">Create Task</button>
+            </label>
+          </div>
+        </div>
+        <div className="form-row task-save-btn">
+          <button type="submit" className="btn-primary">Save Task</button>
+        </div>
       </form>
     );
   }

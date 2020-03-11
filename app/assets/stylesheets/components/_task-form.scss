@@ -1,9 +1,19 @@
 .task-form {
   margin-top: 8px;
   padding: 8px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 
 }
 
+.task-button {
+  // display: block;
+}
 .task-editor {
+  // display: block;
+}
 
+.task-save-btn {
+  justify-content: center;
 }
