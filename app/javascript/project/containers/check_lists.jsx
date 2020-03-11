@@ -4,7 +4,6 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { fetchChecklists } from '../actions/index';
 import CheckList from './check_list';
-// import CheckList from '../components/check_list';
 import CheckListForm from './check_list_form';
 
 
@@ -25,24 +24,19 @@ class CheckLists extends Component {
     // this.refresher =setInterval(this.fetchChecklists, 3000);
   }
 
+componentDidUpdate(prevProps) {
+  if (this.props.checklists !== prevProps.checklists) {
+    this.setState({ isHidden: true });
+  }
+}
+
   componentWillUnmount () {
     // clearInterval(this.refresher);
   }
+
   fetchChecklists = () => {
     this.props.fetchChecklists(this.props.selectedStage);
   }
-
-  // componentWillReceiveProps(nextProps) { // For after switching channels
-  //   if (this.props.selectedChannel != nextProps.selectedChannel) {
-  //     this.subscribeActionCable(nextProps);
-  //   }
-  // }
-
-  //    componentWillReceiveProps(nextProps) { // For after switching channels
-  //   if (this.props.checklist != nextProps.checklist) {
-  //     this.props.fetchTask(nextProps.checklist);
-  //   }
-  // }
 
   render() {
     return (
