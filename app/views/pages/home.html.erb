@@ -36,7 +36,11 @@
 
     <div class="projects-list-container">
       <h2> <%= current_user.first_name  %>'s projects</h2>
-      <p><%= link_to "New Project", new_project_path, class: "btn btn-primary" %></p>
+
+
+          <button type="button" class="btn btn-primary" data-toggle="modal"  data-target="#project-create-modal">
+          Create a Team
+         </button>
 
       <div class="projects-list">
         <% current_user.teams.each do |team| %>
@@ -66,6 +70,15 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
         <%=render template: "teams/new"  %>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="project-create-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <%=render template: "projects/new"  %>
+
     </div>
   </div>
 </div>

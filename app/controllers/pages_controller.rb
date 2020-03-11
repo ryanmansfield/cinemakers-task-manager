@@ -3,5 +3,6 @@ class PagesController < ApplicationController
 
   def home
     @team = Team.new
+    @project = Project.new
   end
 end
