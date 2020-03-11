@@ -19,7 +19,7 @@ class TeamsController < ApplicationController
     @team = Team.new(team_params)
     @team.collaborators.build(user_id: current_user.id)
     if @team.save
-      redirect_to root_path
+      redirect_to team_path(@team)
     else
       render :new
     end

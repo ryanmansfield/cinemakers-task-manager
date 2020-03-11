@@ -9,12 +9,21 @@
         <p><%= current_user.bio %></p>
         <p><%= current_user.website %></p>
       </div>
-        <%= link_to "View All Teams", teams_path, class: "btn btn-primary" %>
-        <%= link_to "New Team", new_team_path, class: "btn btn-primary" %>
     </div>
 
     <div class="teams-list-container">
       <h2> <%= current_user.first_name  %>'s teams:</h2>
+
+
+
+         <button type="button" class="btn btn-primary" data-toggle="modal"  data-target="#team-create-modal">
+          Create a Team
+         </button>
+
+
+
+
+
       <div class="teams-list">
         <% current_user.teams.each do |team| %>
           <div class="team-card">
@@ -44,9 +53,20 @@
       </div>
     </div>
   </div>
+
 <% else %>
   <div class="container">
     <h1>Welcome to Cinemakers</h1>
     <%= link_to "Login", new_user_session_path, class: " btn btn-primary" %>
   </div>
 <% end %>
+
+
+<div class="modal fade" id="team-create-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <%=render template: "teams/new"  %>
+    </div>
+  </div>
+</div>
+
