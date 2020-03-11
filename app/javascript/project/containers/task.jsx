@@ -6,6 +6,11 @@ import { destroyTask } from '../actions/index';
 
 
 class Task extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { is_complete: this.props.task.is_complete };
+  }
+
   componentDidMount() {
     // this.setState({ this.props.checklist });
     // checklist = this.props.checklist
@@ -54,7 +59,8 @@ class Task extends Component {
             </p>
 
             <p>{`Assigned to: ${this.props.task.assigned_to}`}</p>
-            <p>{`Is complete ${this.props.task.is_complete}`}</p>
+            <p>Is complete <input type="checkbox" defaultChecked={this.props.task.is_complete} /></p>
+
           </div>
         </div>
       </div>
