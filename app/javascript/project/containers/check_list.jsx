@@ -8,7 +8,7 @@ import Task from './task';
 class CheckList extends Component {
   constructor(props) {
     super(props);
-    this.state = { isHidden: true };
+    this.state = { isHidden: false };
   }
 
   toggleHidden () {
