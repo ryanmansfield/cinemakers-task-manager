@@ -1,7 +1,18 @@
 <div class="project-banner">
   <h1><%= @project.team.name %> > <%= @project.name %></h1>
+  <h1><%= @project.project_progress %></h1>
+  <% @project.stages.each do |stage| %>
+    <% if stage.checklists.exists? %>
+      <h1><%= stage.name %> progress <%=stage.stage_progress %>%</h1>
+    <% else %>
+      <h1><%= stage.name %> progress 0% </h1>
+    <% end %>
+  <% end %>
 </div>
 <div id="project_app" data-stages=<%= @project.stages.to_json %>></div>
 <% content_for :after_js do %>
   <%= javascript_pack_tag "project" %>
 <% end %>
+
+
+
