@@ -16,7 +16,16 @@ class Api::V1::TasksController < ApplicationController
   def new
   end
 
+
   def update
+    @task = Task.find(params[:id])
+    @task.update(title: task_params[:title],
+                 note: task_params[:note],
+                 due_date: task_params[:due_date],
+                 assigned_to: task_params[:assigned_to],
+                 is_complete: task_params[:is_complete]
+                )
+    head 204
   end
 
   def destroy
@@ -35,6 +44,7 @@ class Api::V1::TasksController < ApplicationController
     params.require(:task).permit(:title,
                                  :note,
                                  :due_date,
-                                 :assigned_to)
+                                 :assigned_to,
+                                 :is_complete)
   end
 end
