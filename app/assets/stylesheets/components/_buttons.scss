@@ -1,6 +1,7 @@
 .btn-destroy {
   border-radius: 50%;
   border: none;
+  background-color: $gray;
 }
 
 .btn-destroy :hover{
@@ -12,6 +13,18 @@
 .fa-trash {
   color: $dark-gray;
 }
+
+.task-btn-destroy {
+  border-radius: 50%;
+  border: none;
+}
+
+.task-btn-destroy :hover{
+  color: $black;
+  font-size: larger;
+
+}
+
 
 .checklist-button {
   border: none;
@@ -25,6 +38,7 @@
   color: $purple;
   font-size: xx-large;
   float: center;
+  background-color: $gray;
 }
 
 .team-create-btn {

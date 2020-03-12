@@ -61,7 +61,7 @@ class Task extends Component {
               </div>
               <div className="task-destroy">
                 <button
-                  className="btn-destroy"
+                  className="task-btn-destroy"
                   onClick={() => this.handleClick(this.props.task)}
                 ><i className="fas fa-trash"></i></button>
               </div>

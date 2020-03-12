@@ -19,7 +19,9 @@ class StageList extends Component {
         className={stage === this.props.selectedStage ? 'active' : null }
         onClick={() => this.handleClick(stage)}
       >
-        <h2>{stage.name}</h2>
+        <div className="stage">
+          <h2>{stage.name}</h2>
+        </div>
       </li>
     )
   }

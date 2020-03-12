@@ -1,5 +1,5 @@
 .task-list {
-  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+  // box-shadow: 0 10px 30px rgba(0,0,0,.1);
   background-color: $gray;
   padding: 8px;
 
@@ -11,13 +11,16 @@
   background-color: $white;
 }
 
-// .task-list :hover {
-//   background-color: $gray;
-// }
+.task-note {
+  font-style: italic;
+}
 
 .task-title {
   display: flex;
   justify-content: space-between;
+  // p {
+  //   font-style: italic;
+  // }
 }
 
 .task-destroy {
@@ -30,6 +33,7 @@
 .task-info {
   display: flex;
   flex-direction: column;
+  font-style: italic;
 
 
 }
