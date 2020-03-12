@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { destroyTask } from '../actions/index';
+import { destroyTask, updateTask } from '../actions/index';
 
 
 
@@ -25,9 +25,10 @@ class Task extends Component {
   // }
 
 
-  // fetchTasks = () => {
-  //   this.props.fetchTasks(this.props.checklist)
-  // }
+  updateTask = (task) => {
+    this.props.updateTask(task);
+    // console.log(`Toggle Checkbox ${!this.props.task.is_complete}`)
+  }
 
 
   handleClick = (task) => {
@@ -40,7 +41,12 @@ class Task extends Component {
       <div className="task">
         <div className="task-title">
           <h3>{this.props.task.title}</h3>
-          <p>Complete <input type="checkbox" defaultChecked={this.props.task.is_complete} /></p>
+          <p>Complete
+            <input
+              type="checkbox"
+              onClick={() => this.updateTask(this.props.task)}
+              defaultChecked={this.props.task.is_complete} />
+          </p>
         </div>
           <div className="task-note">
             <p>{this.props.task.note}</p>
@@ -74,15 +80,13 @@ class Task extends Component {
 }
 
 function mapStateToProps (state) {
-
-
   return {
     tasks: state.tasks,
   };
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ destroyTask }, dispatch)
+  return bindActionCreators({ destroyTask, updateTask }, dispatch)
 }
 
 // export default connect(mapStateToProps)(CheckList);

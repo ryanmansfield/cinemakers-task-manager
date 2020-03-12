@@ -58,7 +58,7 @@ class TaskForm extends Component {
 
   render() {
     return (
-      console.log(this.props.checklist),
+      // console.log(this.props.checklist),
       <form onSubmit={this.handleSubmit} className="task-editor">
         <div className="form-row">
           <div className="col">
