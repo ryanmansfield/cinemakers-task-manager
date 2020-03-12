@@ -51,11 +51,6 @@ class TaskForm extends Component {
     });
   }
 
-  // handleSubmit(event) {
-  //   event.preventDefault();
-  //   const inputs = event.target.getElementsByTagName(‘input’);
-  // }
-
   render() {
     return (
       // console.log(this.props.checklist),

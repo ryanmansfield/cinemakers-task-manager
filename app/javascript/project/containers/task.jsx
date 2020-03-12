@@ -26,7 +26,14 @@ class Task extends Component {
 
 
   updateTask = (task) => {
-    this.props.updateTask(task);
+    this.props.updateTask(task)
+                          // this.props.task.id,
+                          // this.props.task.checklist,
+                          // this.props.task.title,
+                          // this.props.task.note,
+                          // this.props.task.due_date,
+                          // this.props.task.assigned_to,
+                          // this.props.task.is_complete);
     // console.log(`Toggle Checkbox ${!this.props.task.is_complete}`)
   }
 

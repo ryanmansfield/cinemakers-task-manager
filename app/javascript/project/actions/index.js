@@ -136,14 +136,23 @@ export function destroyTask(task){
 
 export function updateTask(task) {
   console.log('inside updateTask redux function')
-  console.log({task});
-  // console.log({title});
-  // console.log({note});
-  const url = `${BASE_URL}/checklists/${checklist.id}/tasks`;
-  const body = { title, note, due_date, assigned_to };
+  // console.log(`checklist ${task.checklist_id}`);
+  // console.log(`task idd${task.id}`);
+  const title = task.title;
+  const note = task.note;
+  const due_date = task.due_date;
+  const assigned_to = task.assigned_to;
+  const is_complete = !task.is_complete;
+
+  const url = `${BASE_URL}/checklists/${task.checklist_id}/tasks/${task.id}`;
+
+
+  const body = { title, note, due_date, assigned_to, is_complete };
+
+
   const csrfToken = document.querySelector('meta[name="csrf-token"]').attributes.content.value;
   const promise = fetch(url, {
-    method: 'POST',
+    method: 'PUT',
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
@@ -152,7 +161,9 @@ export function updateTask(task) {
     credentials: 'same-origin',
     body: JSON.stringify(body)
   }).then(r => r.json());
-  // console.log('tttteeeessttt');
+
+
+  console.log('tttteeeessttt');
 
   return {
     type: TASK_UPDATED,
