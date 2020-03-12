@@ -40,15 +40,12 @@ class Task extends Component {
       <div className="task">
         <div className="task-title">
           <h3>{this.props.task.title}</h3>
-          <div className="task-destroy">
-            <button
-              className="btn-destroy"
-              onClick={() => this.handleClick(this.props.task)}
-            ><i className="fas fa-trash"></i></button>
-          </div>
+          <p>Complete <input type="checkbox" defaultChecked={this.props.task.is_complete} /></p>
         </div>
+          <div className="task-note">
+            <p>{this.props.task.note}</p>
+          </div>
         <div className="task-info">
-          <p>{this.props.task.note}</p>
           <div className="task-due">
             <p>{`Due:
               ${new Intl.DateTimeFormat("en-US", {
@@ -57,10 +54,18 @@ class Task extends Component {
                 day: "2-digit"
               }).format(this.props.due_date)}`}
             </p>
+            <div className="task-footer">
 
-            <p>{`Assigned to: ${this.props.task.assigned_to}`}</p>
-            <p>Completed <input type="checkbox" defaultChecked={this.props.task.is_complete} /></p>
-
+              <div className="assigned-to">
+                <p>{`Assigned to: ${this.props.task.assigned_to}`}</p>
+              </div>
+              <div className="task-destroy">
+                <button
+                  className="btn-destroy"
+                  onClick={() => this.handleClick(this.props.task)}
+                ><i className="fas fa-trash"></i></button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
