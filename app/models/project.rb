@@ -3,6 +3,16 @@ class Project < ApplicationRecord
   has_many :collaborators, through: :team
   validates :name, presence: true, uniqueness: true, allow_blank: false
   has_many :stages, dependent: :destroy
+  has_many :checklists, through: :stages
+  has_many :tasks, through: :checklists
 
-  # accepts_nested_attributes_for :stages
+  def project_progress
+    tasks = self.tasks
+    task_count = self.tasks.count
+    completed_tasks = 0.0
+    tasks.each { |task| completed_tasks +=1 if task.is_complete == true  }
+    progress = (completed_tasks / task_count)*100
+    return progress.to_i
+  end
+
 end
