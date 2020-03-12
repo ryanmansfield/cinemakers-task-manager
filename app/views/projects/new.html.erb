@@ -1,18 +1,27 @@
-<div class="container">
-  <%= simple_form_for [@project] do |f| %>
-    <% if @project.errors.any? %>
-      <div class="errors-container">
-        <ul>
-          <% @project.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
-      </div>
+<div class="project-form">
+  <div class="project-form-title">
+    <h3>Create a Project</h3>
+  </div>
+  <div class="form-action">
+    <%= simple_form_for [@project] do |f| %>
+      <% if @project.errors.any? %>
+        <div class="errors-container">
+          <ul>
+            <% @project.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <%= f.input :name, label: false, placeholder: 'Project Name'%>
+      <%= f.input :plot, label: false, placeholder: 'Project Plot' %>
+      <%= f.input :genre, label: false, placeholder: 'Project Genre' %>
+      <%= f.input :team_id, as: :radio_buttons, collection: current_user.teams, label: false %>
+
+      <%= f.submit class: 'btn btn-primary', value: 'Save Project' %>
     <% end %>
-    <%= f.input :name %>
-    <%= f.input :plot %>
-    <%= f.input :genre %>
-    <%= f.input :team_id, collection: current_user.teams %>
-    <%= f.submit class: 'btn btn-primary'%>
-  <% end %>
+  </div>
 </div>
+
+
+

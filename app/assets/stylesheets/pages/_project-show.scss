@@ -28,11 +28,20 @@
 .stages-container > ul > li {
   color: $blue;
   margin: 10px 0;
-  font-size: 14px;
+  font-size: 1.5em;
+  font-weight: bolder;
   cursor: pointer;
+  transition: transform .2s;
 }
 
+.stages-container > ul > li :hover {
+ -ms-transform: scale(1.1); /* IE 9 */
+  -webkit-transform: scale(1.1); /* Safari 3-8 */
+  transform: scale(1.1);
+
+}
+
+
 .stages-container > ul > li.active {
-  font-weight: 600;
   text-decoration: underline $purple;
 }
