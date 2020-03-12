@@ -12,18 +12,10 @@
     </div>
 
     <div class="teams-list-container">
-      <h2> <%= current_user.first_name  %>'s teams:</h2>
-
-
-
-         <button type="button" class="btn btn-primary" data-toggle="modal"  data-target="#team-create-modal">
-          Create a Team
-         </button>
-
-
-
-
-
+        <button type="button" class="btn btn-primary team-create-btn" data-toggle="modal"    data-target="#team-create-modal">
+         Create a Team
+        </button>
+      <h2> <%= current_user.first_name  %>'s teams</h2>
       <div class="teams-list">
         <% current_user.teams.each do |team| %>
           <div class="team-card">
@@ -35,12 +27,12 @@
     </div>
 
     <div class="projects-list-container">
+      <button type="button" class="btn btn-primary project-create-btn" data-toggle="modal"  data-target="#project-create-modal">
+        Create a Project
+      </button>
       <h2> <%= current_user.first_name  %>'s projects</h2>
 
 
-          <button type="button" class="btn btn-primary" data-toggle="modal"  data-target="#project-create-modal">
-          Create a Team
-         </button>
 
       <div class="projects-list">
         <% current_user.teams.each do |team| %>
@@ -57,6 +49,21 @@
       </div>
     </div>
   </div>
+    <div class="modal fade" id="team-create-modal" tabindex="-1" role="dialog" aria-labelledby="team-create-modal" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <%=render template: "teams/new"  %>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="project-create-modal" tabindex="-1" role="dialog" aria-labelledby="project-create-modal" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <%=render template: "projects/new"  %>
+
+        </div>
+      </div>
 
 <% else %>
   <div class="container">
@@ -66,20 +73,5 @@
 <% end %>
 
 
-<div class="modal fade" id="team-create-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-        <%=render template: "teams/new"  %>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="project-create-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-        <%=render template: "projects/new"  %>
-
-    </div>
-  </div>
 </div>
 

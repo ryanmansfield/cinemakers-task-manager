@@ -1,11 +1,13 @@
-<div class="container">
-
-  <h3>Create a New Team</h3>
-
-
-  <%= simple_form_for @team do |f| %>
-    <%= f.input :name, label: "Team Name" %>
-
-    <%= f.button :submit, class: "btn btn-primary" %>
+<div class="team-form">
+  <div class="team-form-title">
+    <h3>Create a Team</h3>
   </div>
-<% end %>
+  <div class="form-action">
+    <%= simple_form_for @team do |f| %>
+      <!-- <div class="form-row"> -->
+        <%= f.input :name, label: false, placeholder: 'Team Name' %>
+        <%= f.button :submit, class: "btn btn-primary", value: 'Save Team' %>
+      <!-- </div> -->
+    <% end %>
+  </div>
+</div>
