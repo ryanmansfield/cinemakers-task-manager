@@ -23,10 +23,14 @@ class CheckList extends Component {
 
 
   componentDidUpdate(prevProps) {
-  if (this.props.tasks !== prevProps.tasks) {
-    this.setState({ isHidden: true });
+    if (this.props.tasks !== prevProps.tasks) {
+      this.setState({ isHidden: true });
+    }
   }
-}
+
+  componentWillUnmount () {
+    // this.task = this.task.destroyChecklist();
+  }
 
 
   fetchTasks = () => {

@@ -9,6 +9,8 @@ export default function(state = null, action) {
       if (state.map(checklist => checklist.id).includes(action.payload.id)) {
         return state;
       } else {
+        console.log(action.payload)
+        console.log(state)
         const copiedState = state.slice(0);
         copiedState.push(action.payload);
         return copiedState;
@@ -16,14 +18,7 @@ export default function(state = null, action) {
     }
 
     case CHECK_LIST_DESTROYED: {
-        return state;
-        // return action.payload;
-       // return {...state. items: state.items.splice(item.index, 1)};
-        // return state.filter(({ id }) => id !== action.payload);
-         //  return {
-         //   ...state,
-         //   checklists: state.checklists.filter((item, index) => index !== action.payload)
-         // }
+      return state.filter((checklist)  => checklist.id !== action.payload.id);
     }
 
     case STAGE_SELECTED: {

@@ -16,12 +16,21 @@ export default function(state = [], action) {
     }
 
     case TASK_DESTROYED: {
-      return state;
+      return state.filter((task)  => task.id !== action.payload.id);
     }
 
     case TASK_UPDATED: {
       return state;
+      // return state.map((task) => task.id === action.payload.id)
     }
+
+    // case TASK_UPDATED: {
+    //   const newTasks = updateItemInArray(state.tasks, action.payload.id, task => {
+    //     return updateObject(task, { is_complete: action.payload.is_complete })
+    //   })
+
+    //   return updateObject(state, { tasks: newTasks })
+    // }
 
     case STAGE_SELECTED: {
       return []; // Stage has changed. Clearing view.
@@ -30,3 +39,5 @@ export default function(state = [], action) {
       return state;
   }
 }
+
+
