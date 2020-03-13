@@ -1,4 +1,4 @@
-import { FETCH_TASKS, STAGE_SELECTED, TASK_POSTED, TASK_DESTROYED } from '../actions';
+import { FETCH_TASKS, STAGE_SELECTED, TASK_POSTED, TASK_DESTROYED, TASK_UPDATED } from '../actions';
 
 export default function(state = [], action) {
   switch (action.type) {
@@ -16,6 +16,10 @@ export default function(state = [], action) {
     }
 
     case TASK_DESTROYED: {
+      return state;
+    }
+
+    case TASK_UPDATED: {
       return state;
     }
 
