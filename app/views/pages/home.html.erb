@@ -43,6 +43,25 @@
                 <%= link_to "Go To Project", project_path(project.id), class: "btn btn-primary" %>
                 <%= link_to "Delete Project", project, method: :delete, class: "btn btn-primary" %>
               </div>
+              <div class="progress">
+
+                 <p>Project <%= project.project_progress %>%</p>
+
+
+                  <% project.stages.each do |stage| %>
+                    <% if stage.checklists.exists? %>
+
+                        <p><%= stage.name %> progress <%=stage.stage_progress %>%</p>
+
+                    <% else %>
+
+                        <p><%= stage.name %> progress 0% </p>
+
+                    <% end %>
+                  <% end %>
+
+                </div>
+              </div>
             </div>
           <% end %>
         <% end %>
