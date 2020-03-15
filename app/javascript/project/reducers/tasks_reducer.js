@@ -19,18 +19,22 @@ export default function(state = [], action) {
       return state.filter((task)  => task.id !== action.payload.id);
     }
 
+
+
     case TASK_UPDATED: {
-      return state;
-      // return state.map((task) => task.id === action.payload.id)
+      return state.map((task) => {
+        if (task.id !== action.payload.id) {
+          // This isn't the item we care about - keep it as-is
+          return task
+        }
+
+        // Otherwise, this is the one we want - return an updated value
+        return {
+          ...task,
+          ...action.payload
+        }
+      })
     }
-
-    // case TASK_UPDATED: {
-    //   const newTasks = updateItemInArray(state.tasks, action.payload.id, task => {
-    //     return updateObject(task, { is_complete: action.payload.is_complete })
-    //   })
-
-    //   return updateObject(state, { tasks: newTasks })
-    // }
 
     case STAGE_SELECTED: {
       return []; // Stage has changed. Clearing view.
@@ -39,5 +43,6 @@ export default function(state = [], action) {
       return state;
   }
 }
+
 
 
