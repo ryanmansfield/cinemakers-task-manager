@@ -3,7 +3,7 @@
     <h3>Create a Project</h3>
   </div>
   <div class="form-action">
-    <%= simple_form_for [@project] do |f| %>
+    <%= simple_form_for @project do |f| %>
       <% if @project.errors.any? %>
         <div class="errors-container">
           <ul>

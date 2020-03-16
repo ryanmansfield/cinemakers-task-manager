@@ -1,25 +1,23 @@
 // Specific CSS for your home-page
-.profile {
-  padding: 8px;
-  margin-top: 8px;
+.banner {
+  padding: 16px;
   margin-bottom: 8px;
-  background-color: $dark-gray;
-  border-radius: 8px;
+  background-color: $black;
   box-shadow: 0 10px 30px rgba(0,0,0,.1);
-
 }
 
-.user {
+.profile-content {
   color: $gray;
-
 }
-.title {
+.profile-title {
   color: $blue;
   text-decoration: underline $purple;
 }
 
+
+
 .teams-list-container {
-  text-align: center;
+  // text-align: center;
   background-color: $light-gray;
   padding: 8px;
   margin-bottom: 8px;
@@ -34,13 +32,15 @@
 
 .team-card {
   padding: 16px;
+  border-radius: 4px;
+  background-color: $gray;
   box-shadow: 0 10px 30px rgba(0,0,0,.1);
 
 }
 
 
 .projects-list-container {
-  text-align: center;
+  // text-align: center;
   padding: 8px;
   background-color: $light-gray;
   border-radius: 8px;
@@ -48,15 +48,31 @@
 }
 
 .projects-list  {
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+
+
 }
 
 .project-card {
+  margin: auto;
   padding: 16px;
+  width: 45vw;
+  border-radius: 4px;
+  background-color: $gray;
   box-shadow: 0 10px 30px rgba(0,0,0,.1);
 
 }
 
+.project-card-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.stages-progress {
+  display: flex;
+  justify-content: space-between;
+}
 
 

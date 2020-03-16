@@ -10,8 +10,6 @@ class ProjectsController < ApplicationController
       redirect_to project_path(Project.first.name)
     else
       @project = Project.find(params[:id])
-
-
     end
   end
 
@@ -44,7 +42,7 @@ class ProjectsController < ApplicationController
   def project_params
     # *Strong params*: You need to *whitelist* what can be updated by the user
     # Never trust user data!
-    params.require(:project).permit(:name, :team_id)
+    params.require(:project).permit(:name, :team_id, :genre, :plot)
   end
 
   # def set_project

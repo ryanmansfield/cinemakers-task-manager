@@ -1,0 +1,96 @@
+<div class="banner">
+  <div class="profile">
+    <div class="profile-title">
+      <h1><%= current_user.company.capitalize %> > <%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %> </h1>
+    </div>
+    <div class="profile-content">
+       <p><%= current_user.city.capitalize %>, <%= current_user.state.capitalize %></p>
+       <%= current_user.field %>
+      <p><%= current_user.tag %></p>
+      <p><%= current_user.bio %></p>
+      <p><%= current_user.website %></p>
+    </div>
+  </div>
+</div>
+
+
+<div class="teams-list-container">
+  <button type="button" class="create-btn" data-toggle="modal"    data-target="#team-create-modal">
+    <i class="fas fa-plus-circle"></i>
+  </button>
+  <div class="team-list-title">
+    <h2>Teams</h2>
+  </div>
+
+  <div class="teams-list">
+    <% current_user.teams.each do |team| %>
+      <div class="team-card">
+        <h3><%= "#{team.name}"%></h3>
+        <%= link_to "Manage Team", team_path(team.id), class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="projects-list-container">
+  <button type="button" class="create-btn" data-toggle="modal"  data-target="#project-create-modal">
+    <i class="fas fa-plus-circle"></i>
+  </button>
+  <div class="project-list-title">
+    <h2>Projects</h2>
+  </div>
+  <div class="projects-list">
+    <% current_user.teams.each do |team| %>
+      <% team.projects.each do |project| %>
+        <div class="project-card">
+          <div class="project-card-title">
+            <h3><%= "#{project.name}" %></h3>
+            <%= link_to '<i class="fas fa-trash"></i>'.html_safe, project, method: :delete, data: {confirm: 'Delete Project?' }, class: "btn-destroy"%>
+          </div>
+          <p><i><%= "#{project.team.name}" %></i></p>
+          <div class="project-card-actions">
+            <%= link_to "Go To Project", project_path(project.id), class: "btn btn-primary" %>
+
+          </div>
+          <div class="project-card-info">
+            <p><i><%= "#{project.plot}" %></i></p>
+            <p><strong>Genre:</strong> <%= "#{project.genre}"%></p>
+          </div>
+          <div class="project-progress">
+            <div class="project-total">
+              <p><strong>Progress Total</strong> <%= project.project_progress %>%</p>
+            </div>
+            <div class="stages-progress">
+
+              <% project.stages.each do |stage| %>
+                <div class="stage-total">
+                  <p><%= stage.name %> <%=stage.stage_progress %>%</p>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+<!-- Project New Modal -->
+<div class="modal fade" id="project-create-modal" tabindex="-1" role="dialog" aria-labelledby="project-create-modal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <%=render template: "projects/new"  %>
+
+    </div>
+  </div>
+</div>
+<!-- Team New Modal -->
+<div class="modal fade" id="team-create-modal" tabindex="-1" role="dialog" aria-labelledby="team-create-modal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <%=render template: "teams/new"  %>
+    </div>
+  </div>
+</div>
+
+
