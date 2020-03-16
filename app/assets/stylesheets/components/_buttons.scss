@@ -33,6 +33,10 @@
   float: right;
 }
 
+.checklist-button :hover {
+  font-size: larger;
+}
+
 .task-button {
   border: none;
   color: $purple;
@@ -41,16 +45,18 @@
   background-color: $gray;
 }
 
-.team-create-btn {
+.task-button :hover {
+  font-size: larger;
+}
+
+.create-btn {
   border: none;
   color: $purple;
   font-size: xx-large;
   float: right;
 }
 
-.project-create-btn {
-  border: none;
-  color: $purple;
-  font-size: xx-large;
-  float: right;
+.create-btn :hover {
+  font-size: larger;
 }
+
