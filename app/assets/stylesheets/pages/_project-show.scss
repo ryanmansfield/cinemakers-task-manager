@@ -1,20 +1,38 @@
 .project-banner {
   padding: 8px;
-  // margin-top: 8px;
-  // margin-bottom: 8px;
   background-color: $black;
-  // border-radius: 8px;
-  // box-shadow: 0 10px 30px rgba(0,0,0,.1);
-}
-
-.project-banner  {
+  height: 10vh;
   color: $purple;
   padding-left: 16px;
 }
 
+.project-container {
+  height: 90vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.project-info {
+  width: 10vw;
+  height: 100vh;
+  color: $light-gray;
+  padding: 65px 16px;
+  background-color: $black;
+}
+
+.team-member {
+  margin-bottom: 16px;
+}
+
+.team-member > p {
+  margin: 2px;
+}
+
+.project-app {
+  width: 90vw;
+}
 
 .stages-container {
-  // padding: 20px;
   background: $black;
   box-sizing: border-box;
 }
