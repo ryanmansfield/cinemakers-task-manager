@@ -15,9 +15,13 @@
 
 
 <div class="teams-list-container">
-    <button type="button" class="btn btn-primary team-create-btn" data-toggle="modal"    data-target="#team-create-modal">
-     Create a Team
-    </button>
+  <button type="button" class="team-create-btn" data-toggle="modal"    data-target="#team-create-modal">
+    <i class="fas fa-plus-circle"></i>
+  </button>
+  <div class="team-list-title">
+    <h2>Teams</h2>
+  </div>
+
   <div class="teams-list">
     <% current_user.teams.each do |team| %>
       <div class="team-card">
@@ -29,11 +33,11 @@
 </div>
 
 <div class="projects-list-container">
-  <button type="button" class="btn btn-primary project-create-btn" data-toggle="modal"  data-target="#project-create-modal">
-    Create a Project
+  <button type="button" class="project-create-btn" data-toggle="modal"  data-target="#project-create-modal">
+    <i class="fas fa-plus-circle"></i>
   </button>
   <div class="project-list-title">
-    <h2><%= current_user.first_name.capitalize %>'s Projects</h2>
+    <h2>Projects</h2>
   </div>
   <div class="projects-list">
     <% current_user.teams.each do |team| %>
@@ -41,11 +45,12 @@
         <div class="project-card">
           <div class="project-card-title">
             <h3><%= "#{project.name}" %></h3>
-            <p><i><%= "#{project.team.name}" %></i></p>
+            <%= link_to '<i class="fas fa-trash"></i>'.html_safe, project, method: :delete, data: {confirm: 'Delete Project?' }, class: "btn-destroy"%>
           </div>
+          <p><i><%= "#{project.team.name}" %></i></p>
           <div class="project-card-actions">
             <%= link_to "Go To Project", project_path(project.id), class: "btn btn-primary" %>
-            <%= link_to "Delete This", project, method: :delete, data: {confirm: 'Delete Project?' }, class: "btn btn-primary"%>
+
           </div>
           <div class="project-card-info">
             <p><i><%= "#{project.plot}" %></i></p>
