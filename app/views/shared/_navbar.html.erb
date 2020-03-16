@@ -9,23 +9,28 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
 
+
+
         <li class="nav-item dropdown">
-        <p class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">PROJECTS</p>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <% current_user.teams.each do |team| %>
-            <% team.projects.each do |project| %>
-               <%= link_to "#{project.name}", project_path(project.id), class: "dropdown-item" %>
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Projects
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+
+            <% current_user.teams.each do |team| %>
+              <% team.projects.each do |project| %>
+                 <%= link_to "#{project.name}", project_path(project.id), class: "dropdown-item" %>
+              <% end %>
             <% end %>
-          <% end %>
-        </div>
-      </li>
+
+          </div>
+        </li>
 
         <li class="nav-item dropdown">
-          <%= image_tag "hamburger.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-bars"></i>
+          </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-
-
-
             <%= link_to "Edit Profile", edit_user_registration_path, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
