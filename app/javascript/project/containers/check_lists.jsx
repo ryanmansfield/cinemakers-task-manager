@@ -21,7 +21,7 @@ class CheckLists extends Component {
 
   componentDidMount() {
     this.fetchChecklists();
-    // this.refresher =setInterval(this.fetchChecklists, 3000);
+    this.refresher =setInterval(this.fetchChecklists, 3000);
   }
 
   componentDidUpdate(prevProps) {
@@ -32,7 +32,7 @@ class CheckLists extends Component {
   }
 
   componentWillUnmount () {
-    // clearInterval(this.refresher);
+    clearInterval(this.refresher);
   }
 
   fetchChecklists = () => {

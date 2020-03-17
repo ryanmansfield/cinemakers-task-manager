@@ -1,10 +1,14 @@
 <div class="banner-home">
   <div class="profile">
     <div class="profile-title">
-      <h1><%= current_user.company.capitalize %> > <%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %> </h1>
+      <% if current_user.company.present? %>
+          <h1><%= current_user.company.capitalize %> > <%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %> </h1>
+      <% else %>
+        <h1>Cinemakers > <%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %></h1>
+      <% end %>
     </div>
     <div class="profile-content">
-       <p><%= current_user.city.capitalize %>, <%= current_user.state.capitalize %></p>
+       <p><%= current_user.city %>, <%= current_user.state %></p>
        <%= current_user.field %>
       <p><%= current_user.tag %></p>
       <p><%= current_user.bio %></p>

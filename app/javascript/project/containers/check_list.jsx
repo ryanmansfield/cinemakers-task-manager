@@ -19,6 +19,7 @@ class CheckList extends Component {
 
   componentDidMount() {
     this.fetchTasks();
+    // this.refresher =setInterval(this.fetchTasks, 3000);
   }
 
 
@@ -29,7 +30,7 @@ class CheckList extends Component {
   }
 
   componentWillUnmount () {
-    // this.task = this.task.destroyChecklist();
+    clearInterval(this.refresher);
   }
 
 
