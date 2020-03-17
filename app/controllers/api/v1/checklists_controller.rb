@@ -2,7 +2,6 @@ class Api::V1::ChecklistsController < ApplicationController
   before_action :set_stage
 
   def index
-    # @stage = Stage.find(params[:stage_id])
     checklists = @stage.checklists
     render json: checklists
   end

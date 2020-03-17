@@ -1,5 +1,4 @@
 class TeamsController < ApplicationController
-  # before_action :set_project, except: :destroy
 
   def index
     @teams = Team.all

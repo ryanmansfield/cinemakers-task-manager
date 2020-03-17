@@ -1,5 +1,4 @@
 class ProjectsController < ApplicationController
-  # before_action :set_project, only: [:show]
 
   def index
     @projects = Project.all
@@ -44,8 +43,4 @@ class ProjectsController < ApplicationController
     # Never trust user data!
     params.require(:project).permit(:name, :team_id, :genre, :plot)
   end
-
-  # def set_project
-  #   @project = project.find(params[:id])
-  # end
 end

@@ -2,7 +2,6 @@ class Api::V1::TasksController < ApplicationController
   before_action :set_checklist, except: :destroy
 
   def index
-    # @checklist = Checklist.find(params[:checklist_id])
     tasks = @checklist.tasks
     render json: tasks
   end
@@ -15,7 +14,6 @@ class Api::V1::TasksController < ApplicationController
 
   def new
   end
-
 
   def update
     task = Task.find(params[:id])
