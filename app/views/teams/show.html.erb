@@ -4,7 +4,12 @@
       <h1><%= @team.name %></h1>
       <h2>Current Members:</h2>
       <% @team.collaborators.each do |collaborator| %>
-        <p> Team Member : <%= collaborator.user.first_name  %></p>
+        <div class="team-member-card">
+          <p> Team Member: <%= collaborator.user.first_name  %> <%= collaborator.user.last_name  %></p>
+          <p>Postion:<i><%= collaborator.user.field  %></i></p>
+          <p> Email: <i> <%= collaborator.user.email  %></i></p>
+
+        </div>
       <% end %>
     </div>
     <div class="col">
