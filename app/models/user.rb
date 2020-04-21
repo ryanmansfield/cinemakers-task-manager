@@ -5,5 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :collaborators
-  has_many :teams, through: :collaborators
+  has_many :projects, through: :collaborators
 end
