@@ -17,7 +17,7 @@
   </div>
 </div>
 
-
+<!--
 <div class="teams-list-container">
   <button type="button" class="create-btn" data-toggle="modal"    data-target="#team-create-modal">
     <i class="fas fa-plus-circle"></i>
@@ -34,7 +34,7 @@
       </div>
     <% end %>
   </div>
-</div>
+</div> -->
 
 <div class="projects-list-container">
   <button type="button" class="create-btn" data-toggle="modal"  data-target="#project-create-modal">
@@ -60,7 +60,7 @@
             <p><i><%= "#{project.plot}" %></i></p>
             <p><strong>Genre:</strong> <%= "#{project.genre}"%></p>
           </div>
-          <div class="project-progress">
+          <!-- <div class="project-progress">
             <div class="project-total">
               <p><strong>Progress Total</strong> <%= project.project_progress %>%</p>
             </div>
@@ -72,7 +72,7 @@
                 </div>
               <% end %>
             </div>
-          </div>
+          </div> -->
         </div>
       <% end %>
     <% end %>
@@ -89,12 +89,12 @@
   </div>
 </div>
 <!-- Team New Modal -->
-<div class="modal fade" id="team-create-modal" tabindex="-1" role="dialog" aria-labelledby="team-create-modal" aria-hidden="true">
+<!-- <div class="modal fade" id="team-create-modal" tabindex="-1" role="dialog" aria-labelledby="team-create-modal" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
         <%=render template: "teams/new"  %>
     </div>
   </div>
-</div>
+</div> -->
 
 
