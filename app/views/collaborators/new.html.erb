@@ -1,7 +1,14 @@
 <%= simple_form_for [@project, @collaborator] do |f| %>
-  <%= f.button :submit, "Join Team", class: "btn btn-primary" %>
+  <% if @collaborator.errors.any? %>
+    <div class="errors-container">
+      <ul>
+        <% @collaborator.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= f.input :user_id, as: :radio_buttons, collection: User.all, label: false %>
+
+  <%= f.submit class: 'btn btn-primary', value: 'Add to Team' %>
 <% end %>
-
-
-
-
