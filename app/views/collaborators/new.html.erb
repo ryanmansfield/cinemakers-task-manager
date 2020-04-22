@@ -9,8 +9,7 @@
     </div>
   <% end %>
   <%= f.input :user_id, collection: User.all, label: false, input_html: { class: 'js-searchable' } %>
-
-
+  <%= f.association :user, label: false, input_html: { class: 'js-searchable' } %>
 
   <%= f.submit class: 'btn btn-primary', value: 'Add to Team' %>
 <% end %>
@@ -18,7 +17,7 @@
 
 
 <!-- Dropdown list of users, TODO add search to list, when user selected that is what is passed to the form to create -->
-<select id='selUser' style='width: 100px;'>
+<!-- <select class='js-searchable' id='selUser' style='width: 50px;'>
   <option value='0'>Select User</option>
   <% User.all.each do |u| %>
 
@@ -29,10 +28,15 @@
 </select>
 
 <input type='button' value='Seleted option' id='but_read'>
-
-<br/>
-<div id='result'></div>
+ -->
 
 
 
 
+<!--
+<select id="template-example">
+  <% User.all.each do |person| %>
+    <option value="<%= person.id %>" <%= person.first_name %></option>
+  <% end %>
+</select>
+ -->
