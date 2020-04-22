@@ -4,6 +4,7 @@
 <div class="project-container">
   <div class="project-info">
     <h3>Team</h3>
+    <%= render :template => 'collaborators/new' %>
     <% @project.collaborators.each do |collaborator| %>
       <div class="team-member">
         <p><strong><%= "#{collaborator.user.first_name.capitalize}"%> <%= "#{collaborator.user.last_name.capitalize}"%></strong></p>
