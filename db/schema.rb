@@ -25,10 +25,10 @@ ActiveRecord::Schema.define(version: 2020_02_25_030859) do
 
   create_table "collaborators", force: :cascade do |t|
     t.bigint "user_id"
-    t.bigint "team_id"
+    t.bigint "project_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["team_id"], name: "index_collaborators_on_team_id"
+    t.index ["project_id"], name: "index_collaborators_on_project_id"
     t.index ["user_id"], name: "index_collaborators_on_user_id"
   end
 
@@ -38,8 +38,6 @@ ActiveRecord::Schema.define(version: 2020_02_25_030859) do
     t.string "plot"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "team_id"
-    t.index ["team_id"], name: "index_projects_on_team_id"
   end
 
   create_table "stages", force: :cascade do |t|
@@ -60,14 +58,6 @@ ActiveRecord::Schema.define(version: 2020_02_25_030859) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["checklist_id"], name: "index_tasks_on_checklist_id"
-  end
-
-  create_table "teams", force: :cascade do |t|
-    t.string "name"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_teams_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -92,10 +82,8 @@ ActiveRecord::Schema.define(version: 2020_02_25_030859) do
   end
 
   add_foreign_key "checklists", "stages"
-  add_foreign_key "collaborators", "teams"
+  add_foreign_key "collaborators", "projects"
   add_foreign_key "collaborators", "users"
-  add_foreign_key "projects", "teams"
   add_foreign_key "stages", "projects"
   add_foreign_key "tasks", "checklists"
-  add_foreign_key "teams", "users"
 end

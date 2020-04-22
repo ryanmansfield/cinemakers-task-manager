@@ -1,10 +1,11 @@
 <div class="project-banner">
-  <h1><%= @project.team.name %> > <%= @project.name %></h1>
+  <h1>Cinemakers > <%= @project.name %></h1>
 </div>
 <div class="project-container">
   <div class="project-info">
     <h3>Team</h3>
-    <% @project.team.collaborators.each do |collaborator| %>
+    <%= render :template => 'collaborators/new' %>
+    <% @project.collaborators.each do |collaborator| %>
       <div class="team-member">
         <p><strong><%= "#{collaborator.user.first_name.capitalize}"%> <%= "#{collaborator.user.last_name.capitalize}"%></strong></p>
         <p><i>  <%= "#{collaborator.user.field}"%></i></p>

@@ -1,5 +1,5 @@
 class CollaboratorsController < ApplicationController
-  before_action :set_team, except: :destroy
+  before_action :set_project, except: :destroy
 
   def index
     @collaborators = Collaborator.all
@@ -8,15 +8,14 @@ class CollaboratorsController < ApplicationController
   def new
     @collaborator = Collaborator.new
     @user = current_user
-    @team = Team.find(params[:team_id])
   end
 
   def create
     @collaborator = Collaborator.new
     @collaborator.user = current_user
-    @collaborator.team = @team
+    @collaborator.project = @project
     if @collaborator.save
-      redirect_to root_path
+      redirect_to project_path(@project)
     else
       render :new
     end
@@ -24,7 +23,7 @@ class CollaboratorsController < ApplicationController
 
   private
 
-  def set_team
-    @team = Team.find(params[:team_id])
+  def set_project
+    @project = Project.find(params[:project_id])
   end
 end
