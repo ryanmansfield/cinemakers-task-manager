@@ -8,9 +8,9 @@
       </ul>
     </div>
   <% end %>
-  <%= f.input :user_id, collection: User.all, label: false %>
+  <%= f.input :user_id, collection: User.all, label: false, input_html: { class: 'js-searchable' } %>
 
-  <%= f.input :user_id %>
+
 
   <%= f.submit class: 'btn btn-primary', value: 'Add to Team' %>
 <% end %>
