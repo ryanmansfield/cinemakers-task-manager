@@ -8,41 +8,9 @@
       </ul>
     </div>
   <% end %>
-
-
-  <%= f.association :user,label_method: :first_name, input_html: { class: 'js-searchable' } %>
-  <!-- <%= f.association :user, collection: User.all.map { |user| [user.first_name] }, input_html: { class: 'js-searchable' } %>-->
-
-
-
-
+  <%= f.association :user,label: false, label_method: :email, input_html: { class: 'js-searchable' } %>
   <%= f.submit class: 'btn btn-primary', value: 'Add to Team' %>
 <% end %>
 
 
 
-
-<!-- Dropdown list of users, TODO add search to list, when user selected that is what is passed to the form to create -->
-<!-- <select class='js-searchable' id='selUser' style='width: 50px;'>
-  <option value='0'>Select User</option>
-  <% User.all.each do |u| %>
-
-    <option value='<%=u.id  %>'><%=u.first_name %></option>
-
-  <% end %>
-
-</select>
-
-<input type='button' value='Seleted option' id='but_read'>
- -->
-
-
-
-
-<!--
-<select id="template-example">
-  <% User.all.each do |person| %>
-    <option value="<%= person.id %>" <%= person.first_name %></option>
-  <% end %>
-</select>
- -->

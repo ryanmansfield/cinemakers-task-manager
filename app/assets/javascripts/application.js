@@ -8,7 +8,7 @@ $(document).ready(function(){
   $('.js-searchable').select2({
     placeholder: "Choose a User",
     allowClear: true,
-    width: 400,
+    width: 120,
     theme: "bootstrap"
   });
 });
