@@ -48,7 +48,7 @@ class Task extends Component {
       <div className="task">
         <div className="task-title">
           <h3>{this.props.task.title}</h3>
-          <p>Complete
+          <p>
             <input
               type="checkbox"
               onClick={() => this.updateTask(this.props.task)}
@@ -56,7 +56,7 @@ class Task extends Component {
           </p>
         </div>
           <div className="task-note">
-            <p>{this.props.task.note}</p>
+
           </div>
         <div className="task-info">
           <div className="task-due">
