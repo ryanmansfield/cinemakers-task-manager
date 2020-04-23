@@ -6,9 +6,11 @@
 $(document).ready(function(){
   // Turn on js-selectable class so that it becomes SELCT 2 tag
   $('.js-searchable').select2({
-    placeholder: "Choose a User",
+    theme: "bootstrap",
+    multiple: true,
     allowClear: true,
-    width: 120,
-    theme: "bootstrap"
+    minimumInputLength: 3,
+    placeholder: "Search User",
+
   });
 });
