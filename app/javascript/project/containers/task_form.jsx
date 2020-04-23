@@ -10,7 +10,7 @@ class TaskForm extends Component {
     // this.state = { value: '' };
       this.state = {
         title: '',
-
+        note: '',
         due_date: '',
         assigned_to: '',
 
@@ -39,13 +39,13 @@ class TaskForm extends Component {
     this.props.createTask(
                           this.props.checklist,
                           this.state.title,
-
+                          this.state.note,
                           this.state.due_date,
                           this.state.assigned_to);
     this.setState(
                   {
                     title: '',
-
+                    note: '',
                     due_date: '',
                     assigned_to: '',
     });
@@ -56,16 +56,36 @@ class TaskForm extends Component {
       // console.log(this.props.checklist),
       <form onSubmit={this.handleSubmit} className="task-editor">
         <div className="form-row">
-          <input
-            // ref={(input) => {this.messageBox = input; }}
-            name="title"
-            type="text"
-            className="form-control"
-            autoComplete="off"
-            placeholder="Task"
-            value={this.state.title}
-            onChange={this.handleChange}
-          />
+          <div className="col">
+            <label>
+              Task
+              <input
+                // ref={(input) => {this.messageBox = input; }}
+                name="title"
+                type="text"
+                className="form-control"
+                autoComplete="off"
+                placeholder="Task"
+                value={this.state.title}
+                onChange={this.handleChange}
+              />
+            </label>
+          </div>
+          <div className="col">
+            <label>
+              Note
+              <input
+                // ref={(input) => {this.messageBox = input; }}
+                name="note"
+                type="text"
+                className="form-control"
+                autoComplete="off"
+                placeholder="Description"
+                value={this.state.text}
+                onChange={this.handleChange}
+              />
+            </label>
+          </div>
         </div>
 
         <div className="form-row">
