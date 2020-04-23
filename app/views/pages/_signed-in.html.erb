@@ -25,16 +25,11 @@
     <h2>Projects</h2>
   </div>
   <div class="projects-list">
-
     <% current_user.projects.each do |project| %>
       <div class="project-card">
         <div class="project-card-title">
-          <h3><%= "#{project.name}" %></h3>
+          <h3><%= link_to "#{project.name}", project_path(project.id)%></h3>
           <%= link_to '<i class="fas fa-trash"></i>'.html_safe, project, method: :delete, data: {confirm: 'Delete Project?' }, class: "btn-destroy"%>
-        </div>
-        <div class="project-card-actions">
-          <%= link_to "Go To Project", project_path(project.id), class: "btn btn-primary" %>
-
         </div>
         <div class="project-card-info">
           <p><i><%= "#{project.plot}" %></i></p>
@@ -44,6 +39,8 @@
     <% end %>
   </div>
 </div>
+
+
 
 <!-- Project New Modal -->
 <div class="modal fade" id="project-create-modal" tabindex="-1" role="dialog" aria-labelledby="project-create-modal" aria-hidden="true">
