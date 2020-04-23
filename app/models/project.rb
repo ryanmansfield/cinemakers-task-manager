@@ -1,6 +1,4 @@
 class Project < ApplicationRecord
-  # belongs_to :team
-  # has_many :collaborators, through: :team
   has_many :collaborators, dependent: :destroy
   has_many :users, through: :collaborators
   validates :name, presence: true, uniqueness: true, allow_blank: false
@@ -19,10 +17,5 @@ class Project < ApplicationRecord
   #   else
   #     return 0
   #   end
-  # end
-
-  # def is_collaborator
-  #   if self.collaborators includes current user
-
   # end
 end

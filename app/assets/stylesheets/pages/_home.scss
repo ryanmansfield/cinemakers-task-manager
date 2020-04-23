@@ -16,50 +16,47 @@
 }
 
 
-
-.teams-list-container {
-  // text-align: center;
-  background-color: $light-gray;
-  padding: 8px;
-  margin-bottom: 8px;
-  border-radius: 8px;
-  box-shadow: 0 10px 30px rgba(0,0,0,.1);
-}
-
-.teams-list {
-  display: flex;
-  justify-content: space-around;
-}
-
-.team-card {
-  padding: 16px;
-  border-radius: 4px;
-  background-color: $gray;
-  box-shadow: 0 10px 30px rgba(0,0,0,.1);
-
-}
-
-
 .projects-list-container {
-  // text-align: center;
-  padding: 8px;
-  background-color: $light-gray;
-  border-radius: 8px;
-  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+  padding: 16px;
 }
 
 .projects-list  {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 16px;
+}
 
+.projects-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
 
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .projects-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .projects-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .projects-list {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .project-card {
   margin: 16px;
   padding: 8px;
-  width: 45vw;
+  width: webkit-fill-available;
   border-radius: 4px;
   background-color: $gray;
   box-shadow: 0 10px 30px rgba(0,0,0,.1);
@@ -71,9 +68,13 @@
   justify-content: space-between;
 }
 
-.stages-progress {
-  display: flex;
-  justify-content: space-between;
+.project-card-title > h3 :hover {
+  text-decoration: none;
 }
+
+
+
+
+
 
 
