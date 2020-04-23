@@ -20,6 +20,10 @@
   padding: 16px;
 }
 
+.project-list-title h2 {
+  color: $purple;
+}
+
 .projects-list  {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -32,12 +36,18 @@
   .projects-list {
     grid-template-columns: 1fr;
   }
+  .project-card {
+    width: webkit-fill-available;
+  }
 }
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
   .projects-list {
     grid-template-columns: 1fr;
+  }
+  .project-card {
+    width: webkit-fill-available;
   }
 }
 
@@ -53,6 +63,9 @@
   .projects-list {
     grid-template-columns: 1fr 1fr;
   }
+  .project-card {
+    width: 45vw;
+  }
 }
 
 // Extra large devices (large desktops, 1200px and up)
@@ -60,12 +73,14 @@
   .projects-list {
     grid-template-columns: 1fr 1fr;
   }
+    .project-card {
+    width: 45vw;
+  }
 }
 
 .project-card {
   margin: 16px;
   padding: 8px;
-  width: 40em;
   border-radius: 4px;
   background-color: $gray;
   box-shadow: 0 10px 30px rgba(0,0,0,.1);
