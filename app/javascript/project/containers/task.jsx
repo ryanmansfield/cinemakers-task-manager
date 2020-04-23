@@ -48,12 +48,6 @@ class Task extends Component {
       <div className="task">
         <div className="task-title">
           <h3>{this.props.task.title}</h3>
-          <p>Complete
-            <input
-              type="checkbox"
-              onClick={() => this.updateTask(this.props.task)}
-              defaultChecked={this.props.task.is_complete} />
-          </p>
         </div>
           <div className="task-note">
             <p>{this.props.task.note}</p>
@@ -73,6 +67,10 @@ class Task extends Component {
                 <p>{`Assigned to: ${this.props.task.assigned_to}`}</p>
               </div>
               <div className="task-destroy">
+                 <input
+                    type="checkbox"
+                    onClick={() => this.updateTask(this.props.task)}
+                    defaultChecked={this.props.task.is_complete} />
                 <button
                   className="task-btn-destroy"
                   onClick={() => this.handleClick(this.props.task)}
