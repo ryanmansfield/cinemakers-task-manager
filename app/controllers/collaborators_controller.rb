@@ -7,12 +7,11 @@ class CollaboratorsController < ApplicationController
 
   def new
     @collaborator = Collaborator.new
-    @user = current_user
+    @users = User.all
   end
 
   def create
-    @collaborator = Collaborator.new
-    @collaborator.user = current_user
+    @collaborator = Collaborator.new(collaborator_params)
     @collaborator.project = @project
     if @collaborator.save
       redirect_to project_path(@project)
@@ -25,5 +24,11 @@ class CollaboratorsController < ApplicationController
 
   def set_project
     @project = Project.find(params[:project_id])
+  end
+
+  def collaborator_params
+    # *Strong params*: You need to *whitelist* what can be updated by the user
+    # Never trust user data!
+    params.require(:collaborator).permit(:user_id)
   end
 end

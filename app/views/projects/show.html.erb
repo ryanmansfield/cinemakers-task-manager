@@ -1,26 +1,24 @@
 <div class="project-banner">
   <h1>Cinemakers > <%= @project.name %></h1>
 </div>
-<div class="project-container">
-  <div class="project-info">
-    <h3>Team</h3>
-    <%= render :template => 'collaborators/new' %>
-    <% @project.collaborators.each do |collaborator| %>
-      <div class="team-member">
-        <p><strong><%= "#{collaborator.user.first_name.capitalize}"%> <%= "#{collaborator.user.last_name.capitalize}"%></strong></p>
-        <p><i>  <%= "#{collaborator.user.field}"%></i></p>
-
-      </div>
-
-
+<% if current_user.projects.include?(@project) %>
+  <div class="project-container">
+    <div class="project-info">
+      <h3>Team</h3>
+      <%= render :template => 'collaborators/new' %>
+      <% @project.collaborators.each do |collaborator| %>
+        <div class="team-member">
+          <p><strong><%= "#{collaborator.user.first_name.capitalize}"%> <%= "#{collaborator.user.last_name.capitalize}"%></strong></p>
+          <p><i>  <%= "#{collaborator.user.field}"%></i></p>
+        </div>
+      <% end %>
+    </div>
+    <div class="project-app" id="project_app" data-stages=<%= @project.stages.to_json %>></div>
+    <% content_for :after_js do %>
+      <%= javascript_pack_tag "project" %>
     <% end %>
   </div>
-
-  <div class="project-app" id="project_app" data-stages=<%= @project.stages.to_json %>></div>
-  <% content_for :after_js do %>
-    <%= javascript_pack_tag "project" %>
-  <% end %>
-</div>
-
-
+<%else %>
+  <h1>You Don't have access to this project</h1>
+<% end %>
 

@@ -1,28 +1,24 @@
 Rails.application.routes.draw do
-  devise_for :users
   root to: 'pages#home'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  devise_for :users
+  resources :users, only: [:index]
 
   resources :projects, only: [:index, :show, :new, :create, :destroy] do
     resources :collaborators, only: [:index, :new, :create ]
   end
 
-
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
-      # resources :projects, only: [] do
-        resources :stages, only: [] do
-          resources :checklists, only: [ :index, :create, :destroy ]
-        end
-        resources :checklists, only: [ ] do
-            resources :tasks, only: [:index, :new, :create, :update]
-        end
-        resources :tasks, only: [ :destroy]
-      # end
+      resources :stages, only: [] do
+        resources :checklists, only: [ :index, :create, :destroy ]
+      end
+      resources :checklists, only: [ ] do
+          resources :tasks, only: [:index, :new, :create, :update]
+      end
+      resources :tasks, only: [ :destroy]
     end
   end
-
-
 end
 
 

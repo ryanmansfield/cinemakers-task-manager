@@ -5,13 +5,9 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    # if params[:id].blank?
-    #   redirect_to project_path(Project.first.name)
-    # else
-      @project = Project.find(params[:id])
-      @collaborators = @project.collaborators
-      @collaborator = Collaborator.new
-    # end
+    @project = Project.find(params[:id])
+    @collaborators = @project.collaborators
+    @collaborator = Collaborator.new
   end
 
   def new

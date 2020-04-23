@@ -1,7 +1,16 @@
 <%= simple_form_for [@project, @collaborator] do |f| %>
-  <%= f.button :submit, "Join Team", class: "btn btn-primary" %>
+  <% if @collaborator.errors.any? %>
+    <div class="errors-container">
+      <ul>
+        <% @collaborator.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= f.association :user,label: false, label_method: :email, input_html: { class: 'js-searchable' } %>
+  <%= f.submit class: 'btn btn-primary', value: 'Add to Team' %>
 <% end %>
-
 
 
 

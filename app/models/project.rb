@@ -20,4 +20,9 @@ class Project < ApplicationRecord
   #     return 0
   #   end
   # end
+
+  # def is_collaborator
+  #   if self.collaborators includes current user
+
+  # end
 end
