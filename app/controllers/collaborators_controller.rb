@@ -7,12 +7,11 @@ class CollaboratorsController < ApplicationController
 
   def new
     @collaborator = Collaborator.new
+    @users = User.all
   end
 
   def create
     @collaborator = Collaborator.new(collaborator_params)
-    # @collaborator.user = current_user
-
     @collaborator.project = @project
     if @collaborator.save
       redirect_to project_path(@project)

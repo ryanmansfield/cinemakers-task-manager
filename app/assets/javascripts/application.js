@@ -6,7 +6,7 @@
 $(document).ready(function(){
   // Turn on js-selectable class so that it becomes SELCT 2 tag
   $('.js-searchable').select2({
-    placeholder: "Choose a person",
+    placeholder: "Choose a User",
     allowClear: true,
     width: 400,
     theme: "bootstrap"
