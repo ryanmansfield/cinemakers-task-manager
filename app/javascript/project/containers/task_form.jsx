@@ -5,19 +5,16 @@ import { createTask } from '../actions/index';
 
 class TaskForm extends Component {
   constructor(props) {
-    // console.log(props)
     super(props);
-    // this.state = { value: '' };
       this.state = {
         title: '',
         due_date: '',
         assigned_to: '',
-
       };
   }
 
   componentDidMount() {
-    // this.messageBox.focus();
+    this.messageBox.focus();
   }
 
   // handleChange = (event) => {
@@ -26,7 +23,6 @@ class TaskForm extends Component {
   // }
 
   handleChange = (event) => {
-    // console.log("new value", event.target.name);
     this.setState({
       [event.target.name]: event.target.value
     });
@@ -34,7 +30,6 @@ class TaskForm extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    // console.log("Inside handle submit");
     this.props.createTask(
                           this.props.checklist,
                           this.state.title,
@@ -50,14 +45,13 @@ class TaskForm extends Component {
 
   render() {
     return (
-      // console.log(this.props.checklist),
       <form onSubmit={this.handleSubmit} className="task-editor">
         <div className="form-row">
           <div className="col">
             <label>
               Task
               <input
-                // ref={(input) => {this.messageBox = input; }}
+                ref={(input) => {this.messageBox = input; }}
                 name="title"
                 type="text"
                 className="form-control"
@@ -75,7 +69,6 @@ class TaskForm extends Component {
             <label>
               Due Date
               <input
-                // ref={(input) => {this.messageBox = input; }}
                 name="due_date"
                 type="date"
                 className="form-control"
@@ -90,7 +83,6 @@ class TaskForm extends Component {
             <label>
               Assigned To
               <input
-                // ref={(input) => {this.messageBox = input; }}
                 name="assigned_to"
                 type="text"
                 className="form-control"

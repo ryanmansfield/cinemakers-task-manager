@@ -53,7 +53,7 @@ class Task extends Component {
         <div className="task-info">
           <div className="task-due">
             <p>Due: </p>
-            <Moment format="MM-DD-YYYY" parse="YYYY-MM-DD">
+            <Moment format="MM/DD/YYYY" parse="YYYY-MM-DD">
               {this.props.task.due_date}
             </Moment>
 
