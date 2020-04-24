@@ -50,13 +50,12 @@ class Task extends Component {
         </div>
         <div className="task-info">
           <div className="task-due">
-            <p>{`Due:
-              ${new Intl.DateTimeFormat("en-US", {
-                year: "numeric",
-                month: "long",
-                day: "2-digit"
-              }).format(this.props.due_date)}`}
-            </p>
+            <p>{`Due: ${this.props.task.due_date}`}</p>
+
+
+
+
+
             <div className="task-footer">
 
               <div className="assigned-to">
@@ -79,6 +78,8 @@ class Task extends Component {
     );
   }
 }
+
+
 
 function mapStateToProps (state) {
   return {
