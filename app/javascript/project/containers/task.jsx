@@ -30,7 +30,6 @@ class Task extends Component {
                           // this.props.task.id,
                           // this.props.task.checklist,
                           // this.props.task.title,
-                          // this.props.task.note,
                           // this.props.task.due_date,
                           // this.props.task.assigned_to,
                           // this.props.task.is_complete);
@@ -49,9 +48,6 @@ class Task extends Component {
         <div className="task-title">
           <h3>{this.props.task.title}</h3>
         </div>
-          <div className="task-note">
-            <p>{this.props.task.note}</p>
-          </div>
         <div className="task-info">
           <div className="task-due">
             <p>{`Due:
