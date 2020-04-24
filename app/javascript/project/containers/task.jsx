@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { destroyTask, updateTask } from '../actions/index';
+import Moment from 'react-moment';
 
 
 
@@ -50,7 +51,9 @@ class Task extends Component {
         </div>
         <div className="task-info">
           <div className="task-due">
-            <p>{`Due: ${this.props.task.due_date}`}</p>
+            <p>{` unformated : ${this.props.task.due_date}`}</p>
+
+            <Moment format="YYYY/MM/DD">{this.props.task.due_date}</Moment>
 
 
 
