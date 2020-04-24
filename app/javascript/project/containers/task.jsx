@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { destroyTask, updateTask } from '../actions/index';
 import Moment from 'react-moment';
+import 'moment-timezone';
 
 
 
@@ -51,13 +52,10 @@ class Task extends Component {
         </div>
         <div className="task-info">
           <div className="task-due">
-            <p>{` unformated : ${this.props.task.due_date}`}</p>
-
-            <Moment format="YYYY/MM/DD">{this.props.task.due_date}</Moment>
-
-
-
-
+            <p>Due: </p>
+            <Moment format="MM-DD-YYYY" parse="YYYY-MM-DD">
+              {this.props.task.due_date}
+            </Moment>
 
             <div className="task-footer">
 
