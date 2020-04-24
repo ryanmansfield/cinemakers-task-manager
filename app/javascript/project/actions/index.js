@@ -79,9 +79,9 @@ export function fetchTasks(checklist) {
   };
 }
 
-export function createTask(checklist, title, note, due_date, assigned_to) {
+export function createTask(checklist, title, due_date, assigned_to) {
   const url = `${BASE_URL}/checklists/${checklist.id}/tasks`;
-  const body = { title, note, due_date, assigned_to };
+  const body = { title, due_date, assigned_to };
   const csrfToken = document.querySelector('meta[name="csrf-token"]').attributes.content.value;
   const promise = fetch(url, {
     method: 'POST',
@@ -122,12 +122,11 @@ export function destroyTask(task){
 
 export function updateTask(task) {
   const title = task.title;
-  const note = task.note;
   const due_date = task.due_date;
   const assigned_to = task.assigned_to;
   const is_complete = !task.is_complete;
   const url = `${BASE_URL}/checklists/${task.checklist_id}/tasks/${task.id}`;
-  const body = { title, note, due_date, assigned_to, is_complete };
+  const body = { title, due_date, assigned_to, is_complete };
   const csrfToken = document.querySelector('meta[name="csrf-token"]').attributes.content.value;
   const promise = fetch(url, {
     method: 'PUT',

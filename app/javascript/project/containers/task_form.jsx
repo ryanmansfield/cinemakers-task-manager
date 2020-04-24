@@ -10,7 +10,6 @@ class TaskForm extends Component {
     // this.state = { value: '' };
       this.state = {
         title: '',
-        note: '',
         due_date: '',
         assigned_to: '',
 
@@ -35,17 +34,15 @@ class TaskForm extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log("Inside handle submit");
+    // console.log("Inside handle submit");
     this.props.createTask(
                           this.props.checklist,
                           this.state.title,
-                          this.state.note,
                           this.state.due_date,
                           this.state.assigned_to);
     this.setState(
                   {
                     title: '',
-                    note: '',
                     due_date: '',
                     assigned_to: '',
     });
@@ -67,21 +64,6 @@ class TaskForm extends Component {
                 autoComplete="off"
                 placeholder="Task"
                 value={this.state.title}
-                onChange={this.handleChange}
-              />
-            </label>
-          </div>
-          <div className="col">
-            <label>
-              Note
-              <input
-                // ref={(input) => {this.messageBox = input; }}
-                name="note"
-                type="text"
-                className="form-control"
-                autoComplete="off"
-                placeholder="Description"
-                value={this.state.text}
                 onChange={this.handleChange}
               />
             </label>
