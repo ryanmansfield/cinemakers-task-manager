@@ -3,7 +3,6 @@ class CreateTasks < ActiveRecord::Migration[5.2]
     create_table :tasks do |t|
       t.references :checklist, foreign_key: true
       t.string :title
-      t.string :note
       t.datetime :due_date
       t.boolean :is_complete, null: false, default: false
       t.string :assigned_to

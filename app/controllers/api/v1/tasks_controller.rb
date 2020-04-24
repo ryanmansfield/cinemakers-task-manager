@@ -18,11 +18,9 @@ class Api::V1::TasksController < ApplicationController
   def update
     task = Task.find(params[:id])
     task.update(title: task_params[:title],
-                 note: task_params[:note],
-                 due_date: task_params[:due_date],
-                 assigned_to: task_params[:assigned_to],
-                 is_complete: task_params[:is_complete]
-                )
+                due_date: task_params[:due_date],
+                assigned_to: task_params[:assigned_to],
+                is_complete: task_params[:is_complete])
     render json: task
   end
 
@@ -40,7 +38,6 @@ class Api::V1::TasksController < ApplicationController
 
   def task_params
     params.require(:task).permit(:title,
-                                 :note,
                                  :due_date,
                                  :assigned_to,
                                  :is_complete)
