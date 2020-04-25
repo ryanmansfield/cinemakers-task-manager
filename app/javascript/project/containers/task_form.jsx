@@ -2,39 +2,39 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { createTask } from '../actions/index';
+import DatePicker from "react-datepicker";
+
 
 class TaskForm extends Component {
   constructor(props) {
-    // console.log(props)
     super(props);
-    // this.state = { value: '' };
       this.state = {
         title: '',
         due_date: '',
         assigned_to: '',
-
       };
   }
 
   componentDidMount() {
-    // this.messageBox.focus();
+    this.messageBox.focus();
   }
 
-  // handleChange = (event) => {
-  //   this.setState({ value: event.target.value });
-
-  // }
-
   handleChange = (event) => {
-    // console.log("new value", event.target.name);
+     // console.log(event);
     this.setState({
       [event.target.name]: event.target.value
     });
   }
 
+  handleDateChange = (date) => {
+      // console.log(date);
+    this.setState({
+      due_date: date
+    });
+  };
+
   handleSubmit = (event) => {
     event.preventDefault();
-    // console.log("Inside handle submit");
     this.props.createTask(
                           this.props.checklist,
                           this.state.title,
@@ -50,14 +50,13 @@ class TaskForm extends Component {
 
   render() {
     return (
-      // console.log(this.props.checklist),
       <form onSubmit={this.handleSubmit} className="task-editor">
         <div className="form-row">
           <div className="col">
             <label>
               Task
               <input
-                // ref={(input) => {this.messageBox = input; }}
+                ref={(input) => {this.messageBox = input; }}
                 name="title"
                 type="text"
                 className="form-control"
@@ -72,25 +71,17 @@ class TaskForm extends Component {
 
         <div className="form-row">
           <div className="col">
-            <label>
-              Due Date
-              <input
-                // ref={(input) => {this.messageBox = input; }}
-                name="due_date"
-                type="date"
-                className="form-control"
-                autoComplete="off"
-                // label="Due Date"
-                value={this.state.due_date}
-                onChange={this.handleChange}
-              />
-            </label>
+            <DatePicker
+              placeholderText="Due Date"
+              selected={this.state.due_date}
+              onChange={this.handleDateChange}
+            />
           </div>
+
           <div className="col">
             <label>
               Assigned To
               <input
-                // ref={(input) => {this.messageBox = input; }}
                 name="assigned_to"
                 type="text"
                 className="form-control"
@@ -124,3 +115,4 @@ function mapStateToProps (state) {
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(TaskForm);
+
