@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { createTask } from '../actions/index';
+import Moment from 'react-moment';
+import 'moment-timezone';
+import DatePicker from "react-datepicker";
+
+import "react-datepicker/dist/react-datepicker.css";
 
 class TaskForm extends Component {
   constructor(props) {
@@ -17,16 +22,19 @@ class TaskForm extends Component {
     this.messageBox.focus();
   }
 
-  // handleChange = (event) => {
-  //   this.setState({ value: event.target.value });
-
-  // }
-
   handleChange = (event) => {
+     // console.log(event);
     this.setState({
       [event.target.name]: event.target.value
     });
   }
+
+  handleDateChange = (date) => {
+      // console.log(date);
+    this.setState({
+      due_date: date
+    });
+  };
 
   handleSubmit = (event) => {
     event.preventDefault();
@@ -66,19 +74,13 @@ class TaskForm extends Component {
 
         <div className="form-row">
           <div className="col">
-            <label>
-              Due Date
-              <input
-                name="due_date"
-                type="date"
-                className="form-control"
-                autoComplete="off"
-                // label="Due Date"
-                value={this.state.due_date}
-                onChange={this.handleChange}
-              />
-            </label>
+            <DatePicker
+              placeholderText="Due Date"
+              selected={this.state.due_date}
+              onChange={this.handleDateChange}
+            />
           </div>
+
           <div className="col">
             <label>
               Assigned To
@@ -116,3 +118,4 @@ function mapStateToProps (state) {
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(TaskForm);
+
