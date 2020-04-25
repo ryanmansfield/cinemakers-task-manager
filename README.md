@@ -1,3 +1,5 @@
-Rails app to run bundle install
+Rails app with React front end.  
 
-yarn add
+Bundle install
+
+To add to package.json Yarn add
