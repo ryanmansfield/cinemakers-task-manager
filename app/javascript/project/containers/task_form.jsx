@@ -72,6 +72,7 @@ class TaskForm extends Component {
         <div className="form-row">
           <div className="col">
             <DatePicker
+              className="form-control"
               placeholderText="Due Date"
               selected={this.state.due_date}
               onChange={this.handleDateChange}
