@@ -16,6 +16,7 @@ class StageList extends Component {
     return (
       <li
         key={stage.id}
+
         className={stage === this.props.selectedStage ? 'active' : null }
         onClick={() => this.handleClick(stage)}
       >

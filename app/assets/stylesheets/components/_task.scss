@@ -1,8 +1,6 @@
 .task-list {
-  // box-shadow: 0 10px 30px rgba(0,0,0,.1);
   background-color: $gray;
   padding: 8px;
-
 }
 
 .task {
@@ -11,12 +9,19 @@
   background-color: $white;
 }
 
+.task-complete {
+  background-color: $gray;
+  color: $complete-gray;
+  text-decoration: line-through;
+  text-decoration-color: $dark-gray;
+  .task-btn-destroy {
+    background-color: $gray;
+  }
+}
+
 .task-title {
   display: flex;
   justify-content: space-between;
-  // p {
-  //   font-style: italic;
-  // }
 }
 
 .task-title h3 {
@@ -31,8 +36,6 @@
 
 .task-destroy {
   text-align: right;
-
-
 }
 
 
@@ -40,8 +43,6 @@
   display: flex;
   flex-direction: column;
   font-style: italic;
-
-
 }
 
 .task-footer {
