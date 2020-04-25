@@ -2,11 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { createTask } from '../actions/index';
-import Moment from 'react-moment';
-import 'moment-timezone';
 import DatePicker from "react-datepicker";
 
-import "react-datepicker/dist/react-datepicker.css";
 
 class TaskForm extends Component {
   constructor(props) {

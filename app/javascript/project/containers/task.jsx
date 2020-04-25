@@ -3,9 +3,6 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { destroyTask, updateTask } from '../actions/index';
 import Moment from 'react-moment';
-import 'moment-timezone';
-
-
 
 class Task extends Component {
   constructor(props) {
@@ -29,13 +26,6 @@ class Task extends Component {
 
   updateTask = (task) => {
     this.props.updateTask(task)
-                          // this.props.task.id,
-                          // this.props.task.checklist,
-                          // this.props.task.title,
-                          // this.props.task.due_date,
-                          // this.props.task.assigned_to,
-                          // this.props.task.is_complete);
-    // console.log(`Toggle Checkbox ${!this.props.task.is_complete}`)
   }
 
 
@@ -80,8 +70,6 @@ class Task extends Component {
   }
 }
 
-
-
 function mapStateToProps (state) {
   return {
     tasks: state.tasks,
@@ -91,7 +79,5 @@ function mapStateToProps (state) {
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({ destroyTask, updateTask }, dispatch)
 }
-
-// export default connect(mapStateToProps)(CheckList);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Task);
