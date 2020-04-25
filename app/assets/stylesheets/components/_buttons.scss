@@ -1,3 +1,5 @@
+// General
+
 .btn-destroy {
   border-radius: 50%;
   border: none;
@@ -14,6 +16,8 @@
   color: $dark-gray;
 }
 
+// Task Destroy
+
 .task-btn-destroy {
   border-radius: 50%;
   border: none;
@@ -25,7 +29,7 @@
 
 }
 
-
+// Checklist Plus Button
 .checklist-button {
   border: none;
   color: $purple;
@@ -37,6 +41,7 @@
   font-size: larger;
 }
 
+// Task Form Plus Button
 .task-button {
   border: none;
   color: $purple;

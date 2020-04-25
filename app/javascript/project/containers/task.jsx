@@ -36,7 +36,7 @@ class Task extends Component {
 
   render() {
     return (
-      <div className="task">
+      <div className={this.props.task.is_complete === true ? 'task task-complete' : 'task' }>
         <div className="task-title">
           <h3>{this.props.task.title}</h3>
         </div>
