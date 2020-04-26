@@ -1,6 +1,5 @@
 /* eslint no-bitwise:off */
 import React, { Component } from 'react';
-// import { Link } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { selectStage, fetchChecklists } from '../actions/index';
@@ -17,7 +16,7 @@ class StageList extends Component {
       <li
         key={stage.id}
 
-        className={stage === this.props.selectedStage ? 'active' : null }
+        className={stage.id === this.props.selectedStage.id ? 'active' : null }
         onClick={() => this.handleClick(stage)}
       >
         <div className="stage">
