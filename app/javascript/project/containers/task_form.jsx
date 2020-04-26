@@ -3,6 +3,9 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { createTask } from '../actions/index';
 import DatePicker from "react-datepicker";
+import 'react-datepicker/dist/react-datepicker.css';
+
+
 
 
 class TaskForm extends Component {
