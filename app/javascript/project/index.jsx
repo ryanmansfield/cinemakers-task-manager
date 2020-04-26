@@ -6,7 +6,7 @@ import logger from 'redux-logger'
 import ReduxPromise from 'redux-promise';
 // import Moment from 'react-moment';
 // import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import "react-datepicker/dist/react-datepicker.css";
+// import "react-datepicker/dist/react-datepicker.css";
 
 import App from './components/app';
 import checklistsReducer from './reducers/checklists_reducer';
