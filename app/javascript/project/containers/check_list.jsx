@@ -22,10 +22,11 @@ class CheckList extends Component {
     // this.refresher =setInterval(this.fetchTasks, 3000);
   }
 
-
   componentDidUpdate(prevProps) {
-    if (this.props.tasks !== prevProps.tasks) {
-      this.setState({ isHidden: true });
+    if (this.props.tasks !== prevProps.tasks &&
+        this.props.tasks.some(task => task.checklist_id == this.props.checklist.id)
+        ) {
+          this.setState({ isHidden: true });
     }
   }
 
@@ -45,7 +46,6 @@ class CheckList extends Component {
 
   render() {
     return (
-      // const { checklist_id } = this.props.checklist.id;
       <div className="checklist">
         <div className='checklist-title'>
           <h2>{this.props.checklist.name}</h2>
@@ -78,19 +78,12 @@ class CheckList extends Component {
 function mapStateToProps (state, ownProps) {
   return {
     tasks: state.tasks,
-    // selectedStage: state.selectedStage,
-    // checklist: state.checklist
-    // ownProp: ownProps.prop
-
   };
 }
 
 function mapDispatchToProps(dispatch, ownProps) {
-   // console.log(ownProps);
   return bindActionCreators({ fetchTasks, destroyChecklist }, dispatch)
 }
-
-// export default connect(mapStateToProps)(CheckList);
 
 export default connect(mapStateToProps, mapDispatchToProps)(CheckList);
 
