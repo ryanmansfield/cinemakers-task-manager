@@ -4,15 +4,18 @@
       <% if current_user.company.present? %>
           <h1><%= current_user.company.capitalize %> > <%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %> </h1>
       <% else %>
-        <h1>Cinemakers > <%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %></h1>
+        <h1><%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %></h1>
       <% end %>
     </div>
-    <div class="profile-content">
-       <p><%= current_user.city %>, <%= current_user.state %></p>
+<!--     <div class="profile-content">
+       <p><%= current_user.city %> <%= current_user.state %></p>
        <%= current_user.field %>
       <p><%= current_user.tag %></p>
       <p><%= current_user.bio %></p>
       <p><%= current_user.website %></p>
+    </div> -->
+     <div class="profile-content">
+      <p><i><%= current_user.field %></i></p>
     </div>
   </div>
 </div>
@@ -32,8 +35,8 @@
           <%= link_to '<i class="fas fa-trash"></i>'.html_safe, project, method: :delete, data: {confirm: 'Delete Project?' }, class: "btn-destroy"%>
         </div>
         <div class="project-card-info">
-          <p><i><%= "#{project.plot}" %></i></p>
           <p><strong>Genre:</strong> <%= "#{project.genre}"%></p>
+          <p><i><%= "#{project.plot}" %></i></p>
         </div>
       </div>
     <% end %>

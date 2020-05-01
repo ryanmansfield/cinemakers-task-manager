@@ -16,6 +16,19 @@
   color: $dark-gray;
 }
 
+// Team Member
+.collaborator-add {
+  background-color: $black;
+  border: none;
+  color: $blue;
+  padding: 0;
+  font-style: italic;
+}
+
+.collaborator-add :hover {
+  font-style: normal;
+}
+
 // Task Destroy
 
 .task-btn-destroy {
