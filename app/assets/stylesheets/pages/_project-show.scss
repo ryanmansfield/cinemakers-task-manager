@@ -2,8 +2,13 @@
   padding: 8px;
   background-color: $black;
   height: 10vh;
-  color: $purple;
   padding-left: 16px;
+}
+
+.project-banner > h1 {
+  background: -webkit-linear-gradient($blue, $purple);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .project-container {
@@ -35,6 +40,7 @@
 .stages-container {
   background: $black;
   box-sizing: border-box;
+  height: 8vh;
 }
 
 

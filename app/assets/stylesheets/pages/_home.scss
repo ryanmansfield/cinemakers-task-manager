@@ -18,7 +18,7 @@
   padding: 16px;
   margin-bottom: 8px;
   background-color: $black;
-  height: 117px;
+  height: 18vh;
 
   box-shadow: 0 10px 30px rgba(0,0,0,.1);
 }
@@ -27,7 +27,6 @@
   color: $gray;
 }
 .profile-title {
-  // color: $blue;
   background: -webkit-linear-gradient($blue, $purple);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

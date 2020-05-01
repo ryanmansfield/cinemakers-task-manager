@@ -16,7 +16,7 @@ class CollaboratorsController < ApplicationController
     if @collaborator.save
       redirect_to project_path(@project)
     else
-      render :new
+      redirect_to project_path(@project), notice: "User is already on team"
     end
   end
 
