@@ -7,8 +7,8 @@
       <h3>Team</h3>
 
 
-        <button type="button" class="create-btn" data-toggle="modal"  data-target="#collaborator-add-modal">
-          <p>+</p>
+        <button type="text" class="collaborator-add" data-toggle="modal"  data-target="#collaborator-add-modal">
+          <p>add member</p>
         </button>
 
       <% @project.collaborators.each do |collaborator| %>
@@ -28,11 +28,10 @@
 <% end %>
 
 <!-- Project New Modal -->
-<div class="modal fade" id="collaborator-add-modal" tabindex="-1" role="dialog" aria-labelledby="collaborator-add-modal" aria-hidden="true">
+<div class="modal fade" id="collaborator-add-modal"  role="dialog" aria-labelledby="collaborator-add-modal" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
         <%=render partial: "collaborators/new"  %>
-
     </div>
   </div>
 </div>
