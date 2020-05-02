@@ -48,7 +48,7 @@ class Task extends Component {
             </Moment>
           </div>
           <div className="assigned-to">
-            <p>{`Assigned to: ${this.props.task.assigned_to}`}</p>
+            <p><strong>Assigned to: </strong>{`${this.props.task.assigned_to}`}</p>
           </div>
           <div className="task-checkbox">
              <input
