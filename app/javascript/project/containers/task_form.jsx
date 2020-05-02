@@ -59,45 +59,37 @@ class TaskForm extends Component {
       <form onSubmit={this.handleSubmit} className="task-editor">
         <div className="form-row">
           <div className="col">
-            <label>
-              Task
-              <input
-                ref={(input) => {this.messageBox = input; }}
-                name="title"
-                type="text"
-                className="form-control"
-                autoComplete="off"
-                placeholder="Task"
-                value={this.state.title}
-                onChange={this.handleChange}
-              />
-            </label>
+            <input
+              ref={(input) => {this.messageBox = input; }}
+              name="title"
+              type="text"
+              className="form-control task-form-input"
+              autoComplete="off"
+              placeholder="Task"
+              value={this.state.title}
+              onChange={this.handleChange}
+            />
           </div>
         </div>
-
         <div className="form-row">
           <div className="col">
             <DatePicker
-              className="form-control"
+              className="form-control task-form-input"
               placeholderText="Due Date"
               selected={this.state.due_date}
               onChange={this.handleDateChange}
             />
           </div>
-
           <div className="col">
-            <label>
-              Assigned To
               <input
                 name="assigned_to"
                 type="text"
-                className="form-control"
+                className="form-control task-form-input"
                 autoComplete="off"
                 placeholder="Assigned To"
                 value={this.state.assigned_to}
                 onChange={this.handleChange}
               />
-            </label>
           </div>
         </div>
         <div className="form-row task-save-btn">
