@@ -29,24 +29,24 @@
 }
 
 
-.task-due p {
-  margin-bottom: 2px;
-  margin-top: 2px;
+.task-due  {
+  display: flex;
+  flex-direction: row;
 }
+
 
 .task-destroy {
   text-align: right;
 }
 
 
-.task-info {
-  display: flex;
-  flex-direction: column;
-  font-style: italic;
-}
-
 .task-footer {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
+  font-style: italic;
+}
+
+.task-footer p {
+  margin-bottom: 0px;
 }
