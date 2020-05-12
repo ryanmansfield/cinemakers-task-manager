@@ -11,7 +11,7 @@
         </ul>
       </div>
     <% end %>
-    <%= f.association :user,label: false, label_method: :email, input_html: { class: 'js-searchable' } %>
+    <%= f.association :user,label: false, label_method: lambda { |user| "#{user.first_name} #{user.last_name} | @#{user.email}" }, input_html: { class: 'js-searchable' } %>
     <%= f.submit class: 'btn btn-primary', value: 'Add to Team' %>
 <% end %>
 </div>

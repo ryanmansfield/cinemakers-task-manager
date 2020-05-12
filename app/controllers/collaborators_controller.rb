@@ -20,6 +20,10 @@ class CollaboratorsController < ApplicationController
     end
   end
 
+  # def to_label
+  #   "#{first_name} | #{email}"
+  # end
+
   private
 
   def set_project
