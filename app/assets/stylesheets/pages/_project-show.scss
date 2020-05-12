@@ -33,9 +33,14 @@
 
 .team-member {
   margin-bottom: 16px;
+  display: flex;
 }
 
-.team-member > p {
+.member-info {
+  padding-left: 8px;
+}
+
+.member-info > p {
   color: $light-gray;
   margin: 2px;
 }

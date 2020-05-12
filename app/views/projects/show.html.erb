@@ -13,8 +13,11 @@
 
       <% @project.collaborators.each do |collaborator| %>
         <div class="team-member">
-          <p><strong><%= "#{collaborator.user.first_name.capitalize}"%></strong></p>
-           <p><i>  <%= "#{collaborator.position}"%></i></p>
+           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar member-avatar"%>
+           <div class="member-info">
+              <p><strong><%= "#{collaborator.user.first_name.capitalize}"%></strong></p>
+              <p><i>  <%= "#{collaborator.position}"%></i></p>
+           </div>
         </div>
       <% end %>
     </div>
