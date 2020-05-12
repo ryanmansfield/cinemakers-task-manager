@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.destroy_all
+# User.destroy_all
 
 # Collaborator.destroy_all
 # Project.destroy_all
@@ -16,33 +16,33 @@ User.destroy_all
 
 
 
-puts "All Users, Teams, Projects, Stages, Checklists, and Tasks have been destroyed, Creating new ones"
-puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+# puts "All Users, Teams, Projects, Stages, Checklists, and Tasks have been destroyed, Creating new ones"
+# puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
 
-User.create(first_name: "jill", last_name: "hill", email: "jill@test.com", password: "123456" )
-User.create(first_name: "jack", last_name: "beanstalk", email: "jack@test.com", password: "123456")
+# User.create(first_name: "jill", last_name: "hill", email: "jill@test.com", password: "123456" )
+# User.create(first_name: "jack", last_name: "beanstalk", email: "jack@test.com", password: "123456")
 
-puts "Users Created"
+# puts "Users Created"
 
-Project.create(name: "BestProjectEver")
-Stage.create(project_id: 1, name: "pre-production")
-Stage.create(project_id: 1, name: "production")
-Stage.create(project_id: 1, name: "post-production")
+# Project.create(name: "BestProjectEver")
+# Stage.create(project_id: 1, name: "pre-production")
+# Stage.create(project_id: 1, name: "production")
+# Stage.create(project_id: 1, name: "post-production")
 
-Project.create(name: "Second Best Project Ever")
-Stage.create(project_id: 2, name: "pre-production")
-Stage.create(project_id: 2, name: "production")
-Stage.create(project_id: 2, name: "post-production")
+# Project.create(name: "Second Best Project Ever")
+# Stage.create(project_id: 2, name: "pre-production")
+# Stage.create(project_id: 2, name: "production")
+# Stage.create(project_id: 2, name: "post-production")
 
-puts "Projects and Stages Seeded"
+# puts "Projects and Stages Seeded"
 
 
-Collaborator.create(project_id: 1, user_id: 1)
-# Collaborator.create(project_id: 1, user_id: 2)
-Collaborator.create(project_id: 2, user_id: 1)
-# Collaborator.create(project_id: 2, user_id: 2)
+# Collaborator.create(project_id: 1, user_id: 1)
+# # Collaborator.create(project_id: 1, user_id: 2)
+# Collaborator.create(project_id: 2, user_id: 1)
+# # Collaborator.create(project_id: 2, user_id: 2)
 
-puts "Collaborator created"
+# puts "Collaborator created"
 
 
 

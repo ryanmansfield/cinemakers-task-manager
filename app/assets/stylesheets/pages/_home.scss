@@ -26,6 +26,11 @@
 .profile-content {
   color: $gray;
 }
+
+.profile-content p {
+  margin-bottom: 0px;
+  font-style: italic;
+}
 .profile-title {
   background: -webkit-linear-gradient($blue, $purple);
   -webkit-background-clip: text;
