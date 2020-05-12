@@ -20,6 +20,10 @@ class CollaboratorsController < ApplicationController
     end
   end
 
+  # def to_label
+  #   "#{first_name} | #{email}"
+  # end
+
   private
 
   def set_project
@@ -29,6 +33,6 @@ class CollaboratorsController < ApplicationController
   def collaborator_params
     # *Strong params*: You need to *whitelist* what can be updated by the user
     # Never trust user data!
-    params.require(:collaborator).permit(:user_id)
+    params.require(:collaborator).permit(:user_id, :position)
   end
 end

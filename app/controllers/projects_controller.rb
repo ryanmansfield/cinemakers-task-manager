@@ -20,7 +20,7 @@ class ProjectsController < ApplicationController
     @project.stages.build(name: 'pre-production')
     @project.stages.build(name: "production")
     @project.stages.build(name: "post-production")
-    @project.collaborators.build(user_id: current_user.id)
+    @project.collaborators.build(user_id: current_user.id, position: 'owner')
 
     if @project.save
       redirect_to root_path

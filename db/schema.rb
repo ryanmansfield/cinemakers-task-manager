@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2020_02_25_030859) do
   end
 
   create_table "collaborators", force: :cascade do |t|
+    t.string "position"
     t.bigint "user_id"
     t.bigint "project_id"
     t.datetime "created_at", null: false
@@ -51,7 +52,6 @@ ActiveRecord::Schema.define(version: 2020_02_25_030859) do
   create_table "tasks", force: :cascade do |t|
     t.bigint "checklist_id"
     t.string "title"
-    t.string "note"
     t.datetime "due_date"
     t.boolean "is_complete", default: false, null: false
     t.string "assigned_to"
@@ -70,13 +70,9 @@ ActiveRecord::Schema.define(version: 2020_02_25_030859) do
     t.datetime "updated_at", null: false
     t.string "first_name"
     t.string "last_name"
-    t.string "tag"
-    t.string "bio"
-    t.string "company"
+    t.string "user_name"
     t.string "city"
     t.string "state"
-    t.string "website"
-    t.string "field"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

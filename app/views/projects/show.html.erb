@@ -13,8 +13,8 @@
 
       <% @project.collaborators.each do |collaborator| %>
         <div class="team-member">
-          <p><strong><%= "#{collaborator.user.first_name.capitalize}"%> <%= "#{collaborator.user.last_name.capitalize}"%></strong></p>
-          <p><i>  <%= "#{collaborator.user.field}"%></i></p>
+          <p><strong><%= "#{collaborator.user.first_name.capitalize}"%></strong></p>
+           <p><i>  <%= "#{collaborator.position}"%></i></p>
         </div>
       <% end %>
     </div>
