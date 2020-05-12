@@ -45,17 +45,9 @@
   padding: 32px;
 }
 
-
-
-// .select2-container--default .select2-results > .select2-results__options {
-//     max-height: 90px
-// }
-
-// .select2-selection__arrow {
-//     display: none
-// }
-
-
+#collaborator_position {
+  width: 400px;
+}
 
 
 
@@ -97,3 +89,5 @@
 .stages-container > ul > li.active {
   text-decoration: underline $purple;
 }
+
+
