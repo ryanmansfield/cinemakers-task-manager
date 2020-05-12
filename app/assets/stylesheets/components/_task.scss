@@ -34,6 +34,12 @@
   flex-direction: row;
 }
 
+.task-action {
+  display: flex;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
 
 .task-destroy {
   text-align: right;

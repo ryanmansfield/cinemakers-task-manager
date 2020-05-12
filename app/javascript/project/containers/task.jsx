@@ -41,26 +41,30 @@ class Task extends Component {
           <h3>{this.props.task.title}</h3>
         </div>
         <div className="task-footer">
-          <div className="task-due">
-            <p>Due: </p>
-            <Moment format="MM/DD/YYYY" parse="YYYY-MM-DD">
-              {this.props.task.due_date}
-            </Moment>
+          <div className="task-info">
+            <div className="task-due">
+              <p>Due: </p>
+              <Moment format="MM/DD/YYYY" parse="YYYY-MM-DD">
+                {this.props.task.due_date}
+              </Moment>
+            </div>
+            <div className="assigned-to">
+              <p><strong>Assigned to: </strong>{`${this.props.task.assigned_to}`}</p>
+            </div>
           </div>
-          <div className="assigned-to">
-            <p><strong>Assigned to: </strong>{`${this.props.task.assigned_to}`}</p>
-          </div>
-          <div className="task-checkbox">
-             <input
+          <div className="task-action">
+            <div className="task-checkbox">
+              <input
                 type="checkbox"
                 onClick={() => this.updateTask(this.props.task)}
                 defaultChecked={this.props.task.is_complete} />
-          </div>
-          <div className="class-destroy">
-            <button
-              className="task-btn-destroy"
-              onClick={() => this.handleClick(this.props.task)}
-            ><i className="fas fa-trash"></i></button>
+            </div>
+            <div className="class-destroy">
+              <button
+                className="task-btn-destroy"
+                onClick={() => this.handleClick(this.props.task)}
+              ><i className="fas fa-trash"></i></button>
+            </div>
           </div>
         </div>
       </div>
