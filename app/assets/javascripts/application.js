@@ -10,7 +10,7 @@ $(document).ready(function(){
     multiple: false,
     allowClear: true,
     minimumInputLength: 3,
-    placeholder: "Search By User Name or Email",
+    placeholder: "Search By Name or Username",
     width: '400px',
     dropdownAutoWidth: 'true',
     // closeOnSelect: false,
