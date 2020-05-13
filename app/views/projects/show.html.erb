@@ -12,10 +12,23 @@
         </button>
 
       <% @project.collaborators.each do |collaborator| %>
-        <div class="team-member">
-          <p><strong><%= "#{collaborator.user.first_name.capitalize}"%></strong></p>
-           <p><i>  <%= "#{collaborator.position}"%></i></p>
-        </div>
+        <% if collaborator.user.photo.attached? %>
+          <div class="team-member">
+            <%= cl_image_tag("#{collaborator.user.photo.key}", width: 40, height: 40, crop: :thumb, gravity: :face, zoom: 0.7, effect: "sharpen", class: "avatar member-avatar") %>
+            <div class="member-info">
+              <p><strong><%= "#{collaborator.user.first_name.capitalize}"%></strong></p>
+              <p><i>  <%= "#{collaborator.position}"%></i></p>
+           </div>
+          </div>
+        <% else %>
+          <div class="team-member">
+             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar member-avatar"%>
+             <div class="member-info">
+                <p><strong><%= "#{collaborator.user.first_name.capitalize}"%></strong></p>
+                <p><i>  <%= "#{collaborator.position}"%></i></p>
+             </div>
+          </div>
+        <% end %>
       <% end %>
     </div>
     <div class="project-app" id="project_app" data-stages=<%= @project.stages.to_json %>></div>

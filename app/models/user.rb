@@ -6,5 +6,6 @@ class User < ApplicationRecord
 
   has_many :collaborators, dependent: :destroy
   has_many :projects, through: :collaborators
+  has_one_attached :photo
 
 end
